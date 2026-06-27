@@ -269,6 +269,7 @@ const translations = {
     en: 'Proposals in formation (Alpha) that connect existing tools instead of reinventing them.',
   },
   'toolbox.closes_label': { es: 'cierra', en: 'closes' },
+  'toolbox.hub_title': { es: 'Cerrar la brecha', en: 'Close the gap' },
   'toolbox.card1_title': { es: 'Agregador y resolución de identidad', en: 'Aggregator and identity resolution' },
   'toolbox.card1_desc': { es: 'Unifica identidades dispersas y reduce duplicados.', en: 'Unifies scattered identities and reduces duplicates.' },
   'toolbox.card1_close': { es: 'fragmentación y falsos positivos', en: 'fragmentation and false positives' },
