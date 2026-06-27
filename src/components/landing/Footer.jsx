@@ -56,14 +56,14 @@ export default function Footer() {
           </div>
 
           <a
-            href="/respuesta-digital"
+            href="/respuesta-digital.html"
             className="text-sm font-medium text-[#1565C0] hover:text-[#1565C0]/80 underline"
           >
             {t('nav.digital', lang)}
           </a>
 
           <a
-            href="/info-donaciones"
+            href="/infodonaciones.html"
             className="text-sm font-medium text-[#1565C0] hover:text-[#1565C0]/80 underline"
           >
             {t('nav.help', lang)}

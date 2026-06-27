@@ -6,34 +6,34 @@ const columns = [
   {
     titleKey: 'mfooter.col_help',
     links: [
-      { key: 'mfooter.col_help_1', href: '/info-donaciones' },
-      { key: 'mfooter.col_help_2', href: '/info-donaciones#dinero' },
-      { key: 'mfooter.col_help_3', href: '/info-donaciones#fases' },
-      { key: 'mfooter.col_help_4', href: '/info-donaciones#actuar' },
-      { key: 'mfooter.col_help_5', href: '/info-donaciones#cooperacion' },
+      { key: 'mfooter.col_help_1', href: '/infodonaciones.html' },
+      { key: 'mfooter.col_help_2', href: '/infodonaciones.html#dinero' },
+      { key: 'mfooter.col_help_3', href: '/infodonaciones.html#fases' },
+      { key: 'mfooter.col_help_4', href: '/infodonaciones.html#actuar' },
+      { key: 'mfooter.col_help_5', href: '/infodonaciones.html#cooperacion' },
     ],
   },
   {
     titleKey: 'mfooter.col_digital',
     links: [
-      { key: 'mfooter.col_digital_1', href: '/respuesta-digital#ecosistema' },
-      { key: 'mfooter.col_digital_2', href: '/respuesta-digital#grietas' },
-      { key: 'mfooter.col_digital_3', href: '/respuesta-digital#ia' },
-      { key: 'mfooter.col_digital_4', href: '/respuesta-digital#toolbox' },
+      { key: 'mfooter.col_digital_1', href: '/respuesta-digital.html#ecosistema' },
+      { key: 'mfooter.col_digital_2', href: '/respuesta-digital.html#grietas' },
+      { key: 'mfooter.col_digital_3', href: '/respuesta-digital.html#ia' },
+      { key: 'mfooter.col_digital_4', href: '/respuesta-digital.html#toolbox' },
     ],
   },
   {
     titleKey: 'mfooter.col_contacts',
     links: [
-      { key: 'mfooter.col_contacts_1', href: '/contactos#emergencias' },
-      { key: 'mfooter.col_contacts_2', href: '/contactos#entidades' },
-      { key: 'mfooter.col_contacts_3', href: '/contactos#donar' },
+      { key: 'mfooter.col_contacts_1', href: '/contactos.html#emergencias' },
+      { key: 'mfooter.col_contacts_2', href: '/contactos.html#entidades' },
+      { key: 'mfooter.col_contacts_3', href: '/contactos.html#donar' },
     ],
   },
   {
     titleKey: 'mfooter.col_initiative',
     links: [
-      { key: 'mfooter.col_initiative_1', href: '/novedades' },
+      { key: 'mfooter.col_initiative_1', href: '/novedades.html' },
       { key: 'mfooter.col_initiative_2', href: '/#medicos' },
       { key: 'mfooter.col_initiative_3', href: '/#sumate' },
       { key: 'mfooter.col_initiative_4', href: 'mailto:contacto@canporven.org' },
