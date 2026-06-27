@@ -312,6 +312,7 @@ const translations = {
 
   // Nav: Digital Response
   'nav.digital': { es: 'Respuesta digital', en: 'Digital response' },
+  'nav.novedades': { es: 'Novedades', en: 'News' },
 
   // Partners section
   'partners.title': { es: 'Organizaciones, empresas y personas que nos apoyan', en: 'Organizations, companies and people who support us' },

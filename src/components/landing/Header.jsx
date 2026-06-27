@@ -163,6 +163,9 @@ export default function Header() {
           </a>
           <DesktopDropdown labelKey="nav.help" labelHref="/infodonaciones.html" items={helpItems} />
           <DesktopDropdown labelKey="nav.digital" labelHref="/respuesta-digital.html" items={drItems} />
+          <a href="/novedades.html" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
+            {t('nav.novedades', lang)}
+          </a>
           <a href="#medicos" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
             {t('nav.medicos', lang)}
           </a>
@@ -204,6 +207,13 @@ export default function Header() {
             </a>
             <MobileDropdown labelKey="nav.help" labelHref="/infodonaciones.html" items={helpItems} onNavigate={closeMobile} />
             <MobileDropdown labelKey="nav.digital" labelHref="/respuesta-digital.html" items={drItems} onNavigate={closeMobile} />
+            <a
+              href="/novedades.html"
+              onClick={closeMobile}
+              className="block py-3 text-base font-semibold text-[#121212] border-b border-[#1565C0]/10"
+            >
+              {t('nav.novedades', lang)}
+            </a>
             <a
               href="#medicos"
               onClick={closeMobile}
