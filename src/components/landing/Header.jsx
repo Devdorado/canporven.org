@@ -1,6 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/hooks/useTheme';
+
+function ThemeToggle() {
+  const { isDark, toggle } = useTheme();
+  return (
+    <button
+      onClick={toggle}
+      className="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#1565C0]/30 dark:border-white/20 text-[#1565C0] dark:text-yellow-300 hover:bg-[#1565C0]/5 dark:hover:bg-white/10 transition-colors"
+      aria-label={isDark ? 'Modo claro' : 'Modo oscuro'}
+      aria-pressed={isDark}
+    >
+      {isDark ? <Sun size={18} /> : <Moon size={18} />}
+    </button>
+  );
+}
 
 const helpItems = [
   { key: 'menu.help_situacion', href: '/info-donaciones#situacion' },
@@ -184,6 +199,8 @@ export default function Header() {
           </a>
 
           <LangSwitch />
+
+          <ThemeToggle />
 
           {/* Mobile hamburger */}
           <button

@@ -417,7 +417,12 @@ const translations = {
     es: 'Mapa de reportes, personas desaparecidas y noticias actualizadas. Datos de iniciativas ciudadanas.',
     en: 'Map of reports, missing persons and updated news. Data from citizen initiatives.',
   },
-  'vzla.cta_button': { es: 'Mapa y situación en vivo', en: 'Live map and situation' },
+  'vzla.cta_button': { es: 'Ver la situación en vivo', en: 'See the live situation' },
+  'vzla.cta_missing': { es: 'Buscar o reportar desaparecidos', en: 'Search or report missing people' },
+  'vzla.cta_missing_note': {
+    es: 'Herramienta ciudadana externa para reconectar familias tras el sismo. No gestiona dinero ni donaciones.',
+    en: 'External citizen tool to reconnect families after the earthquake. It does not handle money or donations.',
+  },
 
   // Subpage: Cómo ayudar
   'help.intro': {
