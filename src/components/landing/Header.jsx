@@ -19,7 +19,7 @@ export default function Header() {
         {/* Logo + Brand */}
         <a href="/" className="flex items-center shrink-0">
           <img
-            src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/273fffe0b_Canprovenlogo.png"
+            src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/73f9c99fa_image-removebg-preview.png"
             alt="CANPORVEN.ORG"
             className="h-10 md:h-11 w-auto object-contain"
           />
