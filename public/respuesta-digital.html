@@ -143,6 +143,29 @@ td.ch{font-weight:700;color:var(--tinta)}
 .ft p{font-size:13px;color:#9fb0c6;max-width:80ch;margin-top:14px;line-height:1.6}
 .ft .dom{margin-top:10px;font-weight:600;color:#e7eefa;font-size:13.5px}
 .ft .bar{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:18px;font-size:12px;color:#7d8da6}
+/* mega menu */
+.menu-toggle{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.menu{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0}
+.menu>li{position:relative}
+.menu>li>a{display:flex;align-items:center;gap:5px;font-size:14px;font-weight:600;color:var(--gris);padding:9px 12px;border-radius:9px;white-space:nowrap}
+.menu>li>a:hover{color:var(--azul);background:var(--azul-l)}
+.menu>li>a.cta{background:var(--azul);color:#fff;padding:9px 16px}
+.menu>li>a.cta:hover{background:var(--azul-d);color:#fff}
+.menu .caret{font-size:10px;opacity:.55}
+.dropdown{position:absolute;top:calc(100% + 5px);left:0;min-width:215px;background:#fff;border:1px solid var(--linea);border-radius:12px;box-shadow:var(--sombra);padding:7px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s}
+.menu>li:hover .dropdown{opacity:1;visibility:visible;transform:none}
+.dropdown a{display:block;font-size:13.5px;color:var(--tinta);padding:9px 11px;border-radius:8px}
+.dropdown a:hover{background:var(--azul-l);color:var(--azul)}
+.menu-btn{display:none;width:42px;height:40px;border:1px solid var(--linea);background:#fff;border-radius:10px;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn svg{width:20px;height:20px;stroke:var(--tinta);fill:none}
+@media(max-width:900px){
+.menu-btn{display:flex}
+.menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--linea);box-shadow:var(--sombra);padding:12px;gap:2px;max-height:82vh;overflow:auto}
+.menu-toggle:checked ~ .menu{display:flex}
+.menu>li>a{padding:12px 14px}
+.dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-left:2px solid var(--linea);border-radius:0;margin:0 0 6px 14px;padding:0;min-width:0}
+.dropdown a{padding:8px 12px}
+}
 </style>
 </head>
 <body>
@@ -159,13 +182,31 @@ td.ch{font-weight:700;color:var(--tinta)}
       </svg>
       <span class="wm"><span class="b">CAN</span><span class="o">POR</span><span class="r">VEN</span><span class="g">.ORG</span></span>
     </a>
-    <nav class="nav-links">
-      <a href="#ecosistema">Ecosistema</a>
-      <a href="#grietas">Las grietas</a>
-      <a href="#ia">IA agéntica</a>
-      <a href="#toolbox">Nuestra toolbox</a>
-      <a href="/" class="cta">Volver al inicio</a>
-    </nav>
+    <input type="checkbox" id="mtoggle" class="menu-toggle" aria-label="Abrir menú">
+    <label for="mtoggle" class="menu-btn" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></label>
+    <ul class="menu">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/infodonaciones.html">Cómo ayudar <span class="caret">▾</span></a>
+        <div class="dropdown">
+          <a href="/infodonaciones.html#situacion">La situación</a>
+          <a href="/infodonaciones.html#dinero">Dinero vs. especie</a>
+          <a href="/infodonaciones.html#fases">Las fases</a>
+          <a href="/infodonaciones.html#funciona">Qué funciona</a>
+          <a href="/infodonaciones.html#canarias">Factor Canarias</a>
+          <a href="/infodonaciones.html#actuar">Cómo actuar</a>
+        </div>
+      </li>
+      <li><a href="/respuesta-digital.html">Respuesta digital <span class="caret">▾</span></a>
+        <div class="dropdown">
+          <a href="/respuesta-digital.html#ecosistema">Ecosistema</a>
+          <a href="/respuesta-digital.html#grietas">Las grietas</a>
+          <a href="/respuesta-digital.html#ia">IA agéntica</a>
+          <a href="/respuesta-digital.html#toolbox">Nuestra toolbox</a>
+        </div>
+      </li>
+      <li><a href="/#medicos">Médicos</a></li>
+      <li><a href="/#sumate" class="cta">Súmate</a></li>
+    </ul>
   </div>
 </header>
 
