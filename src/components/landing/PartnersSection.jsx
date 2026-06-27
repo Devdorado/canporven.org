@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
-import { ExternalLink, Heart } from 'lucide-react';
+import { ExternalLink, Heart, X, ChevronLeft, ChevronRight, Building2 } from 'lucide-react';
 
 const partners = [
   {
@@ -42,10 +42,25 @@ const partners = [
   },
 ];
 
-const PLACEHOLDER_COUNT = 5;
-
 export default function PartnersSection() {
   const { lang } = useLang();
+  const [selected, setSelected] = useState(null);
+  const scrollRef = useRef(null);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(true);
+
+  const updateScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanLeft(el.scrollLeft > 5);
+    setCanRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 5);
+  }, []);
+
+  const scrollBy = (dir) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: 'smooth' });
+  };
 
   return (
     <section id="apoyos" className="py-16 md:py-24 bg-gray-50" aria-labelledby="partners-heading">
@@ -57,65 +72,65 @@ export default function PartnersSection() {
           <p className="text-[#121212]/70 max-w-2xl mx-auto">{t('partners.subtitle', lang)}</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {/* Carousel controls */}
+        <div className="flex items-center justify-center gap-3 mb-5">
+          <button
+            onClick={() => scrollBy(-1)}
+            disabled={!canLeft}
+            aria-label={t('partners.prev', lang)}
+            className="p-2 rounded-full border border-gray-300 bg-white hover:border-[#1565C0] hover:text-[#1565C0] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => scrollBy(1)}
+            disabled={!canRight}
+            aria-label={t('partners.next', lang)}
+            className="p-2 rounded-full border border-gray-300 bg-white hover:border-[#1565C0] hover:text-[#1565C0] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
+        {/* Carousel */}
+        <div
+          ref={scrollRef}
+          onScroll={updateScroll}
+          className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {partners.map((p) => {
             const desc = lang === 'es' ? p.descEs : p.descEn;
-            const card = (
-              <div className="flex items-start gap-3 h-full">
-                <div className="w-10 h-10 shrink-0 rounded-lg bg-[#1565C0]/10 flex items-center justify-center text-[#1565C0] font-bold text-sm overflow-hidden">
+            return (
+              <button
+                key={p.name}
+                onClick={() => setSelected(p)}
+                className="snap-center shrink-0 w-56 md:w-64 group rounded-2xl border border-gray-200 bg-white p-6 flex flex-col items-center text-center hover:shadow-lg hover:border-[#1565C0]/30 transition-all"
+              >
+                <div className="w-28 h-28 md:w-32 md:h-32 shrink-0 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden mb-4">
                   {p.logo ? (
                     <img
                       src={p.logo}
                       alt={p.name}
-                      className="w-full h-full object-contain p-1"
+                      className="w-full h-full object-contain p-2"
                       loading="lazy"
                     />
                   ) : (
-                    p.name.charAt(0)
+                    <Building2 size={48} className="text-[#1565C0]/40" />
                   )}
                 </div>
-                <div>
-                  <p className="font-semibold text-[#121212] leading-tight">{p.name}</p>
-                  <p className="text-sm text-[#121212]/60 mt-0.5">{desc}</p>
-                </div>
-              </div>
-            );
-            return p.url ? (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block rounded-xl border border-gray-200 bg-white p-5 hover:shadow-md hover:border-[#1565C0]/30 transition-all"
-              >
-                {card}
-                <div className="mt-3 flex items-center gap-1 text-xs font-medium text-[#1565C0]">
-                  <ExternalLink size={14} />
-                  <span className="opacity-70 group-hover:opacity-100 transition-opacity">
-                    {p.url.replace(/^https?:\/\//, '')}
-                  </span>
-                </div>
-              </a>
-            ) : (
-              <div
-                key={p.name}
-                className="rounded-xl border border-gray-200 bg-white p-5"
-              >
-                {card}
-              </div>
+                <p className="font-semibold text-[#121212] leading-tight mb-1">{p.name}</p>
+                <p className="text-sm text-[#121212]/60 leading-snug">{desc}</p>
+              </button>
             );
           })}
 
-          {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => (
-            <div
-              key={`ph-${i}`}
-              className="rounded-xl border-2 border-dashed border-gray-300 bg-white/50 p-5 flex items-center justify-center min-h-[110px]"
-            >
-              <p className="text-sm font-medium text-[#121212]/40 text-center">
-                {t('partners.placeholder', lang)}
-              </p>
-            </div>
-          ))}
+          {/* Placeholder */}
+          <div className="snap-center shrink-0 w-56 md:w-64 rounded-2xl border-2 border-dashed border-gray-300 bg-white/50 p-6 flex flex-col items-center justify-center text-center min-h-[260px]">
+            <p className="text-sm font-medium text-[#121212]/40">
+              {t('partners.placeholder', lang)}
+            </p>
+          </div>
         </div>
 
         {/* CTA */}
@@ -132,6 +147,60 @@ export default function PartnersSection() {
           </a>
         </div>
       </div>
+
+      {/* Popup */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-md w-full p-8 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelected(null)}
+              aria-label={t('partners.close', lang)}
+              className="absolute top-4 right-4 p-2 text-[#121212]/50 hover:text-[#121212] transition-colors"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="flex flex-col items-center text-center">
+              <div className="w-32 h-32 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden mb-5">
+                {selected.logo ? (
+                  <img
+                    src={selected.logo}
+                    alt={selected.name}
+                    className="w-full h-full object-contain p-3"
+                  />
+                ) : (
+                  <Building2 size={56} className="text-[#1565C0]/40" />
+                )}
+              </div>
+
+              <h3 className="text-xl font-bold text-[#121212] mb-2">{selected.name}</h3>
+              <p className="text-[#121212]/70 mb-6">
+                {lang === 'es' ? selected.descEs : selected.descEn}
+              </p>
+
+              {selected.url ? (
+                <a
+                  href={selected.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base bg-[#1565C0] text-white hover:bg-[#1255A0] transition-colors min-h-[48px]"
+                >
+                  <ExternalLink size={18} />
+                  {t('partners.visit', lang)}
+                </a>
+              ) : (
+                <p className="text-sm text-[#121212]/50">{t('partners.no_link', lang)}</p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

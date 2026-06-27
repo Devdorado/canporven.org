@@ -130,6 +130,11 @@ const translations = {
   'partners.placeholder': { es: 'Tu organización aquí', en: 'Your organization here' },
   'partners.cta_title': { es: 'Buscamos aliados activamente. Apóyanos tú también.', en: 'We are actively looking for partners. Support us too.' },
   'partners.cta_button': { es: 'Quiero apoyar', en: 'I want to support' },
+  'partners.visit': { es: 'Visitar sitio web', en: 'Visit website' },
+  'partners.no_link': { es: 'Sin enlace disponible', en: 'No link available' },
+  'partners.close': { es: 'Cerrar', en: 'Close' },
+  'partners.prev': { es: 'Anterior', en: 'Previous' },
+  'partners.next': { es: 'Siguiente', en: 'Next' },
 
   // Footer
   'alpha.text': {
