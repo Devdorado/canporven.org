@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
 
-const HERO_IMG = 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/10eecb440_image.png';
+const HERO_IMG = 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/d79d1b943_image.png';
 
 export default function Hero() {
   const { lang } = useLang();
