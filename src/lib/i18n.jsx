@@ -124,6 +124,13 @@ const translations = {
   'share.copied': { es: '¡Enlace copiado!', en: 'Link copied!' },
   'share.copy': { es: 'Copiar enlace', en: 'Copy link' },
 
+  // Partners section
+  'partners.title': { es: 'Organizaciones, empresas y personas que nos apoyan', en: 'Organizations, companies and people who support us' },
+  'partners.subtitle': { es: 'Una alianza en construcción de tecnología, salud y voluntariado.', en: 'A growing alliance of technology, health and volunteers.' },
+  'partners.placeholder': { es: 'Tu organización aquí', en: 'Your organization here' },
+  'partners.cta_title': { es: 'Buscamos aliados activamente. Apóyanos tú también.', en: 'We are actively looking for partners. Support us too.' },
+  'partners.cta_button': { es: 'Quiero apoyar', en: 'I want to support' },
+
   // Footer
   'alpha.text': {
     es: 'En construcción. Canarias por Venezuela es, por ahora, una iniciativa ciudadana privada en fase de formación, sin personalidad jurídica ni garantía legal. Damos la bienvenida a ayuda profesional, a organizaciones y a la colaboración para construirla bien.',

@@ -7,6 +7,7 @@ import MissionSection from '@/components/landing/MissionSection';
 import DoctorForm from '@/components/landing/DoctorForm';
 import NotifySection from '@/components/landing/NotifySection';
 import ShareSection from '@/components/landing/ShareSection';
+import PartnersSection from '@/components/landing/PartnersSection';
 import Footer from '@/components/landing/Footer';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
           <DoctorForm />
           <NotifySection />
           <ShareSection />
+          <PartnersSection />
         </main>
         <Footer />
       </div>
