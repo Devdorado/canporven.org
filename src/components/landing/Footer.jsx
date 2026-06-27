@@ -24,7 +24,7 @@ export default function Footer() {
 
       {/* Contact + Language + Copyright */}
       <div className="max-w-4xl mx-auto px-4 pb-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-6 border-t border-white/10">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-6 pt-6 border-t border-white/10 flex-wrap">
           <div className="text-sm text-white/50">
             <span className="font-medium text-white/70">{t('footer.contact', lang)}: </span>
             <a

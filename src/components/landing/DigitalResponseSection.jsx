@@ -26,14 +26,14 @@ export default function DigitalResponseSection() {
         </div>
 
         {/* Stat cards */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 mb-10">
           {stats.map((s, i) => (
             <div
               key={i}
-              className="rounded-xl border border-[#1565C0]/15 bg-[#1565C0]/5 p-4 text-center flex flex-col justify-center min-h-[110px]"
+              className="rounded-xl border border-[#1565C0]/15 bg-[#1565C0]/5 p-3 md:p-4 text-center flex flex-col justify-center min-h-[100px] md:min-h-[110px]"
             >
-              <p className="text-lg md:text-xl font-bold text-[#1565C0] leading-tight">{s.value}</p>
-              <p className="text-xs md:text-sm text-[#121212]/60 mt-1 leading-snug">
+              <p className="text-sm sm:text-base md:text-lg font-bold text-[#1565C0] leading-tight break-words">{s.value}</p>
+              <p className="text-xs text-[#121212]/60 mt-1 leading-snug">
                 {lang === 'es' ? s.labelEs : s.labelEn}
               </p>
             </div>
