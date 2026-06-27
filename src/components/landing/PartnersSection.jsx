@@ -14,6 +14,7 @@ const partners = [
     descEs: 'Soluciones de IA · Tech for Good',
     descEn: 'AI solutions · Tech for Good',
     url: 'https://canarymedtech.es',
+    logo: 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/72e0b2a3e_image.png',
   },
   {
     name: 'Jarocco AG',
