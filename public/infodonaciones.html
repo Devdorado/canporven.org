@@ -128,7 +128,7 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
 .shift p{font-size:14.5px;color:#1c5d43}
 
 /* reveal */
-[data-rev]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+[data-rev]{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 [data-rev].in{opacity:1;transform:none}
 .nav-links a.active{color:var(--azul);background:var(--azul-l)}
 .nav-links a.cta.active{color:#fff;background:var(--azul-d)}
@@ -368,11 +368,11 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
         <p class="sub">Cuánto del valor llega realmente a las personas afectadas</p>
         <div class="bar-row">
           <div class="bar-top"><span style="display:inline-flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.3a3.6 3.6 0 0 0-5 .3 4 4 0 0 0 0 4.8 3.6 3.6 0 0 0 5 .3M8.5 11h5M8.5 13.2h4"/></svg> Dinero a ONG verificada</span><span class="pct" style="color:var(--verde)">&gt;90%</span></div>
-          <div class="bar good"><i data-w="92"></i></div>
+          <div class="bar good"><i data-w="92" style="width:92%"></i></div>
         </div>
         <div class="bar-row">
           <div class="bar-top"><span style="display:inline-flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--rojo)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 6.2l2 3 2-1.2V20h8V8l2 1.2 2-3L16 3l-2 2a2.6 2.6 0 0 1-4 0L8 3z"/></svg> Ropa usada enviada</span><span class="pct" style="color:var(--rojo)">30–50%</span></div>
-          <div class="bar bad"><i data-w="40"></i></div>
+          <div class="bar bad"><i data-w="40" style="width:40%"></i></div>
         </div>
         <div class="foot">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
@@ -482,9 +482,9 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
         </div>
         <div data-rev>
           <div class="stackbar barfig">
-            <div data-w="10" style="background:var(--verde)">10%</div>
-            <div data-w="30" style="background:var(--oro)">30%</div>
-            <div data-w="60" style="background:var(--rojo)">60%</div>
+            <div data-w="10" style="background:var(--verde);width:10%">10%</div>
+            <div data-w="30" style="background:var(--oro);width:30%">30%</div>
+            <div data-w="60" style="background:var(--rojo);width:60%">60%</div>
           </div>
           <div class="sd-leg">
             <div class="lg"><span class="sw" style="background:var(--verde)"></span><span><b>5–15% prioritario:</b> útil de inmediato.</span></div>
