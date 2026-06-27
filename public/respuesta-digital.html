@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();</script>
+<style>html.dark{--bg:#0f1724;--soft:#161f2e;--soft2:#1d2940;--tinta:#e7eef7;--gris:#aeb9cc;--gris-l:#8b97ab;--linea:#27344a;--azul-l:#152a44;--oro-l:#3a2e12;--rojo-l:#3a1714;--verde-l:#10311f;--sombra:0 1px 2px rgba(0,0,0,.3),0 6px 24px rgba(0,0,0,.45);--sombra-l:0 1px 2px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.4)}html.dark body{background:#0f1724;color:#e7eef7}</style>
+<script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t=='dark')document.documentElement.classList.add('dark')}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La respuesta digital e IA al terremoto de Venezuela 2026 · Canarias por Venezuela</title>
 <meta name="description" content="Mapa de la respuesta digital y de inteligencia artificial al terremoto de Venezuela del 24 de junio de 2026: alertas, satélite, plataformas ciudadanas de desaparecidos, las grietas del sistema y dónde encaja nuestra toolbox. Canarias por Venezuela · canporven.org">
-<link rel="canonical" href="https://canporven.org/respuesta-digital.html">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://canporven.org/respuesta-digital.html">
-<meta property="og:title" content="La respuesta digital e IA al terremoto de Venezuela 2026 · Canarias por Venezuela">
-<meta property="og:description" content="Mapa de la respuesta digital y de inteligencia artificial al terremoto de Venezuela del 24 de junio de 2026: alertas, satélite, plataformas ciudadanas de desaparecidos, las grietas del sistema y dónde encaja nuestra toolbox. Canarias por Venezuela · canporven.org">
-<meta property="og:image" content="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/d79d1b943_image.png">
-<meta property="og:locale" content="es_ES">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="La respuesta digital e IA al terremoto de Venezuela 2026 · Canarias por Venezuela">
-<meta name="twitter:description" content="Mapa de la respuesta digital y de inteligencia artificial al terremoto de Venezuela del 24 de junio de 2026: alertas, satélite, plataformas ciudadanas de desaparecidos, las grietas del sistema y dónde encaja nuestra toolbox. Canarias por Venezuela · canporven.org">
-<meta name="twitter:image" content="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/d79d1b943_image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Canarias por Venezuela","alternateName":"CANPORVEN.ORG","url":"https://canporven.org/","logo":"https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/73f9c99fa_image-removebg-preview.png","description":"Iniciativa ciudadana desde las Islas Canarias para coordinar ayuda profesional y verificada a Venezuela tras los terremotos de junio de 2026.","areaServed":["Canarias","Venezuela"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"La respuesta digital e IA al terremoto de Venezuela 2026 · Canarias por Venezuela","description":"Mapa de la respuesta digital y de inteligencia artificial al terremoto de Venezuela del 24 de junio de 2026: alertas, satélite, plataformas ciudadanas de desaparecidos, las grietas del sistema y dónde encaja nuestra toolbox. Canarias por Venezuela · canporven.org","image":"https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/d79d1b943_image.png","inLanguage":"es","mainEntityOfPage":"https://canporven.org/respuesta-digital.html","publisher":{"@type":"NGO","name":"Canarias por Venezuela","logo":{"@type":"ImageObject","url":"https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/73f9c99fa_image-removebg-preview.png"}}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -181,213 +169,49 @@ td.ch{font-weight:700;color:var(--tinta)}
 .dropdown a{padding:8px 12px}
 }
 </style>
-
-<style id="cpv-dark">
-html.dark{
-  --tinta:#E8EEF6;--gris:#A8B5C8;--gris-l:#8593A8;
-  --bg:#0b1322;--soft:#111c30;--soft2:#16233b;--linea:#243349;
-  --azul-l:#15273f;--oro-l:#2a2410;--rojo-l:#2c1714;--verde-l:#10241b;--violeta-l:#1d1733;--rosa-l:#2a1521;
-  --sombra:0 1px 2px rgba(0,0,0,.5),0 6px 24px rgba(0,0,0,.45);
-  --sombra-l:0 1px 2px rgba(0,0,0,.5),0 2px 8px rgba(0,0,0,.4);
-}
-html.dark body{background:var(--bg);color:var(--tinta)}
-html.dark .alpha{background:linear-gradient(90deg,#2a2410,#15273f);color:#cfe0f5;border-bottom-color:var(--linea)}
-/* card/surface heuristics */
-html.dark .isla,html.dark .flyer,html.dark .note,html.dark .point,html.dark .cat,html.dark .kicker{background:var(--soft);border-color:var(--linea)}
-html.dark .soft-bg{background:#0e1726}
-html.dark .point.a{background:#241f0e}html.dark .point.b{background:var(--azul-l)}
-/* ===== Header (cpv-nav) dark ===== */
-html.dark .cpv-nav{background:rgba(11,19,34,.92);border-bottom-color:rgba(255,255,255,.08)}
-html.dark .cpv-link{color:#E8EEF6}
-html.dark .cpv-link:hover,html.dark .cpv-link.cpv-active{color:#5b9be0}
-html.dark .cpv-dd-in{background:#111c30;border-color:rgba(255,255,255,.1);box-shadow:0 20px 25px -5px rgba(0,0,0,.6)}
-html.dark .cpv-dd-in a{color:#E8EEF6}
-html.dark .cpv-dd-in a:hover{background:rgba(91,155,224,.12);color:#5b9be0}
-html.dark .cpv-mobile{background:#0b1322;border-top-color:rgba(255,255,255,.1)}
-html.dark .cpv-mlink{color:#E8EEF6;border-bottom-color:rgba(255,255,255,.1)}
-html.dark .cpv-msub a{color:rgba(232,238,246,.7)}
-html.dark .cpv-lang{border-color:rgba(91,155,224,.4)}
-html.dark .cpv-lang a{background:#111c30;color:#5b9be0}
-html.dark .cpv-lang a.cpv-lang-on{background:#1565C0;color:#fff}
-html.dark .cpv-burger{color:#5b9be0}
-html.dark .cpv-burger:hover{background:rgba(91,155,224,.12)}
-/* ===== Theme toggle button ===== */
-.cpv-theme{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9999px;border:2px solid rgba(21,101,192,.3);background:#fff;color:#1565C0;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
-.cpv-theme:hover{background:rgba(21,101,192,.05)}
-.cpv-theme svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.cpv-theme .cpv-sun{display:none}
-html.dark .cpv-theme{background:#111c30;border-color:rgba(255,255,255,.2);color:#FACC15}
-html.dark .cpv-theme .cpv-moon{display:none}
-html.dark .cpv-theme .cpv-sun{display:block}
-</style>
-
-<style id="cpv-contrast-fix">
-html.dark{--gris:#B9C6D9;--gris-l:#97A6BC}
-html.dark .muted,html.dark .sub,html.dark small,html.dark .note p,html.dark .meta{color:#B9C6D9}
-html.dark a{color:#7CB0EA}
-html.dark .chip,html.dark .tag,html.dark .badge{border-color:var(--linea)}
-html.dark hr,html.dark .divider{border-color:var(--linea)}
-</style>
 </head>
 <body>
 
 <div class="alpha"><b>ALPHA</b> Iniciativa ciudadana privada en formación, sin garantía legal. Ayuda profesional y alianzas bienvenidas.</div>
 
-
-<style id="cpv-shell-style">
-.cpv-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-bottom:1px solid rgba(21,101,192,.1);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.cpv-nav *{box-sizing:border-box}
-.cpv-nav-in{max-width:1152px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.cpv-logo{display:flex;align-items:center;flex-shrink:0}
-.cpv-logo img{height:40px;width:auto;object-fit:contain}
-.cpv-nav-links{display:none;align-items:center;gap:4px}
-.cpv-link{display:inline-flex;align-items:center;gap:4px;padding:8px 12px;font-size:14px;font-weight:600;color:#121212;text-decoration:none;transition:color .15s;background:none;border:0;cursor:pointer;font-family:inherit}
-.cpv-link:hover{color:#1565C0}
-.cpv-link.cpv-active{color:#1565C0}
-.cpv-caret{width:15px;height:15px;display:inline-block}
-.cpv-dd{position:relative}
-.cpv-dd-menu{position:absolute;left:0;top:100%;padding-top:8px;z-index:50;display:none}
-.cpv-dd:hover .cpv-dd-menu{display:block}
-.cpv-dd-in{min-width:230px;border-radius:12px;border:1px solid rgba(21,101,192,.1);background:#fff;box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);padding:8px 0}
-.cpv-dd-in a{display:block;padding:10px 16px;font-size:14px;color:#121212;text-decoration:none;transition:background .15s,color .15s}
-.cpv-dd-in a:hover{background:rgba(21,101,192,.05);color:#1565C0}
-.cpv-right{display:flex;align-items:center;gap:12px}
-.cpv-cta{display:none;align-items:center;padding:8px 20px;border-radius:9999px;font-weight:600;font-size:14px;color:#fff;background:#1565C0;text-decoration:none;min-height:44px;transition:background .15s}
-.cpv-cta:hover{background:#1255A0}
-.cpv-lang{display:flex;border-radius:9999px;border:2px solid rgba(21,101,192,.3);overflow:hidden}
-.cpv-lang a{padding:6px 12px;font-size:14px;font-weight:600;text-decoration:none;transition:background .15s,color .15s;color:#1565C0;background:#fff}
-.cpv-lang a:hover{background:rgba(21,101,192,.05)}
-.cpv-lang a.cpv-lang-on{background:#1565C0;color:#fff}
-.cpv-burger{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;color:#1565C0;background:none;border:0;cursor:pointer;transition:background .15s}
-.cpv-burger:hover{background:rgba(21,101,192,.05)}
-.cpv-burger svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
-.cpv-mtoggle{display:none}
-.cpv-mobile{display:none;border-top:1px solid rgba(21,101,192,.1);background:#fff}
-.cpv-mtoggle:checked~.cpv-mobile{display:block}
-.cpv-mobile-in{max-width:1152px;margin:0 auto;padding:8px 16px}
-.cpv-mlink{display:block;padding:12px 0;font-size:16px;font-weight:600;color:#121212;text-decoration:none;border-bottom:1px solid rgba(21,101,192,.1)}
-.cpv-msub a{display:block;padding:10px 0 10px 16px;font-size:14px;color:rgba(18,18,18,.7);text-decoration:none}
-.cpv-mcta{display:block;margin:12px 0;text-align:center;padding:12px 20px;border-radius:9999px;font-weight:600;font-size:14px;color:#fff;background:#1565C0;text-decoration:none}
-@media(min-width:1024px){
-  .cpv-nav-links{display:flex}
-  .cpv-cta{display:inline-flex}
-  .cpv-burger{display:none}
-  .cpv-mobile{display:none!important}
-  .cpv-logo img{height:44px}
-}
-/* ===== FOOTER (FooterMega) ===== */
-.cpv-ft{background:#0b1322;color:#fff;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.cpv-ft *{box-sizing:border-box}
-.cpv-ft-in{max-width:1152px;margin:0 auto;padding:56px 16px 40px}
-.cpv-ft-grid{display:grid;grid-template-columns:1fr;gap:40px}
-.cpv-ft-wm{font-weight:800;letter-spacing:-.02em;font-size:21px;line-height:1}
-.cpv-ft-wm .b{color:#5b9be0}.cpv-ft-wm .o{color:#F2A900}.cpv-ft-wm .r{color:#e8604f}.cpv-ft-wm .g{color:#fff}
-.cpv-ft-desc{margin:16px 0 0;font-size:14px;color:rgba(255,255,255,.65);line-height:1.625}
-.cpv-ft-dom{margin:12px 0 0;font-size:14px;font-weight:500;color:rgba(255,255,255,.8)}
-.cpv-ft-trans{margin:16px 0 0;font-size:12px;color:rgba(255,255,255,.45);line-height:1.625}
-.cpv-ft-cols{display:grid;grid-template-columns:1fr;gap:0}
-.cpv-ft-col{border-bottom:1px solid rgba(255,255,255,.1)}
-.cpv-ft-col>input{display:none}
-.cpv-ft-col>label{display:flex;align-items:center;justify-content:space-between;cursor:pointer;width:100%;padding:16px 0;text-align:left}
-.cpv-ft-col>label span.cpv-ttl{font-weight:600;color:#fff;font-size:14px;text-transform:uppercase;letter-spacing:.025em}
-.cpv-ft-acc{width:18px;height:18px;color:rgba(255,255,255,.5);transition:transform .2s}
-.cpv-ft-col>input:checked~label .cpv-ft-acc{transform:rotate(180deg)}
-.cpv-ft-links{display:none;padding:0 0 16px}
-.cpv-ft-col>input:checked~.cpv-ft-links{display:block}
-.cpv-ft-links li{list-style:none;margin-bottom:10px}
-.cpv-ft-links a{font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s}
-.cpv-ft-links a:hover{color:#fff}
-.cpv-ft-links ul{margin:0;padding:0}
-.cpv-ft-bar{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:14px;color:rgba(255,255,255,.55);display:flex;flex-direction:column;gap:4px}
-.cpv-ft-bar .cpv-bold{font-weight:700;color:rgba(255,255,255,.8);margin:0}
-.cpv-ft-bar p{margin:0}
-.cpv-ft-bar .cpv-copy{color:rgba(255,255,255,.45)}
-@media(min-width:768px){
-  .cpv-ft-cols{grid-template-columns:repeat(4,1fr);column-gap:24px}
-  .cpv-ft-col{border-bottom:0}
-  .cpv-ft-col>label{cursor:default;padding:0 0 16px}
-  .cpv-ft-acc{display:none}
-  .cpv-ft-links{display:block!important;padding-bottom:0}
-}
-@media(min-width:1024px){
-  .cpv-ft-grid{grid-template-columns:1fr 2fr}
-  .cpv-ft-brand{padding-right:24px}
-}
-</style>
-<header class="cpv-nav">
-  <input type="checkbox" id="cpv-mtoggle" class="cpv-mtoggle" aria-hidden="true">
-  <div class="cpv-nav-in">
-    <a class="cpv-logo" href="/" aria-label="CANPORVEN.ORG"><img src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/73f9c99fa_image-removebg-preview.png" alt="CANPORVEN.ORG"></a>
-    <nav class="cpv-nav-links">
-      <a class="cpv-link" href="/">Inicio</a>
-      <div class="cpv-dd">
-        <a class="cpv-link" href="/infodonaciones.html">Cómo ayudar <svg class="cpv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-        <div class="cpv-dd-menu"><div class="cpv-dd-in">
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/" aria-label="Canarias por Venezuela">
+      <svg width="32" height="32" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <path d="M17 30C17 30 4 22.5 4 12.8 4 8 7.7 4.6 11.8 4.6c2.4 0 4.4 1.1 5.2 2.9.8-1.8 2.8-2.9 5.2-2.9C26.3 4.6 30 8 30 12.8 30 22.5 17 30 17 30Z" fill="url(#hg)"/>
+        <path d="M11 16.2l3.2 2.3 2.8-2.1 2.8 2.1 3.2-2.3" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="hg" x1="4" y1="5" x2="30" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#F2A900"/><stop offset=".5" stop-color="#1763B0"/><stop offset="1" stop-color="#DC2A1A"/></linearGradient></defs>
+      </svg>
+      <span class="wm"><span class="b">CAN</span><span class="o">POR</span><span class="r">VEN</span><span class="g">.ORG</span></span>
+    </a>
+    <input type="checkbox" id="mtoggle" class="menu-toggle" aria-label="Abrir menú">
+    <label for="mtoggle" class="menu-btn" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></label>
+    <ul class="menu">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/infodonaciones.html">Cómo ayudar <span class="caret">▾</span></a>
+        <div class="dropdown">
           <a href="/infodonaciones.html#situacion">La situación</a>
           <a href="/infodonaciones.html#dinero">Dinero vs. especie</a>
           <a href="/infodonaciones.html#fases">Las fases</a>
           <a href="/infodonaciones.html#funciona">Qué funciona</a>
           <a href="/infodonaciones.html#canarias">Factor Canarias</a>
           <a href="/infodonaciones.html#actuar">Cómo actuar</a>
-          <a href="/infodonaciones.html#cooperacion">Cooperación institucional</a>
-        </div></div>
-      </div>
-      <div class="cpv-dd">
-        <a class="cpv-link cpv-active" href="/respuesta-digital.html">Respuesta digital <svg class="cpv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-        <div class="cpv-dd-menu"><div class="cpv-dd-in">
+        </div>
+      </li>
+      <li><a href="/respuesta-digital.html">Respuesta digital <span class="caret">▾</span></a>
+        <div class="dropdown">
           <a href="/respuesta-digital.html#ecosistema">Ecosistema</a>
           <a href="/respuesta-digital.html#grietas">Las grietas</a>
           <a href="/respuesta-digital.html#ia">IA agéntica</a>
           <a href="/respuesta-digital.html#toolbox">Nuestra toolbox</a>
-        </div></div>
-      </div>
-      <a class="cpv-link" href="/novedades.html">Novedades</a>
-      <div class="cpv-dd">
-        <a class="cpv-link" href="/contactos.html">Contactos <svg class="cpv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-        <div class="cpv-dd-menu"><div class="cpv-dd-in">
-          <a href="/contactos.html#emergencias">Teléfonos de emergencia</a>
-          <a href="/contactos.html#entidades">Entidades en la zona</a>
-          <a href="/contactos.html#donar">Canales de donación</a>
-        </div></div>
-      </div>
-      <a class="cpv-link" href="/#medicos">Médicos</a>
-    </nav>
-    <div class="cpv-right">
-      <a class="cpv-cta" href="/#sumate">Súmate</a>
-      <button class="cpv-theme" type="button" aria-label="Cambiar tema" onclick="(function(){var r=document.documentElement;var d=r.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}})()"><svg class="cpv-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="cpv-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-      <div class="cpv-lang"><a class="cpv-lang-on" href="#">ES</a><a href="#">EN</a></div>
-      <label for="cpv-mtoggle" class="cpv-burger" aria-label="Menú"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></label>
-    </div>
+        </div>
+      </li>
+      <li><a href="/novedades.html">Novedades</a></li>
+      <li><a href="/contactos.html">Contactos</a></li>
+      <li><a href="/#medicos">Médicos</a></li>
+      <li><a href="/#sumate" class="cta">Súmate</a></li>
+    </ul>
   </div>
-  <div class="cpv-mobile"><div class="cpv-mobile-in">
-    <a class="cpv-mlink" href="/">Inicio</a>
-    <a class="cpv-mlink" href="/infodonaciones.html">Cómo ayudar</a>
-    <div class="cpv-msub">
-      <a href="/infodonaciones.html#situacion">La situación</a>
-      <a href="/infodonaciones.html#dinero">Dinero vs. especie</a>
-      <a href="/infodonaciones.html#fases">Las fases</a>
-      <a href="/infodonaciones.html#funciona">Qué funciona</a>
-      <a href="/infodonaciones.html#canarias">Factor Canarias</a>
-      <a href="/infodonaciones.html#actuar">Cómo actuar</a>
-      <a href="/infodonaciones.html#cooperacion">Cooperación institucional</a>
-    </div>
-    <a class="cpv-mlink" href="/respuesta-digital.html">Respuesta digital</a>
-    <div class="cpv-msub">
-      <a href="/respuesta-digital.html#ecosistema">Ecosistema</a>
-      <a href="/respuesta-digital.html#grietas">Las grietas</a>
-      <a href="/respuesta-digital.html#ia">IA agéntica</a>
-      <a href="/respuesta-digital.html#toolbox">Nuestra toolbox</a>
-    </div>
-    <a class="cpv-mlink" href="/novedades.html">Novedades</a>
-    <a class="cpv-mlink" href="/contactos.html">Contactos</a>
-    <div class="cpv-msub">
-      <a href="/contactos.html#emergencias">Teléfonos de emergencia</a>
-      <a href="/contactos.html#entidades">Entidades en la zona</a>
-      <a href="/contactos.html#donar">Canales de donación</a>
-    </div>
-    <a class="cpv-mlink" href="/#medicos">Médicos</a>
-    <a class="cpv-mcta" href="/#sumate">Súmate</a>
-  </div></div>
 </header>
 
 <main>
@@ -650,39 +474,12 @@ html.dark hr,html.dark .divider{border-color:var(--linea)}
 
 </main>
 
-<footer class="cpv-ft">
-  <div class="cpv-ft-in">
-    <div class="cpv-ft-grid">
-      <div class="cpv-ft-brand">
-        <span class="cpv-ft-wm"><span class="b">CAN</span><span class="o">POR</span><span class="r">VEN</span><span class="g">.ORG</span></span>
-        <p class="cpv-ft-desc">Organizamos información y conexión desde Canarias para Venezuela. Dinero, no cosas. No recaudamos ni gestionamos donaciones: solo informamos y enlazamos a canales verificados.</p>
-        <p class="cpv-ft-dom">canariasporvenezuela.org · canporven.org</p>
-        <p class="cpv-ft-trans">Esta es una iniciativa ciudadana privada, no una asociación registrada. Buscamos una entidad jurídica o asociación que actúe como soporte legal.</p>
-      </div>
-      <div class="cpv-ft-cols">
-        <div class="cpv-ft-col">
-          <input type="checkbox" id="cpv-fc1"><label for="cpv-fc1"><span class="cpv-ttl">Cómo ayudar</span><svg class="cpv-ft-acc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></label>
-          <div class="cpv-ft-links"><ul><li><a href="/infodonaciones.html">Cómo ayudar de verdad</a></li><li><a href="/infodonaciones.html#dinero">Dinero, no cosas</a></li><li><a href="/infodonaciones.html#fases">Las fases</a></li><li><a href="/infodonaciones.html#actuar">Cómo actuar</a></li><li><a href="/infodonaciones.html#cooperacion">Cooperación institucional</a></li></ul></div>
-        </div>
-        <div class="cpv-ft-col">
-          <input type="checkbox" id="cpv-fc2"><label for="cpv-fc2"><span class="cpv-ttl">Respuesta digital</span><svg class="cpv-ft-acc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></label>
-          <div class="cpv-ft-links"><ul><li><a href="/respuesta-digital.html#ecosistema">Ecosistema</a></li><li><a href="/respuesta-digital.html#grietas">Las grietas</a></li><li><a href="/respuesta-digital.html#ia">IA agéntica</a></li><li><a href="/respuesta-digital.html#toolbox">Nuestra toolbox</a></li></ul></div>
-        </div>
-        <div class="cpv-ft-col">
-          <input type="checkbox" id="cpv-fc3"><label for="cpv-fc3"><span class="cpv-ttl">Contactos</span><svg class="cpv-ft-acc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></label>
-          <div class="cpv-ft-links"><ul><li><a href="/contactos.html#emergencias">Teléfonos de emergencia</a></li><li><a href="/contactos.html#entidades">Entidades en la zona</a></li><li><a href="/contactos.html#donar">Canales de donación</a></li></ul></div>
-        </div>
-        <div class="cpv-ft-col">
-          <input type="checkbox" id="cpv-fc4"><label for="cpv-fc4"><span class="cpv-ttl">La iniciativa</span><svg class="cpv-ft-acc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></label>
-          <div class="cpv-ft-links"><ul><li><a href="/novedades.html">Novedades</a></li><li><a href="/#medicos">Médicos voluntarios</a></li><li><a href="/#sumate">Súmate</a></li><li><a href="mailto:contacto@canporven.org">Contacto: contacto@canporven.org</a></li></ul></div>
-        </div>
-      </div>
-    </div>
-    <div class="cpv-ft-bar">
-      <p class="cpv-bold">canporven.org no recauda ni gestiona donaciones.</p>
-      <p>Iniciativa ciudadana privada en formación, sin garantía legal.</p>
-      <p class="cpv-copy">© 2026 Canarias por Venezuela</p>
-    </div>
+<footer class="ft">
+  <div class="wrap">
+    <span class="wm" style="font-size:20px"><span class="b" style="color:#5b9be0">CAN</span><span class="o" style="color:#F2A900">POR</span><span class="r" style="color:#e8604f">VEN</span><span class="g">.ORG</span></span>
+    <p>Síntesis basada en evidencia de fuentes públicas (OCHA, IFRC, PAHO/WHO, Copernicus EMS, Microsoft AI for Good Lab, Humanitarian OpenStreetMap, Tilores, Translators without Borders y literatura de informática de crisis: ResQConnect/MDPI, ENV-QAS/AMCIS, SentEMBNet), actualizada a 27 de junio de 2026. Las cifras son preliminares y cambian a diario.</p>
+    <p class="dom">canariasporvenezuela.org · canporven.org</p>
+    <div class="bar">© 2026 Canarias por Venezuela · Documento informativo · Iniciativa en formación, sin garantía legal</div>
   </div>
 </footer>
 
