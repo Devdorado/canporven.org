@@ -1,0 +1,97 @@
+{
+  "name": "DoctorRegistration",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "title": "Full Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "profession": {
+      "type": "string",
+      "title": "Profession / Specialty"
+    },
+    "medical_skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Chronic disease care",
+          "Mental health / Psychosocial support",
+          "Triage / Teleconsultation",
+          "Pediatrics",
+          "General medicine",
+          "Other"
+        ]
+      },
+      "title": "Medical Skills"
+    },
+    "languages_spoken": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Spanish",
+          "English",
+          "Portuguese",
+          "Other"
+        ]
+      },
+      "title": "Languages Spoken"
+    },
+    "license_number": {
+      "type": "string",
+      "title": "Medical License Number"
+    },
+    "license_country": {
+      "type": "string",
+      "title": "Country of License"
+    },
+    "weekly_hours": {
+      "type": "number",
+      "title": "Weekly Availability (hours)"
+    },
+    "availability_text": {
+      "type": "string",
+      "title": "General Availability"
+    },
+    "preferred_start_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Preferred Start Date"
+    },
+    "note": {
+      "type": "string",
+      "title": "Optional Note"
+    },
+    "gdpr_consent": {
+      "type": "boolean",
+      "title": "GDPR Consent"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "verified",
+        "rejected"
+      ],
+      "default": "pending",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "profession",
+    "medical_skills",
+    "languages_spoken",
+    "license_number",
+    "license_country",
+    "weekly_hours",
+    "gdpr_consent"
+  ]
+}

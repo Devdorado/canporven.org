@@ -1,0 +1,29 @@
+{
+  "name": "NotificationSignup",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "preferred_language": {
+      "type": "string",
+      "enum": [
+        "ES",
+        "EN"
+      ],
+      "default": "ES",
+      "title": "Preferred Language"
+    },
+    "gdpr_consent": {
+      "type": "boolean",
+      "title": "GDPR Consent"
+    }
+  },
+  "required": [
+    "email",
+    "preferred_language",
+    "gdpr_consent"
+  ]
+}
