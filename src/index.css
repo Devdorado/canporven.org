@@ -95,3 +95,24 @@ html {
     @apply bg-background text-foreground font-body;
   }
 }
+
+/* ===== Dark mode overrides for hardcoded landing colors ===== */
+/* The landing components were built with fixed light colors. These rules
+   map those literal values to dark-friendly equivalents so the whole site
+   reacts to dark mode without touching each component. Light mode is untouched. */
+.dark .bg-white { background-color: #111c30 !important; }
+.dark .bg-gray-50,
+.dark .bg-slate-50 { background-color: #0e1726 !important; }
+.dark .bg-\[\#F5F7FB\],
+.dark .bg-\[\#F5F8FC\],
+.dark .bg-\[\#F7F9FC\],
+.dark .bg-\[\#F5F6F8\],
+.dark .bg-\[\#F7FAFD\] { background-color: #0e1726 !important; }
+
+.dark .text-\[\#121212\] { color: #E8EEF6 !important; }
+.dark .text-\[\#1565C0\] { color: #5b9be0 !important; }
+.dark .text-\[\#1763B0\] { color: #5b9be0 !important; }
+
+/* Soft borders that used the blue tint become lighter in dark */
+.dark .border-\[\#1565C0\]\/10 { border-color: rgba(255,255,255,0.08) !important; }
+.dark .border-\[\#1565C0\]\/30 { border-color: rgba(255,255,255,0.2) !important; }
