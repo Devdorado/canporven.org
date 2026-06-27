@@ -125,6 +125,10 @@ const translations = {
   'share.copy': { es: 'Copiar enlace', en: 'Copy link' },
 
   // Footer
+  'alpha.text': {
+    es: 'En construcción. Canarias por Venezuela es, por ahora, una iniciativa ciudadana privada en fase de formación, sin personalidad jurídica ni garantía legal. Damos la bienvenida a ayuda profesional, a organizaciones y a la colaboración para construirla bien.',
+    en: 'Work in progress. Canarias por Venezuela is, for now, a private citizen initiative in early formation, with no legal entity and no legal guarantee yet. Professional help, organizations and partnerships are warmly welcome.',
+  },
   'footer.transparency_title': { es: 'Aviso de transparencia', en: 'Transparency Notice' },
   'footer.transparency': {
     es: 'Esta es actualmente una iniciativa ciudadana privada, no una asociación registrada. Estamos buscando una entidad jurídica o asociación que actúe como soporte legal. La plataforma no recoge donaciones directamente y solo enlaza a organizaciones verificadas. Próximamente publicaremos una guía sobre ayuda eficaz.',
