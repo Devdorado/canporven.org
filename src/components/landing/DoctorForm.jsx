@@ -113,11 +113,11 @@ export default function DoctorForm() {
           </div>
 
           {/* Image */}
-          <div className="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden">
+          <div className="mb-10 rounded-xl overflow-hidden">
             <img
               src={DOCTOR_IMG}
               alt={lang === 'es' ? 'Telemedicina' : 'Telemedicine'}
-              className="w-full h-48 md:h-56 object-cover"
+              className="w-full h-auto object-cover"
               loading="lazy"
             />
           </div>
