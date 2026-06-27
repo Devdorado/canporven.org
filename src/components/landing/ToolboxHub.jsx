@@ -10,15 +10,33 @@ import {
 } from 'lucide-react';
 
 const BLUE = '#1763B0';
+const RED = '#E23124';
+const YELLOW = '#F5B301';
+
+// tone: 'yellow' = operational focus, 'red' = potential
+const tones = {
+  yellow: {
+    line: YELLOW,
+    tile: 'bg-[#F5B301]/15',
+    icon: 'text-[#C48F00]',
+    title: 'text-[#9A6E00]',
+  },
+  red: {
+    line: RED,
+    tile: 'bg-[#E23124]/12',
+    icon: 'text-[#E23124]',
+    title: 'text-[#0F2747]',
+  },
+};
 
 // Nodes in the user's requested order. side/row drive desktop layout.
 const nodes = [
-  { id: 'n1', icon: Fingerprint, titleKey: 'toolbox.card1_title', descKey: 'toolbox.card1_desc', closeKey: 'toolbox.card1_close', side: 'left', row: 0 },
-  { id: 'n2', icon: ShieldCheck, titleKey: 'toolbox.card4_title', descKey: 'toolbox.card4_desc', closeKey: 'toolbox.card4_close', side: 'left', row: 1 },
-  { id: 'n3', icon: WifiOff, titleKey: 'toolbox.card5_title', descKey: 'toolbox.card5_desc', closeKey: 'toolbox.card5_close', side: 'left', row: 2 },
-  { id: 'n4', icon: Languages, titleKey: 'toolbox.card2_title', descKey: 'toolbox.card2_desc', closeKey: 'toolbox.card2_close', side: 'right', row: 0 },
-  { id: 'n5', icon: MonitorSmartphone, titleKey: 'toolbox.card3_title', descKey: 'toolbox.card3_desc', closeKey: 'toolbox.card3_close', side: 'right', row: 1 },
-  { id: 'n6', icon: Users, titleKey: 'toolbox.card6_title', descKey: 'toolbox.card6_desc', closeKey: 'toolbox.card6_close', side: 'right', row: 2 },
+  { id: 'n1', icon: Fingerprint, titleKey: 'toolbox.card1_title', descKey: 'toolbox.card1_desc', closeKey: 'toolbox.card1_close', side: 'left', row: 0, tone: 'red' },
+  { id: 'n2', icon: ShieldCheck, titleKey: 'toolbox.card4_title', descKey: 'toolbox.card4_desc', closeKey: 'toolbox.card4_close', side: 'left', row: 1, tone: 'red' },
+  { id: 'n3', icon: WifiOff, titleKey: 'toolbox.card5_title', descKey: 'toolbox.card5_desc', closeKey: 'toolbox.card5_close', side: 'left', row: 2, tone: 'red' },
+  { id: 'n4', icon: Languages, titleKey: 'toolbox.card2_title', descKey: 'toolbox.card2_desc', closeKey: 'toolbox.card2_close', side: 'right', row: 0, tone: 'red' },
+  { id: 'n5', icon: MonitorSmartphone, titleKey: 'toolbox.card3_title', descKey: 'toolbox.card3_desc', closeKey: 'toolbox.card3_close', side: 'right', row: 1, tone: 'yellow' },
+  { id: 'n6', icon: Users, titleKey: 'toolbox.card6_title', descKey: 'toolbox.card6_desc', closeKey: 'toolbox.card6_close', side: 'right', row: 2, tone: 'yellow' },
 ];
 
 // SVG geometry (viewBox 1000 x 620). Hub center ~ (500, 310).
@@ -42,6 +60,7 @@ function elbowPath(p, side) {
 function NodeCard({ node, active, onActivate, onLeave }) {
   const { lang } = useLang();
   const Icon = node.icon;
+  const tone = tones[node.tone] || tones.red;
   return (
     <button
       type="button"
@@ -56,10 +75,10 @@ function NodeCard({ node, active, onActivate, onLeave }) {
           : 'shadow-sm border-gray-200 hover:shadow-md'
       }`}
     >
-      <div className="w-11 h-11 rounded-xl bg-[#1763B0]/10 flex items-center justify-center mb-3">
-        <Icon size={22} className="text-[#1763B0]" />
+      <div className={`w-11 h-11 rounded-xl ${tone.tile} flex items-center justify-center mb-3`}>
+        <Icon size={22} className={tone.icon} />
       </div>
-      <h3 className="font-bold text-[#0F2747] mb-1.5 leading-tight">{t(node.titleKey, lang)}</h3>
+      <h3 className={`font-bold ${tone.title} mb-1.5 leading-tight`}>{t(node.titleKey, lang)}</h3>
       <p className="text-sm text-gray-500 mb-3 leading-snug">{t(node.descKey, lang)}</p>
       <span className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-[#F5B301]/20 text-[#9A6E00]">
         {t('toolbox.closes_label', lang)}: {t(node.closeKey, lang)}
@@ -130,14 +149,15 @@ export default function ToolboxHub() {
         >
           {nodes.map((n) => {
             const isActive = active === n.id;
+            const stroke = tones[n.tone]?.line || BLUE;
             return (
               <path
                 key={n.id}
                 d={elbowPath(linePoints[n.id], n.side)}
                 fill="none"
-                stroke={BLUE}
+                stroke={stroke}
                 strokeWidth={isActive ? 3 : 1.25}
-                strokeOpacity={isActive ? 0.9 : 0.3}
+                strokeOpacity={isActive ? 0.95 : 0.35}
                 className="transition-all duration-300"
               />
             );
