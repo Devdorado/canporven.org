@@ -5,6 +5,7 @@ const translations = {
   'nav.mission': { es: 'Misión', en: 'Mission' },
   'nav.doctors': { es: 'Médicos', en: 'Doctors' },
   'nav.notify': { es: 'Recibir aviso', en: 'Get Notified' },
+  'nav.help': { es: 'Cómo ayudar de verdad', en: 'How real help works' },
 
   // Hero
   'hero.headline': {

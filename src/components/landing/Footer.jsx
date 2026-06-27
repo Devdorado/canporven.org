@@ -55,6 +55,13 @@ export default function Footer() {
             </button>
           </div>
 
+          <a
+            href="/infodonaciones"
+            className="text-sm font-medium text-[#1565C0] hover:text-[#1565C0]/80 underline"
+          >
+            {t('nav.help', lang)}
+          </a>
+
           <p className="text-xs text-white/40">
             {t('footer.rights', lang)}
           </p>
