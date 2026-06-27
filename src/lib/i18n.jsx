@@ -515,7 +515,9 @@ export function LangProvider({ children }) {
 }
 
 export function useLang() {
-  return useContext(LangContext);
+  const ctx = useContext(LangContext);
+  // Fallback when called outside a LangProvider (e.g. page component above the provider)
+  return ctx || { lang: 'es', setLang: () => {} };
 }
 
 export function t(key, lang) {
