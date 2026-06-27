@@ -73,6 +73,17 @@ export default function GetInvolvedSection() {
           </div>
         )}
 
+        {/* Empresas y profesionales image */}
+        {activeTab === 'company' && (
+          <div className="max-w-3xl mx-auto mb-8">
+            <ImageZoom
+              src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/9ab74be1d_image.png"
+              alt={t('getinvolved.tab_company', lang)}
+              className="w-full rounded-2xl border border-gray-200 shadow-sm"
+            />
+          </div>
+        )}
+
         {/* Particulares image */}
         {activeTab === 'individual' && (
           <div className="max-w-3xl mx-auto mb-8">
