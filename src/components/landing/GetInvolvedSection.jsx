@@ -27,6 +27,7 @@ export default function GetInvolvedSection() {
 
   return (
     <section id="sumate" className="py-16 md:py-24 bg-gray-50" aria-labelledby="getinvolved-heading">
+      <span id="medicos" className="block relative -top-20" aria-hidden="true" />
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-10">
           <h2 id="getinvolved-heading" className="text-2xl md:text-3xl font-bold text-[#121212] mb-3">

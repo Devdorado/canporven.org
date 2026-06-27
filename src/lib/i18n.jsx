@@ -8,6 +8,22 @@ const translations = {
   'nav.help': { es: 'Cómo ayudar de verdad', en: 'How real help works' },
   'nav.menu': { es: 'Menú', en: 'Menu' },
   'nav.home': { es: 'Inicio', en: 'Home' },
+  'nav.medicos': { es: 'Médicos', en: 'Doctors' },
+  'nav.join': { es: 'Súmate', en: 'Join' },
+
+  // Cómo ayudar dropdown
+  'menu.help_situacion': { es: 'La situación', en: 'The situation' },
+  'menu.help_dinero': { es: 'Dinero vs. especie', en: 'Money vs. goods' },
+  'menu.help_fases': { es: 'Las fases', en: 'The phases' },
+  'menu.help_funciona': { es: 'Qué funciona', en: 'What works' },
+  'menu.help_canarias': { es: 'Factor Canarias', en: 'Canary Islands factor' },
+  'menu.help_actuar': { es: 'Cómo actuar', en: 'How to act' },
+
+  // Respuesta digital dropdown
+  'menu.dr_ecosistema': { es: 'Ecosistema', en: 'Ecosystem' },
+  'menu.dr_grietas': { es: 'Las grietas', en: 'The gaps' },
+  'menu.dr_ia': { es: 'IA agéntica', en: 'Agentic AI' },
+  'menu.dr_toolbox': { es: 'Nuestra toolbox', en: 'Our toolbox' },
   'nav.getinvolved': { es: 'Súmate a la red', en: 'Join the network' },
   'nav.partners': { es: 'Aliados', en: 'Partners' },
   'nav.share': { es: 'Comparte', en: 'Share' },
