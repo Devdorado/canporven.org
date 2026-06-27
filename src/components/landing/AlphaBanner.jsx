@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
+import { X } from 'lucide-react';
 
 export default function AlphaBanner() {
   const { lang } = useLang();
+  const [dismissed, setDismissed] = useState(false);
+
+  if (dismissed) return null;
+
   return (
     <div
       role="alert"
@@ -16,6 +21,13 @@ export default function AlphaBanner() {
         <p className="text-xs md:text-sm leading-snug text-[#121212]">
           {t('alpha.text', lang)}
         </p>
+        <button
+          onClick={() => setDismissed(true)}
+          aria-label="Cerrar"
+          className="shrink-0 ml-auto -mr-1 p-1 rounded-md text-[#121212]/60 hover:text-[#121212] hover:bg-[#F5B301]/20 transition-colors"
+        >
+          <X size={16} />
+        </button>
       </div>
     </div>
   );
