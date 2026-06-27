@@ -419,6 +419,85 @@ const translations = {
   },
   'vzla.cta_button': { es: 'Mapa y situación en vivo', en: 'Live map and situation' },
 
+  // Subpage: Cómo ayudar
+  'help.intro': {
+    es: 'Una guía práctica para que tu ayuda llegue de verdad: qué funciona, qué no, y cómo actuar desde Canarias.',
+    en: 'A practical guide so your help truly lands: what works, what does not, and how to act from the Canary Islands.',
+  },
+  'help.situacion_body': {
+    es: 'Tras los terremotos de junio de 2026, las zonas afectadas necesitan coordinación, no improvisación. La prioridad son las personas atrapadas, la atención médica y el agua potable.',
+    en: 'After the June 2026 earthquakes, the affected areas need coordination, not improvisation. The priority is trapped people, medical care and drinking water.',
+  },
+  'help.dinero_body': {
+    es: 'El dinero a organizaciones verificadas es casi siempre más útil que el envío de objetos: llega antes, se adapta a la necesidad real y sostiene la economía local. Los envíos en especie no solicitados suelen colapsar la logística.',
+    en: 'Money to verified organizations is almost always more useful than sending goods: it arrives faster, adapts to real needs and supports the local economy. Unsolicited in-kind shipments tend to clog logistics.',
+  },
+  'help.fases_body': {
+    es: 'Emergencia (días), estabilización (semanas) y reconstrucción (meses). Cada fase necesita cosas distintas; ayudar bien significa ayudar en el momento adecuado.',
+    en: 'Emergency (days), stabilization (weeks) and reconstruction (months). Each phase needs different things; helping well means helping at the right time.',
+  },
+  'help.funciona_body': {
+    es: 'Funcionan los canales verificados, la telemedicina para crónicos y salud mental, y la coordinación entre voluntarios. No funcionan los envíos sin coordinar ni la información sin verificar.',
+    en: 'What works: verified channels, telemedicine for chronic and mental health care, and coordination among volunteers. What does not: uncoordinated shipments and unverified information.',
+  },
+  'help.canarias_body': {
+    es: 'Canarias tiene un vínculo histórico y humano con Venezuela. Eso nos da redes, idioma común y credibilidad para canalizar ayuda de forma responsable.',
+    en: 'The Canary Islands have a historical and human bond with Venezuela. That gives us networks, a shared language and credibility to channel help responsibly.',
+  },
+  'help.actuar_body': {
+    es: 'Dona a canales verificados, regístrate como voluntario si tienes competencias útiles, y difunde información contrastada. Evita reenviar rumores.',
+    en: 'Donate to verified channels, register as a volunteer if you have useful skills, and share verified information. Avoid forwarding rumors.',
+  },
+  'help.cooperacion_body': {
+    es: 'Buscamos cooperación con instituciones, ONG y empresas que puedan aportar logística, financiación o servicios. Si representas a una organización, escríbenos.',
+    en: 'We seek cooperation with institutions, NGOs and companies that can provide logistics, funding or services. If you represent an organization, get in touch.',
+  },
+
+  // Subpage: Respuesta digital
+  'dr.ecosistema_body': {
+    es: 'Alertas móviles, satélites, IA que mapea daños y plataformas ciudadanas forman un ecosistema digital que opera en paralelo al rescate físico.',
+    en: 'Mobile alerts, satellites, AI mapping damage and citizen platforms form a digital ecosystem operating in parallel with the physical rescue.',
+  },
+  'dr.grietas_body': {
+    es: 'Las grietas: información fragmentada y duplicada, exclusión lingüística, rumores, cortes de red y falta de continuidad sanitaria.',
+    en: 'The gaps: fragmented and duplicated information, linguistic exclusion, rumors, network outages and lack of healthcare continuity.',
+  },
+  'dr.ia_body': {
+    es: 'La IA agéntica puede unir identidades dispersas, traducir en tiempo real, verificar fuentes y derivar casos sin duplicar el trabajo de los voluntarios.',
+    en: 'Agentic AI can unify scattered identities, translate in real time, verify sources and route cases without duplicating volunteers\' work.',
+  },
+
+  // Subpage: Novedades
+  'news.intro': {
+    es: 'Actualizaciones sobre la iniciativa, los médicos voluntarios y la respuesta digital.',
+    en: 'Updates about the initiative, volunteer doctors and the digital response.',
+  },
+  'news.item1_title': { es: 'Lanzamos el mapa en vivo de Venezuela', en: 'We launched the live Venezuela map' },
+  'news.item1_body': {
+    es: 'Ya puedes consultar reportes, personas desaparecidas y noticias actualizadas desde la página de situación en vivo.',
+    en: 'You can now check reports, missing persons and updated news from the live situation page.',
+  },
+  'news.item2_title': { es: 'Pre-registro de médicos voluntarios abierto', en: 'Volunteer doctor pre-registration open' },
+  'news.item2_body': {
+    es: 'Los profesionales sanitarios cualificados pueden pre-coordinarse para teleconsulta, salud mental y crónicos.',
+    en: 'Qualified health professionals can pre-coordinate for teleconsultation, mental health and chronic care.',
+  },
+  'news.item3_title': { es: 'Buscamos aliados y soporte legal', en: 'We are looking for partners and legal support' },
+  'news.item3_body': {
+    es: 'Iniciativa ciudadana en formación: damos la bienvenida a organizaciones y a una entidad jurídica que actúe como soporte.',
+    en: 'Citizen initiative in formation: we welcome organizations and a legal entity to act as carrier.',
+  },
+
+  // Subpage: Contactos
+  'contactos.intro': {
+    es: 'Teléfonos de emergencia, entidades en la zona y canales de donación verificados.',
+    en: 'Emergency phones, entities in the area and verified donation channels.',
+  },
+  'contactos.solo_vzla': { es: '(solo desde Venezuela)', en: '(from Venezuela only)' },
+  'contactos.em_911': { es: 'Emergencias generales', en: 'General emergencies' },
+  'contactos.em_171': { es: 'Emergencias / Protección Civil', en: 'Emergencies / Civil Protection' },
+  'contactos.em_sismo': { es: 'Línea de atención sísmica', en: 'Earthquake support line' },
+
   // Misc
   'required': { es: 'Obligatorio', en: 'Required' },
   'select_options': { es: 'Selecciona opciones', en: 'Select options' },

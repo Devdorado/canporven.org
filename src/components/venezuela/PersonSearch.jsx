@@ -7,8 +7,8 @@ import { Search, User, Hospital } from 'lucide-react';
 
 export default function PersonSearch() {
   const [query, setQuery] = useState('');
-  const [estado, setEstado] = useState('');
-  const { data, isLoading } = useVenezuelaPersons(query, estado);
+  const [estado, setEstado] = useState('all');
+  const { data, isLoading } = useVenezuelaPersons(query, estado === 'all' ? '' : estado);
 
   return (
     <Card className="border-border">
@@ -34,7 +34,7 @@ export default function PersonSearch() {
               <SelectValue placeholder="Alle Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Alle Status</SelectItem>
+              <SelectItem value="all">Alle Status</SelectItem>
               <SelectItem value="seeking_info">Vermisst</SelectItem>
               <SelectItem value="found_alive">Gefunden</SelectItem>
             </SelectContent>

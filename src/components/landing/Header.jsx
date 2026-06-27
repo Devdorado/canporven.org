@@ -3,19 +3,19 @@ import { useLang, t } from '@/lib/i18n.jsx';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const helpItems = [
-  { key: 'menu.help_situacion', href: '/infodonaciones.html#situacion' },
-  { key: 'menu.help_dinero', href: '/infodonaciones.html#dinero' },
-  { key: 'menu.help_fases', href: '/infodonaciones.html#fases' },
-  { key: 'menu.help_funciona', href: '/infodonaciones.html#funciona' },
-  { key: 'menu.help_canarias', href: '/infodonaciones.html#canarias' },
-  { key: 'menu.help_actuar', href: '/infodonaciones.html#actuar' },
+  { key: 'menu.help_situacion', href: '/info-donaciones#situacion' },
+  { key: 'menu.help_dinero', href: '/info-donaciones#dinero' },
+  { key: 'menu.help_fases', href: '/info-donaciones#fases' },
+  { key: 'menu.help_funciona', href: '/info-donaciones#funciona' },
+  { key: 'menu.help_canarias', href: '/info-donaciones#canarias' },
+  { key: 'menu.help_actuar', href: '/info-donaciones#actuar' },
 ];
 
 const drItems = [
-  { key: 'menu.dr_ecosistema', href: '/respuesta-digital.html#ecosistema' },
-  { key: 'menu.dr_grietas', href: '/respuesta-digital.html#grietas' },
-  { key: 'menu.dr_ia', href: '/respuesta-digital.html#ia' },
-  { key: 'menu.dr_toolbox', href: '/respuesta-digital.html#toolbox' },
+  { key: 'menu.dr_ecosistema', href: '/respuesta-digital#ecosistema' },
+  { key: 'menu.dr_grietas', href: '/respuesta-digital#grietas' },
+  { key: 'menu.dr_ia', href: '/respuesta-digital#ia' },
+  { key: 'menu.dr_toolbox', href: '/respuesta-digital#toolbox' },
 ];
 
 function DesktopDropdown({ labelKey, labelHref, items }) {
@@ -161,15 +161,15 @@ export default function Header() {
           <a href="/" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
             {t('nav.home', lang)}
           </a>
-          <DesktopDropdown labelKey="nav.help" labelHref="/infodonaciones.html" items={helpItems} />
-          <DesktopDropdown labelKey="nav.digital" labelHref="/respuesta-digital.html" items={drItems} />
-          <a href="/novedades.html" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
+          <DesktopDropdown labelKey="nav.help" labelHref="/info-donaciones" items={helpItems} />
+          <DesktopDropdown labelKey="nav.digital" labelHref="/respuesta-digital" items={drItems} />
+          <a href="/novedades" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
             {t('nav.novedades', lang)}
           </a>
-          <a href="/contactos.html" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
+          <a href="/contactos" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
             {t('nav.contactos', lang)}
           </a>
-          <a href="#medicos" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
+          <a href="/#medicos" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
             {t('nav.medicos', lang)}
           </a>
         </nav>
@@ -177,7 +177,7 @@ export default function Header() {
         {/* Right controls */}
         <div className="flex items-center gap-3">
           <a
-            href="#sumate"
+            href="/#sumate"
             className="hidden lg:inline-flex items-center px-5 py-2 rounded-full font-semibold text-sm text-white bg-[#1565C0] hover:bg-[#1255A0] transition-colors min-h-[44px]"
           >
             {t('nav.join', lang)}
@@ -208,31 +208,31 @@ export default function Header() {
             >
               {t('nav.home', lang)}
             </a>
-            <MobileDropdown labelKey="nav.help" labelHref="/infodonaciones.html" items={helpItems} onNavigate={closeMobile} />
-            <MobileDropdown labelKey="nav.digital" labelHref="/respuesta-digital.html" items={drItems} onNavigate={closeMobile} />
+            <MobileDropdown labelKey="nav.help" labelHref="/info-donaciones" items={helpItems} onNavigate={closeMobile} />
+            <MobileDropdown labelKey="nav.digital" labelHref="/respuesta-digital" items={drItems} onNavigate={closeMobile} />
             <a
-              href="/novedades.html"
+              href="/novedades"
               onClick={closeMobile}
               className="block py-3 text-base font-semibold text-[#121212] border-b border-[#1565C0]/10"
             >
               {t('nav.novedades', lang)}
             </a>
             <a
-              href="/contactos.html"
+              href="/contactos"
               onClick={closeMobile}
               className="block py-3 text-base font-semibold text-[#121212] border-b border-[#1565C0]/10"
             >
               {t('nav.contactos', lang)}
             </a>
             <a
-              href="#medicos"
+              href="/#medicos"
               onClick={closeMobile}
               className="block py-3 text-base font-semibold text-[#121212] border-b border-[#1565C0]/10"
             >
               {t('nav.medicos', lang)}
             </a>
             <a
-              href="#sumate"
+              href="/#sumate"
               onClick={closeMobile}
               className="block my-3 text-center px-5 py-3 rounded-full font-semibold text-sm text-white bg-[#1565C0] hover:bg-[#1255A0] transition-colors"
             >

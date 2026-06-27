@@ -7,6 +7,7 @@ import PersonSearch from '@/components/venezuela/PersonSearch';
 import NewsFeed from '@/components/venezuela/NewsFeed';
 import ReportsList from '@/components/venezuela/ReportsList';
 import DamageValidation from '@/components/venezuela/DamageValidation';
+import DashboardErrorBoundary from '@/components/venezuela/DashboardErrorBoundary';
 
 export default function VenezuelaDashboard() {
   const { updatedAt } = useVenezuelaUpdatedAt();

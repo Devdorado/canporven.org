@@ -8,6 +8,10 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import VenezuelaDashboard from './pages/VenezuelaDashboard';
+import InfoDonaciones from './pages/InfoDonaciones';
+import RespuestaDigital from './pages/RespuestaDigital';
+import Novedades from './pages/Novedades';
+import Contactos from './pages/Contactos';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -38,6 +42,10 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/venezuela" element={<VenezuelaDashboard />} />
+      <Route path="/info-donaciones" element={<InfoDonaciones />} />
+      <Route path="/respuesta-digital" element={<RespuestaDigital />} />
+      <Route path="/novedades" element={<Novedades />} />
+      <Route path="/contactos" element={<Contactos />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
