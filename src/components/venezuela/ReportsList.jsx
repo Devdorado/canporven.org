@@ -30,12 +30,12 @@ const severityBadge = {
 
 export default function ReportsList() {
   const { data: reports, isLoading } = useVenezuelaReports();
-  const [filterCategory, setFilterCategory] = useState('');
-  const [filterSeverity, setFilterSeverity] = useState('');
+  const [filterCategory, setFilterCategory] = useState('all');
+  const [filterSeverity, setFilterSeverity] = useState('all');
 
   const filtered = reports?.filter((r) => {
-    const catMatch = !filterCategory || r.category === filterCategory;
-    const sevMatch = !filterSeverity || r.severity === filterSeverity;
+    const catMatch = filterCategory === 'all' || r.category === filterCategory;
+    const sevMatch = filterSeverity === 'all' || r.severity === filterSeverity;
     return catMatch && sevMatch;
   }) || [];
 
@@ -57,7 +57,7 @@ export default function ReportsList() {
                 <SelectValue placeholder="Kategorie" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Alle Kategorien</SelectItem>
+                <SelectItem value="all">Alle Kategorien</SelectItem>
                 {categories.map((c) => (
                   <SelectItem key={c} value={c}>
                     {categoryLabels[c] || c}
@@ -70,7 +70,7 @@ export default function ReportsList() {
                 <SelectValue placeholder="Schwere" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Alle</SelectItem>
+                <SelectItem value="all">Alle</SelectItem>
                 {severities.map((s) => (
                   <SelectItem key={s} value={s}>
                     {severityLabels[s] || s}
