@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
+import { Plus } from 'lucide-react';
 
 const HERO_IMG = 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/d79d1b943_image.png';
 
@@ -49,12 +50,27 @@ export default function Hero() {
             {t('hero.mission_statement', lang)}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-stretch">
             <a
-              href="#medicos"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-[#1565C0] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-[#1255A0] transition-colors min-h-[48px] shadow-lg shadow-[#1565C0]/30"
+              href="#sumate"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#1565C0] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-[#1255A0] transition-colors min-h-[48px] shadow-lg shadow-[#1565C0]/30"
             >
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#E23124] shrink-0">
+                <Plus size={14} className="text-white" strokeWidth={3} />
+              </span>
               {t('hero.cta_doctor', lang)}
+            </a>
+            <a
+              href="?tab=company#sumate"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-semibold text-sm sm:text-base rounded-lg border-2 border-white/50 hover:border-white hover:bg-white/20 transition-colors min-h-[48px] backdrop-blur-sm"
+            >
+              {t('hero.cta_professional', lang)}
+            </a>
+            <a
+              href="?tab=individual#sumate"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-semibold text-sm sm:text-base rounded-lg border-2 border-white/50 hover:border-white hover:bg-white/20 transition-colors min-h-[48px] backdrop-blur-sm"
+            >
+              {t('hero.cta_individual', lang)}
             </a>
             <a
               href="#aviso"

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
 import { Stethoscope, Building2, User } from 'lucide-react';
 import DoctorGatedForm from '@/components/landing/forms/DoctorGatedForm';
@@ -11,9 +11,19 @@ const tabs = [
   { id: 'individual', icon: User, titleKey: 'getinvolved.tab_individual', descKey: 'getinvolved.tab_individual_desc' },
 ];
 
+const validTabs = ['doctor', 'company', 'individual'];
+
 export default function GetInvolvedSection() {
   const { lang } = useLang();
   const [activeTab, setActiveTab] = useState('doctor');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tab = params.get('tab');
+    if (tab && validTabs.includes(tab)) {
+      setActiveTab(tab);
+    }
+  }, []);
 
   return (
     <section id="sumate" className="py-16 md:py-24 bg-gray-50" aria-labelledby="getinvolved-heading">

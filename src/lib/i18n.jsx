@@ -21,6 +21,8 @@ const translations = {
     en: 'We channel help into what actually works and connect volunteer doctors with those who need them.',
   },
   'hero.cta_doctor': { es: 'Soy médico, quiero ayudar', en: "I'm a doctor, I want to help" },
+  'hero.cta_professional': { es: 'Soy profesional (no médico)', en: "I'm a professional (non-medical)" },
+  'hero.cta_individual': { es: 'Soy particular', en: "I'm a private individual" },
   'hero.cta_notify': { es: 'Avísame cuando esté listo', en: 'Notify me when ready' },
 
   // Mission
