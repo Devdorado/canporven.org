@@ -1,0 +1,75 @@
+{
+  "name": "CompanyRegistration",
+  "type": "object",
+  "properties": {
+    "contact_name": {
+      "type": "string",
+      "title": "Contact Name"
+    },
+    "organization_name": {
+      "type": "string",
+      "title": "Organization / Company Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "org_type": {
+      "type": "string",
+      "enum": [
+        "company",
+        "professional",
+        "ngo",
+        "other"
+      ],
+      "default": "company",
+      "title": "Type"
+    },
+    "help_ways": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "donation_matching",
+          "logistics",
+          "telecom",
+          "medical_services",
+          "technology",
+          "funding",
+          "other"
+        ]
+      },
+      "title": "How They Can Help"
+    },
+    "message": {
+      "type": "string",
+      "title": "Short Message"
+    },
+    "gdpr_consent": {
+      "type": "boolean",
+      "title": "GDPR Consent"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "contacted",
+        "rejected"
+      ],
+      "default": "pending",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "contact_name",
+    "email",
+    "phone",
+    "org_type",
+    "gdpr_consent"
+  ]
+}

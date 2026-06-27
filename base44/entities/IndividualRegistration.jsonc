@@ -1,10 +1,10 @@
 {
-  "name": "DoctorRegistration",
+  "name": "IndividualRegistration",
   "type": "object",
   "properties": {
-    "full_name": {
+    "name": {
       "type": "string",
-      "title": "Full Name"
+      "title": "Name"
     },
     "email": {
       "type": "string",
@@ -15,19 +15,20 @@
       "type": "string",
       "title": "Phone"
     },
-    "profession": {
-      "type": "string",
-      "title": "Profession / Specialty"
+    "help_ways": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "donate",
+          "skills_volunteering",
+          "spread_word",
+          "other"
+        ]
+      },
+      "title": "How They Want to Help"
     },
-    "qualification_number": {
-      "type": "string",
-      "title": "Qualification / License / Registration Number"
-    },
-    "license_country": {
-      "type": "string",
-      "title": "Country of License"
-    },
-    "languages_spoken": {
+    "languages": {
       "type": "array",
       "items": {
         "type": "string",
@@ -38,15 +39,11 @@
           "Other"
         ]
       },
-      "title": "Languages Spoken"
+      "title": "Languages"
     },
-    "weekly_hours": {
-      "type": "number",
-      "title": "Weekly Availability (hours)"
-    },
-    "availability_text": {
+    "message": {
       "type": "string",
-      "title": "General Availability"
+      "title": "Short Message"
     },
     "gdpr_consent": {
       "type": "boolean",
@@ -56,7 +53,7 @@
       "type": "string",
       "enum": [
         "pending",
-        "verified",
+        "contacted",
         "rejected"
       ],
       "default": "pending",
@@ -64,14 +61,10 @@
     }
   },
   "required": [
-    "full_name",
+    "name",
     "email",
     "phone",
-    "profession",
-    "qualification_number",
-    "license_country",
-    "languages_spoken",
-    "weekly_hours",
+    "help_ways",
     "gdpr_consent"
   ]
 }

@@ -4,7 +4,7 @@ import AlphaBanner from '@/components/landing/AlphaBanner';
 import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
 import MissionSection from '@/components/landing/MissionSection';
-import DoctorForm from '@/components/landing/DoctorForm';
+import GetInvolvedSection from '@/components/landing/GetInvolvedSection';
 import NotifySection from '@/components/landing/NotifySection';
 import DigitalResponseSection from '@/components/landing/DigitalResponseSection';
 import ToolboxSection from '@/components/landing/ToolboxSection';
@@ -21,7 +21,7 @@ export default function Home() {
         <main>
           <Hero />
           <MissionSection />
-          <DoctorForm />
+          <GetInvolvedSection />
           <NotifySection />
           <DigitalResponseSection />
           <ToolboxSection />

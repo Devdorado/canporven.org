@@ -99,6 +99,92 @@ const translations = {
   'lang.portuguese': { es: 'Portugués', en: 'Portuguese' },
   'lang.other': { es: 'Otro', en: 'Other' },
 
+  // Get Involved section
+  'getinvolved.title': { es: 'Súmate a la red', en: 'Join the network' },
+  'getinvolved.intro': {
+    es: 'Elige tu perfil. Recogemos solo lo necesario para coordinar la ayuda.',
+    en: 'Choose your profile. We only collect what we need to coordinate help.',
+  },
+  'getinvolved.tab_doctor': { es: 'Médicos y personal sanitario', en: 'Doctors and qualified health personnel' },
+  'getinvolved.tab_doctor_desc': { es: 'Profesionales cualificados', en: 'Qualified professionals' },
+  'getinvolved.tab_company': { es: 'Empresas y profesionales', en: 'Companies and professionals' },
+  'getinvolved.tab_company_desc': { es: 'Organizaciones y empresas', en: 'Organizations and companies' },
+  'getinvolved.tab_individual': { es: 'Particulares', en: 'Private individuals' },
+  'getinvolved.tab_individual_desc': { es: 'Personas que quieren ayudar', en: 'People who want to help' },
+  'getinvolved.doctor_gate': {
+    es: 'Este formulario es solo para médicos y personal sanitario cualificado.',
+    en: 'This form is only for doctors and qualified health personnel.',
+  },
+  'getinvolved.doctor_gate_btn': {
+    es: 'Sí, soy médico o personal sanitario cualificado',
+    en: 'Yes, I am a doctor or qualified health professional',
+  },
+  'getinvolved.success_title': { es: '¡Gracias!', en: 'Thank you!' },
+  'getinvolved.success_doctor': {
+    es: 'Hemos recibido tu registro. Verificaremos tu titulación y nos pondremos en contacto contigo.',
+    en: 'We have received your registration. We will verify your qualification and get in touch with you.',
+  },
+  'getinvolved.success_company': {
+    es: 'Hemos recibido tu solicitud. Nos pondremos en contacto contigo pronto.',
+    en: 'We have received your request. We will get in touch with you soon.',
+  },
+  'getinvolved.success_individual': {
+    es: 'Hemos recibido tu solicitud. Nos pondremos en contacto contigo pronto.',
+    en: 'We have received your request. We will get in touch with you soon.',
+  },
+
+  // Shared form fields
+  'gi.full_name': { es: 'Nombre completo', en: 'Full name' },
+  'gi.email': { es: 'Correo electrónico', en: 'Email' },
+  'gi.phone': { es: 'Teléfono', en: 'Phone' },
+  'gi.profession': { es: 'Profesión o especialidad', en: 'Profession or specialty' },
+  'gi.qualification': { es: 'Titulación / Nº de colegiación o licencia', en: 'Qualification / License or registration number' },
+  'gi.license_country': { es: 'País de la licencia', en: 'Country of license' },
+  'gi.languages': { es: 'Idiomas', en: 'Languages' },
+  'gi.weekly_hours': { es: 'Disponibilidad semanal (horas)', en: 'Weekly availability (hours)' },
+  'gi.availability': { es: 'Disponibilidad general', en: 'General availability' },
+  'gi.consent': {
+    es: 'Consiento el almacenamiento de mis datos para coordinar la ayuda (RGPD).',
+    en: 'I consent to the storage of my data to coordinate help (GDPR).',
+  },
+  'gi.submit': { es: 'Enviar', en: 'Submit' },
+  'gi.submitting': { es: 'Enviando...', en: 'Submitting...' },
+  'gi.general_disclaimer': {
+    es: 'Iniciativa ciudadana privada en formación, sin garantía legal. Tus datos se guardan temporalmente en esta plataforma solo para coordinar la ayuda; la gestión formal del consentimiento se hará vía Klaviyo. No compartimos tus datos con terceros sin tu permiso.',
+    en: 'Private citizen initiative in formation, with no legal guarantee. Your data is stored temporarily on this platform only to coordinate help; formal consent management will be handled via Klaviyo. We do not share your data with third parties without your permission.',
+  },
+  'gi.doctor_disclaimer': {
+    es: 'Verificaremos tu titulación o colegiación. Esto no constituye una relación laboral ni un servicio médico; la telemedicina se orienta a pacientes crónicos, salud mental y triaje.',
+    en: 'We will verify your qualification or professional registration. This is not an employment relationship or a medical service; telemedicine focuses on chronic patients, mental health and triage.',
+  },
+
+  // Company form
+  'company.contact_name': { es: 'Nombre de contacto', en: 'Contact name' },
+  'company.org_name': { es: 'Organización o empresa', en: 'Organization / Company name' },
+  'company.type': { es: 'Tipo', en: 'Type' },
+  'company.type_company': { es: 'Empresa', en: 'Company' },
+  'company.type_professional': { es: 'Profesional', en: 'Professional' },
+  'company.type_ngo': { es: 'ONG', en: 'NGO' },
+  'company.type_other': { es: 'Otro', en: 'Other' },
+  'company.how_help': { es: '¿Cómo podéis ayudar?', en: 'How can you help?' },
+  'company.help_donation': { es: 'Matching de donaciones', en: 'Donation matching' },
+  'company.help_logistics': { es: 'Logística', en: 'Logistics' },
+  'company.help_telecom': { es: 'Telecomunicaciones', en: 'Telecom' },
+  'company.help_medical': { es: 'Servicios médicos', en: 'Medical services' },
+  'company.help_technology': { es: 'Tecnología', en: 'Technology' },
+  'company.help_funding': { es: 'Financiación', en: 'Funding' },
+  'company.help_other': { es: 'Otro', en: 'Other' },
+  'company.message': { es: 'Mensaje breve', en: 'Short message' },
+
+  // Individual form
+  'individual.name': { es: 'Nombre', en: 'Name' },
+  'individual.how_help': { es: '¿Cómo quieres ayudar?', en: 'How do you want to help?' },
+  'individual.help_donate': { es: 'Donar', en: 'Donate' },
+  'individual.help_skills': { es: 'Voluntariado de habilidades', en: 'Skills volunteering' },
+  'individual.help_spread': { es: 'Difundir', en: 'Spread the word' },
+  'individual.help_other': { es: 'Otro', en: 'Other' },
+  'individual.message': { es: 'Mensaje breve', en: 'Short message' },
+
   // Notify section
   'notify.title': { es: 'Recibir aviso', en: 'Get Notified' },
   'notify.subtitle': {
