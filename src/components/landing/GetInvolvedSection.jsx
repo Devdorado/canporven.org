@@ -4,6 +4,7 @@ import { Stethoscope, Building2, User } from 'lucide-react';
 import DoctorGatedForm from '@/components/landing/forms/DoctorGatedForm';
 import CompanyForm from '@/components/landing/forms/CompanyForm';
 import IndividualForm from '@/components/landing/forms/IndividualForm';
+import ImageZoom from '@/components/landing/ImageZoom';
 
 const tabs = [
   { id: 'doctor', icon: Stethoscope, titleKey: 'getinvolved.tab_doctor', descKey: 'getinvolved.tab_doctor_desc' },
@@ -63,22 +64,24 @@ export default function GetInvolvedSection() {
 
         {/* Médicos image */}
         {activeTab === 'doctor' && (
-          <img
-            src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/cdfdbe0f0_image.png"
-            alt="CANARYmedic"
-            className="w-full max-w-3xl mx-auto rounded-2xl border border-gray-200 shadow-sm mb-8"
-            loading="lazy"
-          />
+          <div className="max-w-3xl mx-auto mb-8">
+            <ImageZoom
+              src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/cdfdbe0f0_image.png"
+              alt="CANARYmedic"
+              className="w-full rounded-2xl border border-gray-200 shadow-sm"
+            />
+          </div>
         )}
 
         {/* Particulares image */}
         {activeTab === 'individual' && (
-          <img
-            src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/3626475a2_image.png"
-            alt={t('getinvolved.title', lang)}
-            className="w-full max-w-3xl mx-auto rounded-2xl border border-gray-200 shadow-sm mb-8"
-            loading="lazy"
-          />
+          <div className="max-w-3xl mx-auto mb-8">
+            <ImageZoom
+              src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/3626475a2_image.png"
+              alt={t('getinvolved.title', lang)}
+              className="w-full rounded-2xl border border-gray-200 shadow-sm"
+            />
+          </div>
         )}
 
         {/* Active form */}
