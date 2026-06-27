@@ -61,6 +61,16 @@ export default function GetInvolvedSection() {
           })}
         </div>
 
+        {/* Particulares image */}
+        {activeTab === 'individual' && (
+          <img
+            src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/3626475a2_image.png"
+            alt={t('getinvolved.title', lang)}
+            className="w-full max-w-3xl mx-auto rounded-2xl border border-gray-200 shadow-sm mb-8"
+            loading="lazy"
+          />
+        )}
+
         {/* Active form */}
         {activeTab === 'doctor' && <DoctorGatedForm />}
         {activeTab === 'company' && <CompanyForm />}
