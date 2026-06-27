@@ -13,7 +13,7 @@ export default function Hero() {
       <img
         src={HERO_IMG}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover animate-hero-zoom"
         loading="eager"
       />
 
