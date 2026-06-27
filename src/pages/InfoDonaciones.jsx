@@ -1,36 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
+import { LangProvider, useLang, t } from '@/lib/i18n.jsx';
+
+function InfoDonacionesContent() {
+  const { lang } = useLang();
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+      <div className="max-w-xl w-full text-center bg-white rounded-2xl border border-[#1565C0]/15 shadow-sm p-8 md:p-12">
+        <h1 className="text-2xl md:text-3xl font-bold text-[#121212] mb-3">
+          {t('nav.help', lang)}
+        </h1>
+        <p className="text-[#121212]/60 mb-8">
+          {lang === 'es'
+            ? 'Estamos añadiendo el contenido completo de esta sección. Vuelve pronto.'
+            : "We're adding the full content of this section. Please check back soon."}
+        </p>
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold bg-[#1565C0] text-white hover:bg-[#1255A0] transition-colors min-h-[48px]"
+        >
+          <ArrowLeft size={18} />
+          {lang === 'es' ? 'Volver al inicio' : 'Back to home'}
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export default function InfoDonaciones() {
-  const [loaded, setLoaded] = useState(false);
-
   return (
-    <div style={{ margin: 0, padding: 0, width: '100vw', height: '100vh', overflow: 'hidden', position: 'relative' }}>
-      {!loaded && (
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontFamily: 'sans-serif',
-          fontSize: '14px',
-          color: '#666',
-        }}>
-          Cargando la guía…
-        </div>
-      )}
-      <iframe
-        src="/infodonaciones.html"
-        title="Cómo ayudar de verdad"
-        onLoad={() => setLoaded(true)}
-        style={{
-          display: 'block',
-          width: '100vw',
-          height: '100vh',
-          border: 'none',
-          margin: 0,
-        }}
-      />
-    </div>
+    <LangProvider>
+      <InfoDonacionesContent />
+    </LangProvider>
   );
 }
