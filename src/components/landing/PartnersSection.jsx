@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
 import { ExternalLink, Heart, X, ChevronLeft, ChevronRight, Building2 } from 'lucide-react';
 
@@ -62,6 +62,21 @@ export default function PartnersSection() {
     el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: 'smooth' });
   };
 
+  // Auto-rotate
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const id = setInterval(() => {
+      const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 5;
+      if (atEnd) {
+        el.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        el.scrollBy({ left: el.clientWidth * 0.8, behavior: 'smooth' });
+      }
+    }, 4000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="apoyos" className="py-16 md:py-24 bg-gray-50" aria-labelledby="partners-heading">
       <div className="max-w-6xl mx-auto px-4">
@@ -105,18 +120,18 @@ export default function PartnersSection() {
               <button
                 key={p.name}
                 onClick={() => setSelected(p)}
-                className="snap-center shrink-0 w-56 md:w-64 group rounded-2xl border border-gray-200 bg-white p-6 flex flex-col items-center text-center hover:shadow-lg hover:border-[#1565C0]/30 transition-all"
+                className="snap-center shrink-0 w-64 md:w-72 group rounded-2xl border border-gray-200 bg-white p-6 flex flex-col items-center text-center hover:shadow-lg hover:border-[#1565C0]/30 transition-all"
               >
-                <div className="w-28 h-28 md:w-32 md:h-32 shrink-0 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden mb-4">
+                <div className="w-full h-36 md:h-40 shrink-0 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden mb-4">
                   {p.logo ? (
                     <img
                       src={p.logo}
                       alt={p.name}
-                      className="w-full h-full object-contain p-2"
+                      className="w-full h-full object-contain p-3"
                       loading="lazy"
                     />
                   ) : (
-                    <Building2 size={48} className="text-[#1565C0]/40" />
+                    <Building2 size={56} className="text-[#1565C0]/40" />
                   )}
                 </div>
                 <p className="font-semibold text-[#121212] leading-tight mb-1">{p.name}</p>
@@ -126,7 +141,7 @@ export default function PartnersSection() {
           })}
 
           {/* Placeholder */}
-          <div className="snap-center shrink-0 w-56 md:w-64 rounded-2xl border-2 border-dashed border-gray-300 bg-white/50 p-6 flex flex-col items-center justify-center text-center min-h-[260px]">
+          <div className="snap-center shrink-0 w-64 md:w-72 rounded-2xl border-2 border-dashed border-gray-300 bg-white/50 p-6 flex flex-col items-center justify-center text-center min-h-[280px]">
             <p className="text-sm font-medium text-[#121212]/40">
               {t('partners.placeholder', lang)}
             </p>
@@ -167,15 +182,15 @@ export default function PartnersSection() {
             </button>
 
             <div className="flex flex-col items-center text-center">
-              <div className="w-32 h-32 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden mb-5">
+              <div className="w-full h-44 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden mb-5">
                 {selected.logo ? (
                   <img
                     src={selected.logo}
                     alt={selected.name}
-                    className="w-full h-full object-contain p-3"
+                    className="w-full h-full object-contain p-4"
                   />
                 ) : (
-                  <Building2 size={56} className="text-[#1565C0]/40" />
+                  <Building2 size={64} className="text-[#1565C0]/40" />
                 )}
               </div>
 
