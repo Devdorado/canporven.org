@@ -130,6 +130,16 @@ export default function DoctorForm() {
         >
           <h3 className="text-lg font-semibold text-[#121212] mb-2">{t('doctors.form_title', lang)}</h3>
 
+          {/* Pre-coordination notice */}
+          <div className="rounded-lg bg-[#1565C0]/5 border border-[#1565C0]/20 px-4 py-3">
+            <p className="text-sm text-[#121212]/70 leading-relaxed">
+              <span className="font-semibold text-[#1565C0]">
+                {lang === 'es' ? 'Pre-coordinación:' : 'Pre-coordination:'}
+              </span>{' '}
+              {t('doctors.pre_coordination_note', lang)}
+            </p>
+          </div>
+
           {/* Full Name */}
           <div>
             <label className="block text-sm font-medium text-[#121212] mb-1.5">{t('doctors.full_name', lang)} *</label>

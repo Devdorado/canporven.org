@@ -53,6 +53,10 @@ const translations = {
   'doctors.area3': { es: 'Triaje y teleconsulta', en: 'Triage & teleconsultation' },
   'doctors.area4': { es: 'Segunda opinión médica', en: 'Second medical opinion' },
   'doctors.form_title': { es: 'Formulario de registro', en: 'Registration Form' },
+  'doctors.pre_coordination_note': {
+    es: 'Este formulario es exclusivamente para la pre-coordinación de médicos voluntarios. No es un compromiso inmediato: nos pondremos en contacto contigo para verificar tu licencia y coordinar tu participación antes de cualquier actividad.',
+    en: 'This form is exclusively for the pre-coordination of volunteer doctors. It is not an immediate commitment: we will contact you to verify your license and coordinate your participation before any activity.',
+  },
   'doctors.full_name': { es: 'Nombre completo', en: 'Full name' },
   'doctors.email': { es: 'Correo electrónico', en: 'Email' },
   'doctors.profession': { es: 'Profesión o especialidad', en: 'Profession or specialty' },
