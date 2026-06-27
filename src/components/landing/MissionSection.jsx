@@ -2,7 +2,7 @@ import React from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
 import { CircleDollarSign, Stethoscope, Building2 } from 'lucide-react';
 
-const MISSION_IMG = 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/72b8ee96f_generated_2e70d32f.png';
+const MISSION_IMG = 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/dcae4875e_image.png';
 
 const cards = [
   {
