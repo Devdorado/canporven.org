@@ -53,7 +53,7 @@ const translations = {
 
   // Hero
   'hero.headline': {
-    es: 'Canarias con Venezuela',
+    es: 'Canarias por Venezuela',
     en: 'Canary Islands for Venezuela',
   },
   'hero.subheadline': {
