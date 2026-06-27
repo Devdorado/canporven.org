@@ -17,11 +17,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#1565C0]/10">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo + Brand */}
-        <a href="#" className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 rounded-lg bg-[#1565C0]/10 border border-[#1565C0]/20 flex items-center justify-center">
-            <span className="text-[#1565C0] text-xs font-bold">Logo</span>
-          </div>
-          <span className="font-bold text-lg tracking-tight text-[#121212]">CANPORVEN.ORG</span>
+        <a href="/" className="flex items-center shrink-0">
+          <img
+            src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/273fffe0b_Canprovenlogo.png"
+            alt="CANPORVEN.ORG"
+            className="h-10 md:h-11 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Nav */}

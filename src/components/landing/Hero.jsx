@@ -18,10 +18,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/60 via-[#121212]/40 to-[#121212]/80" />
 
       <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-32 text-center">
-        {/* Logo placeholder */}
-        <div className="mx-auto w-20 h-20 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center mb-8">
-          <span className="text-white/80 text-xs font-bold">Logo</span>
-        </div>
+        {/* Logo */}
+        <img
+          src="https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/273fffe0b_Canprovenlogo.png"
+          alt="CANPORVEN.ORG"
+          className="mx-auto h-24 md:h-28 w-auto object-contain mb-8"
+        />
 
         <h1
           id="hero-heading"
