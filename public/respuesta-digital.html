@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La respuesta digital e IA al terremoto de Venezuela 2026 · Canarias por Venezuela</title>
+<meta name="description" content="Mapa de la respuesta digital y de inteligencia artificial al terremoto de Venezuela del 24 de junio de 2026: alertas, satélite, plataformas ciudadanas de desaparecidos, las grietas del sistema y dónde encaja nuestra toolbox. Canarias por Venezuela · canporven.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#1763B0; --azul-d:#0C3F75; --azul-l:#E8F1FB;
+  --oro:#F2A900; --oro-d:#C98700; --oro-l:#FFF4DD;
+  --rojo:#DC2A1A; --rojo-d:#B01C0F; --rojo-l:#FCE9E6;
+  --verde:#1F9D6B; --verde-l:#E6F6EF;
+  --tinta:#16203A; --gris:#56627A; --gris-l:#8893A6;
+  --bg:#FFFFFF; --soft:#F4F8FC; --soft2:#EAF1F8; --linea:#E1E8F1;
+  --sombra:0 1px 2px rgba(16,32,58,.04),0 6px 24px rgba(16,32,58,.07);
+  --sombra-l:0 1px 2px rgba(16,32,58,.04),0 2px 8px rgba(16,32,58,.05);
+  --radio:18px; --maxw:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--tinta);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,.wm{font-family:'Plus Jakarta Sans','Inter',sans-serif;line-height:1.14;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.sec{padding:78px 0;position:relative}
+section{scroll-margin-top:80px}
+
+/* alpha bar */
+.alpha{background:linear-gradient(90deg,var(--oro-l),var(--azul-l));border-bottom:1px solid var(--linea);font-size:13px;color:var(--azul-d);text-align:center;padding:9px 16px;font-weight:600}
+.alpha b{background:var(--oro-d);color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;letter-spacing:.06em;margin-right:8px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800}
+.wm{font-size:18px;font-weight:800}
+.wm .b{color:var(--azul)} .wm .o{color:var(--oro-d)} .wm .r{color:var(--rojo)} .wm .g{color:var(--azul);opacity:.65}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-size:14px;font-weight:600;color:var(--gris);padding:9px 12px;border-radius:9px;transition:.18s}
+.nav-links a:hover{color:var(--azul);background:var(--azul-l)}
+.nav-links a.cta{background:var(--azul);color:#fff;padding:9px 16px}
+.nav-links a.cta:hover{background:var(--azul-d)}
+@media(max-width:860px){.nav-links a:not(.cta){display:none}}
+
+/* hero */
+.hero{padding:64px 0 56px;background:radial-gradient(1000px 420px at 86% -10%,var(--azul-l),transparent 60%),radial-gradient(820px 420px at 0% 120%,var(--oro-l),transparent 55%)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--azul-d);background:#fff;border:1px solid var(--linea);padding:7px 14px;border-radius:100px;box-shadow:var(--sombra-l)}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--azul);box-shadow:0 0 0 4px var(--azul-l)}
+h1{font-size:clamp(31px,4.6vw,50px);font-weight:800;margin:20px 0 0;max-width:18ch}
+.hero .lede{font-size:clamp(16px,1.5vw,19px);color:var(--gris);margin-top:18px;max-width:60ch}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:13px 22px;border-radius:12px;cursor:pointer;border:1px solid transparent;transition:.18s}
+.btn-primary{background:var(--azul);color:#fff;box-shadow:0 8px 22px rgba(23,99,176,.26)}
+.btn-primary:hover{background:var(--azul-d);transform:translateY(-2px)}
+.btn-ghost{background:#fff;border-color:var(--linea);color:var(--tinta)}
+.btn-ghost:hover{border-color:var(--azul);color:var(--azul)}
+
+/* stat band */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:46px}
+.stat{background:#fff;border:1px solid var(--linea);border-radius:15px;padding:18px;box-shadow:var(--sombra-l)}
+.stat .n{font-family:'Plus Jakarta Sans';font-weight:800;font-size:25px;line-height:1}
+.stat .n.azul{color:var(--azul)} .stat .n.oro{color:var(--oro-d)} .stat .n.rojo{color:var(--rojo)} .stat .n.verde{color:var(--verde)}
+.stat .t{font-size:12px;color:var(--gris);margin-top:8px;line-height:1.4}
+@media(max-width:900px){.stats{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:560px){.stats{grid-template-columns:1fr 1fr}}
+
+/* section head */
+.sec-head{max-width:760px;margin-bottom:40px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--azul);margin-bottom:13px}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--azul);border-radius:2px}
+h2{font-size:clamp(25px,3.2vw,37px);font-weight:800}
+.sec-head p{font-size:17px;color:var(--gris);margin-top:14px}
+.soft-bg{background:var(--soft)}
+
+/* eco cards */
+.eco{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:24px;box-shadow:var(--sombra-l);display:flex;flex-direction:column}
+.card .tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--azul-d);background:var(--azul-l);align-self:flex-start;padding:5px 10px;border-radius:100px;margin-bottom:13px}
+.card.live .tag{color:var(--verde);background:var(--verde-l)}
+.card.warn .tag{color:var(--oro-d);background:var(--oro-l)}
+.card h4{font-size:17px;margin-bottom:7px}
+.card p{font-size:13.5px;color:var(--gris);flex:1}
+.card a.lk{margin-top:14px;font-size:13px;font-weight:700;color:var(--azul);display:inline-flex;align-items:center;gap:6px}
+.card a.lk:hover{color:var(--azul-d)}
+@media(max-width:900px){.eco{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.eco{grid-template-columns:1fr}}
+
+/* table */
+.tbl{background:#fff;border:1px solid var(--linea);border-radius:16px;overflow:hidden;box-shadow:var(--sombra-l);overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{padding:13px 16px;text-align:left;font-size:13px;border-bottom:1px solid var(--linea);vertical-align:top}
+thead th{background:var(--azul-d);color:#fff;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+tbody tr:last-child td{border-bottom:none}
+td.ch{font-weight:700;color:var(--tinta)}
+.hl-ve{background:var(--oro-l)}
+
+/* gaps */
+.gaps{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.gap{background:#fff;border:1px solid var(--linea);border-left:4px solid var(--rojo);border-radius:14px;padding:22px;box-shadow:var(--sombra-l)}
+.gap h4{font-size:17px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+.gap p{font-size:13.5px;color:var(--gris)}
+.gap .fig{font-family:'Plus Jakarta Sans';font-weight:800;color:var(--rojo);font-size:13px}
+@media(max-width:760px){.gaps{grid-template-columns:1fr}}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:22px;box-shadow:var(--sombra-l);position:relative}
+.step .num{width:30px;height:30px;border-radius:9px;background:var(--azul);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans';font-weight:800;font-size:14px;margin-bottom:13px}
+.step h4{font-size:15.5px;margin-bottom:7px}
+.step p{font-size:12.5px;color:var(--gris)}
+.step .tech{margin-top:11px;font-size:11px;font-weight:700;color:var(--azul-d);background:var(--azul-l);border-radius:7px;padding:5px 9px;display:inline-block}
+@media(max-width:860px){.pipe{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pipe{grid-template-columns:1fr}}
+
+/* toolbox */
+.tb-head{background:linear-gradient(160deg,var(--azul-d),#0a3361);color:#fff;border-radius:22px;padding:34px;box-shadow:var(--sombra);margin-bottom:26px}
+.tb-head .tag{display:inline-block;background:var(--oro-d);color:#fff;border-radius:7px;padding:3px 10px;font-size:11px;font-weight:700;letter-spacing:.06em;margin-bottom:14px}
+.tb-head h3{font-size:24px;margin-bottom:8px}
+.tb-head p{font-size:14.5px;color:#cfdcec;max-width:70ch}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tool{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:22px;box-shadow:var(--sombra-l)}
+.tool .ic{width:42px;height:42px;border-radius:11px;background:var(--verde-l);display:flex;align-items:center;justify-content:center;margin-bottom:13px;font-size:20px}
+.tool h4{font-size:16px;margin-bottom:7px}
+.tool p{font-size:13px;color:var(--gris)}
+.tool .gapn{margin-top:11px;font-size:11.5px;color:var(--rojo-d);background:var(--rojo-l);border-radius:7px;padding:5px 9px;display:inline-block;font-weight:600}
+@media(max-width:900px){.tools{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tools{grid-template-columns:1fr}}
+
+/* cta */
+.cta-box{background:radial-gradient(700px 300px at 90% 10%,rgba(242,169,0,.18),transparent 60%),linear-gradient(150deg,var(--azul),var(--azul-d));color:#fff;border-radius:24px;padding:48px;text-align:center;margin-top:18px}
+.cta-box h2{font-size:clamp(24px,3vw,34px)}
+.cta-box p{font-size:17px;color:#dbe8f7;max-width:58ch;margin:14px auto 24px}
+.cta-box .btn-primary{background:#fff;color:var(--azul-d)}
+.cta-box .btn-primary:hover{background:#eef5ff}
+
+/* footer */
+.ft{background:#0b1322;color:#c7d2e2;padding:48px 0 28px}
+.ft .wm .g{color:#8fb4e0;opacity:1}
+.ft p{font-size:13px;color:#9fb0c6;max-width:80ch;margin-top:14px;line-height:1.6}
+.ft .dom{margin-top:10px;font-weight:600;color:#e7eefa;font-size:13.5px}
+.ft .bar{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:18px;font-size:12px;color:#7d8da6}
+</style>
+</head>
+<body>
+
+<div class="alpha"><b>ALPHA</b> Iniciativa ciudadana privada en formación, sin garantía legal. Ayuda profesional y alianzas bienvenidas.</div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/" aria-label="Canarias por Venezuela">
+      <svg width="32" height="32" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <path d="M17 30C17 30 4 22.5 4 12.8 4 8 7.7 4.6 11.8 4.6c2.4 0 4.4 1.1 5.2 2.9.8-1.8 2.8-2.9 5.2-2.9C26.3 4.6 30 8 30 12.8 30 22.5 17 30 17 30Z" fill="url(#hg)"/>
+        <path d="M11 16.2l3.2 2.3 2.8-2.1 2.8 2.1 3.2-2.3" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="hg" x1="4" y1="5" x2="30" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#F2A900"/><stop offset=".5" stop-color="#1763B0"/><stop offset="1" stop-color="#DC2A1A"/></linearGradient></defs>
+      </svg>
+      <span class="wm"><span class="b">CAN</span><span class="o">POR</span><span class="r">VEN</span><span class="g">.ORG</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#ecosistema">Ecosistema</a>
+      <a href="#grietas">Las grietas</a>
+      <a href="#ia">IA agéntica</a>
+      <a href="#toolbox">Nuestra toolbox</a>
+      <a href="/" class="cta">Volver al inicio</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO / ABSTRACT -->
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker"><span class="dot"></span> Informe · Crisis Informatics · 24 jun 2026</span>
+    <h1>El terremoto de Venezuela, en clave digital</h1>
+    <p class="lede">Mientras los equipos cavan entre escombros, otra respuesta ocurre en paralelo: alertas en el móvil, satélites que mapean daños y plataformas ciudadanas que buscan a más de 50.000 desaparecidos. Este es el mapa de esa respuesta digital y de IA, sus grietas, y dónde puede encajar una iniciativa como la nuestra.</p>
+    <div class="hero-btns">
+      <a href="#toolbox" class="btn btn-primary">Dónde encajamos
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#ecosistema" class="btn btn-ghost">Ver el ecosistema</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n rojo">7,2 + 7,5</div><div class="t">Doblete sísmico con 39 segundos de diferencia, falla de San Sebastián</div></div>
+      <div class="stat"><div class="n rojo">~920</div><div class="t">Fallecidos confirmados y más de 4.500 heridos (cifras preliminares)</div></div>
+      <div class="stat"><div class="n oro">50.000+</div><div class="t">Personas reportadas como desaparecidas en plataformas ciudadanas</div></div>
+      <div class="stat"><div class="n azul">10–15 s</div><div class="t">De aviso que dio la alerta de Android antes de las ondas destructivas</div></div>
+      <div class="stat"><div class="n verde">28.040 → 26.962</div><div class="t">Reportes deduplicados por resolución de identidad (Tilores)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSISTEMA -->
+<section id="ecosistema" class="sec soft-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">El ecosistema activo</span>
+      <h2>Quién está respondiendo en lo digital</h2>
+      <p>Una mezcla de telemetría global, activaciones de satélite y plataformas ciudadanas montadas en horas, que están cubriendo el vacío dejado por las redes de telecomunicaciones y los servicios de emergencia dañados.</p>
+    </div>
+    <div class="eco">
+      <div class="card live">
+        <span class="tag">Alerta temprana</span>
+        <h4>Google · Alertas de terremotos en Android</h4>
+        <p>Convierte millones de móviles en una red sísmica distribuida. Detecta las ondas P y avisa antes de las ondas destructivas. El nivel <b>TakeAction</b> tomó la pantalla completa en Caracas y La Guaira y dio segundos críticos para evacuar.</p>
+      </div>
+      <div class="card warn">
+        <span class="tag">Conectividad</span>
+        <h4>Starlink · Internet de emergencia</h4>
+        <p>Un mes gratis hasta el 25 de julio de 2026 en la zona del desastre y despliegue de terminales en las comunidades más golpeadas. Pero el kit cuesta unos 470 USD y se vende solo en tres distribuidores: una solución todavía de lujo.</p>
+      </div>
+      <div class="card live">
+        <span class="tag">Observación de la Tierra</span>
+        <h4>Copernicus EMS (EMSR884)</h4>
+        <p>La UE activó el servicio de cartografía rápida el 25 de junio. La constelación Sentinel genera mapas de daños bajo demanda para los equipos internacionales de rescate y la protección civil local.</p>
+        <a class="lk" href="https://mapping.emergency.copernicus.eu/news/earthquake-in-venezuela-emsr884/" target="_blank" rel="noopener">Activación EMSR884 →</a>
+      </div>
+      <div class="card live">
+        <span class="tag">IA · Daños</span>
+        <h4>Microsoft AI for Good Lab</h4>
+        <p>Redes neuronales sobre imagen satelital post-desastre clasifican daño edificio por edificio en Catia La Mar, cruzado con huellas de Overture Maps y publicado como GeoPackage en el Humanitarian Data Exchange.</p>
+        <a class="lk" href="https://data.humdata.org/dataset/venezuela-earthquakes-catia-la-mar" target="_blank" rel="noopener">Dataset en HDX →</a>
+      </div>
+      <div class="card live">
+        <span class="tag">Mapeo colaborativo</span>
+        <h4>Humanitarian OpenStreetMap (HOT)</h4>
+        <p>Voluntarios remotos trazan edificios y vías de Caracas y La Guaira sobre imagen aérea reciente (OpenAerialMap), para guiar a los equipos USAR que llegan sin mapas base actualizados.</p>
+        <a class="lk" href="https://community.openstreetmap.org/t/mapping-to-support-the-venezuela-earthquake-response/144882" target="_blank" rel="noopener">Tarea de mapeo →</a>
+      </div>
+      <div class="card">
+        <span class="tag">Ciudadanía · Desaparecidos</span>
+        <h4>Plataformas ciudadanas de búsqueda</h4>
+        <p>Desarrolladores ciudadanos levantaron portales para registrar y buscar familiares: <b>Hazlo Hoy / Venezuela Ayuda</b>, <b>Desaparecidos Terremoto Venezuela</b> y <b>Venezuela Te Busca</b>, esta última deduplicada con el motor de identidad <b>Tilores</b>.</p>
+        <a class="lk" href="https://venezuela-ayuda.vercel.app/" target="_blank" rel="noopener">Venezuela Ayuda →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALELISMOS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Aprendizajes</span>
+      <h2>Qué enseñaron otras catástrofes</h2>
+      <p>Cada gran terremoto dejó una lección de informática de crisis. Venezuela las hereda todas a la vez: datos sin verificar, última milla, censura y exclusión lingüística.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead>
+          <tr><th>Variable</th><th>Haití 2010</th><th>Nepal 2015</th><th>Türkiye/Siria 2023</th><th>Marruecos 2023</th><th>Venezuela 2026</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ch">Motor de crowdsourcing</td>
+            <td>Ushahidi, OpenStreetMap inicial</td>
+            <td>Activación de HOT</td>
+            <td>Deprem.io, Afet Haritası, scrapers</td>
+            <td>WhatsApp y SMS regionales</td>
+            <td class="hl-ve">Venezuela Ayuda, Desaparecidos, Venezuela Te Busca</td>
+          </tr>
+          <tr>
+            <td class="ch">Satélite e IA</td>
+            <td>Interpretación visual manual</td>
+            <td>GIS remoto, redes viarias</td>
+            <td>Microsoft AI + Planet Labs</td>
+            <td>Copernicus EMS, evaluación manual</td>
+            <td class="hl-ve">Copernicus EMSR884, Microsoft AI en Catia La Mar</td>
+          </tr>
+          <tr>
+            <td class="ch">Telecomunicaciones</td>
+            <td>Colapso total, VSAT limitado</td>
+            <td>Aislamiento rural, satélite</td>
+            <td>4G/5G con cortes locales</td>
+            <td>Alto Atlas sin señal</td>
+            <td class="hl-ve">Starlink + bloqueos de CONATEL a VPN y redes</td>
+          </tr>
+          <tr>
+            <td class="ch">Adaptación lingüística</td>
+            <td>Creole a inglés manual</td>
+            <td>Inglés y nepalí</td>
+            <td>Turco y árabe</td>
+            <td>Exclusión del tashelhit (amazigh)</td>
+            <td class="hl-ve">Solo español; exclusión de wayuunaiki, warao, pemón</td>
+          </tr>
+          <tr>
+            <td class="ch">Resolución de identidad</td>
+            <td>Limpieza manual</td>
+            <td>Limpieza básica de CSV</td>
+            <td>Deduplicado en Python</td>
+            <td>Validación manual</td>
+            <td class="hl-ve">Motor Tilores sobre APIs públicas</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- GRIETAS -->
+<section id="grietas" class="sec soft-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Las grietas del sistema</span>
+      <h2>Dónde falla la respuesta digital</h2>
+      <p>El despliegue tecnológico es real, pero cuatro fracturas profundas limitan su efecto en el terreno. Aquí es donde más vidas se pierden o se salvan.</p>
+    </div>
+    <div class="gaps">
+      <div class="gap">
+        <h4>Censura e infraestructura</h4>
+        <p>Cortes de luz dejan inútiles las torres locales y CONATEL bloquea redes sociales, medios y VPN. Aunque la OFAC dio licencia temporal para la ayuda, la censura interna impide difundir instrucciones y acceder a portales como hazlohoy.org. <span class="fig">Starlink sigue siendo de lujo.</span></p>
+      </div>
+      <div class="gap">
+        <h4>Fragmentación y falsos positivos</h4>
+        <p>Varios registros ciudadanos en silos separados generan duplicidad y, peor, falsos positivos: confundir hermanos con nombres parecidos puede detener una búsqueda activa. Tilores ya halló <span class="fig">75 casos marcados a la vez como desaparecido y localizado</span> y 947 grupos duplicados.</p>
+      </div>
+      <div class="gap">
+        <h4>Exclusión lingüística y cultural</h4>
+        <p>La respuesta es casi monolingüe en español. Quedan fuera el wayuunaiki (~348.000), el warao (~36.000) y el pemón (~22.000), con alfabetización indígena del 70–71% y por debajo del 35% en grupos aislados. <span class="fig">No hay traductores automáticos integrados.</span></p>
+      </div>
+      <div class="gap">
+        <h4>Falta de cultura sísmica</h4>
+        <p>Los últimos grandes terremotos fueron 1967 (Caracas) y 1998 (Sucre). Sin cultura de preparación, proliferan el pánico, las alertas mal interpretadas y los rumores y evaluaciones estructurales sin verificar que circulan por mensajería. <span class="fig">La desinformación cuesta vidas.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IA AGENTICA -->
+<section id="ia" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Lo que viene</span>
+      <h2>IA agéntica y orquestación multimodal</h2>
+      <p>Frente a estos fallos de coordinación, la investigación propone marcos autónomos que razonan, verifican y planifican rutas incluso con redes intermitentes o cortadas.</p>
+    </div>
+    <div class="eco">
+      <div class="card">
+        <span class="tag">Multiagente</span>
+        <h4>ResQConnect</h4>
+        <p>Convierte una nota de voz o un SMS caótico en una tarea estructurada (Meta Node), recupera contexto, evalúa su calidad y enruta entregas con un algoritmo AET. En simulación: <b>85% menos cálculos</b> y a un 7–12% de la ruta óptima.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Decisión</span>
+        <h4>ENV-QAS</h4>
+        <p>Une modelos multimodales, grafos de conocimiento temporal y RAG para modelar la evolución de la crisis y responder preguntas predictivas, por ejemplo el redireccionamiento de pacientes si un hospital sigue evacuado 24 horas.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Filtrado</span>
+        <h4>SentEMBNet + PACO</h4>
+        <p>Filtra el ruido de la mensajería en crisis (jerga, erratas, sarcasmo, rumores) y deja pasar solo las peticiones de ayuda accionables a los coordinadores humanos.</p>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin:46px 0 24px">
+      <span class="eyebrow">Blueprint de integración</span>
+      <h2 style="font-size:clamp(22px,2.6vw,30px)">Un pipeline de cuatro fases</h2>
+      <p>La recomendación de fondo no es crear otra plataforma aislada, sino conectar lo que ya existe en un flujo verificable de extremo a extremo.</p>
+    </div>
+    <div class="pipe">
+      <div class="step"><div class="num">1</div><h4>Ingesta y filtro</h4><p>Limpia voz y texto de WhatsApp y SMS y deja peticiones imperativas en JSON.</p><span class="tech">SentEMBNet + PACO</span></div>
+      <div class="step"><div class="num">2</div><h4>Traducción y acceso</h4><p>Traduce wayuunaiki, warao y pemón, con voz a texto para baja alfabetización.</p><span class="tech">UniAndes MT + Whisper</span></div>
+      <div class="step"><div class="num">3</div><h4>Resolución de identidad</h4><p>Normaliza cédulas y nombres y propone coincidencias seguras para revisión humana.</p><span class="tech">Tilores</span></div>
+      <div class="step"><div class="num">4</div><h4>Enrutado logístico</h4><p>Cruza daños de IA y red viaria para rutas de rescate conscientes de obstáculos.</p><span class="tech">ResQConnect AET</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLBOX -->
+<section id="toolbox" class="sec soft-bg">
+  <div class="wrap">
+    <div class="tb-head">
+      <span class="tag">NUESTRA TOOLBOX · PROPUESTA EN FORMACIÓN</span>
+      <h3>Dónde encajamos: cerrar la brecha, no reinventarla</h3>
+      <p>No queremos crear otro silo. Como puente Canarias–Venezuela, con socios de salud y tecnología, podemos organizar y construir piezas concretas que conectan lo que ya funciona. Lo que sigue es lo que evaluamos construir y coordinar, no sistemas ya en producción.</p>
+    </div>
+    <div class="tools">
+      <div class="tool">
+        <div class="ic">🔗</div>
+        <h4>Agregador y resolución de identidad</h4>
+        <p>Conectar los registros ciudadanos con un flujo de deduplicación seguro y verificación humana, alimentando los canales oficiales de tracing en lugar de competir con ellos.</p>
+        <span class="gapn">Cierra: fragmentación y falsos positivos</span>
+      </div>
+      <div class="tool">
+        <div class="ic">🗣️</div>
+        <h4>Puente multilingüe y de voz</h4>
+        <p>Interfaz en español e inglés, con voz primero y traducción de lenguas indígenas a partir de los modelos de la UniAndes, para no dejar fuera a las comunidades más vulnerables.</p>
+        <span class="gapn">Cierra: exclusión lingüística</span>
+      </div>
+      <div class="tool">
+        <div class="ic">🩺</div>
+        <h4>Telemedicina (Canarymedic.es)</h4>
+        <p>Red de médicos voluntarios para crónicos, salud mental y triaje a distancia, conectando la capacidad médica canaria con la demanda real, no la emergencia quirúrgica aguda.</p>
+        <span class="gapn">Cierra: continuidad sanitaria</span>
+      </div>
+      <div class="tool">
+        <div class="ic">🛡️</div>
+        <h4>Verificación y anti-desinformación</h4>
+        <p>Curación con fuentes, detección de fraude y un protocolo de coincidencia segura con revisión humana antes de dar a nadie por localizado o fallecido.</p>
+        <span class="gapn">Cierra: rumores y falsos positivos</span>
+      </div>
+      <div class="tool">
+        <div class="ic">📡</div>
+        <h4>Acceso resistente a cortes</h4>
+        <p>Contenido ligero, offline-first y espejos resistentes a bloqueos, más enlaces a conectividad de emergencia, para que la información llegue incluso con red intermitente.</p>
+        <span class="gapn">Cierra: censura e infraestructura</span>
+      </div>
+      <div class="tool">
+        <div class="ic">🧭</div>
+        <h4>Coordinación y derivación</h4>
+        <p>Dirigir a cada persona al canal correcto (Cruz Roja/ICRC para desaparecidos, ONG verificadas para dinero) y agregar la oferta de ayuda de la diáspora canaria.</p>
+        <span class="gapn">Cierra: duplicación de esfuerzos</span>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h2>¿Construyes, financias o coordinas? Súmate.</h2>
+      <p>Buscamos socios de tecnología, salud y logística para convertir esta toolbox en algo real, conectado a los canales oficiales y útil sobre el terreno.</p>
+      <a href="/" class="btn btn-primary">Apóyanos y conecta con nosotros
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <span class="wm" style="font-size:20px"><span class="b" style="color:#5b9be0">CAN</span><span class="o" style="color:#F2A900">POR</span><span class="r" style="color:#e8604f">VEN</span><span class="g">.ORG</span></span>
+    <p>Síntesis basada en evidencia de fuentes públicas (OCHA, IFRC, PAHO/WHO, Copernicus EMS, Microsoft AI for Good Lab, Humanitarian OpenStreetMap, Tilores, Translators without Borders y literatura de informática de crisis: ResQConnect/MDPI, ENV-QAS/AMCIS, SentEMBNet), actualizada a 27 de junio de 2026. Las cifras son preliminares y cambian a diario.</p>
+    <p class="dom">canariasporvenezuela.org · canporven.org</p>
+    <div class="bar">© 2026 Canarias por Venezuela · Documento informativo · Iniciativa en formación, sin garantía legal</div>
+  </div>
+</footer>
+
+</body>
+</html>
