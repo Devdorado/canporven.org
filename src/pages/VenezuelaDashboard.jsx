@@ -16,6 +16,7 @@ export default function VenezuelaDashboard() {
     : '—';
 
   return (
+    <DashboardErrorBoundary>
     <div className="min-h-screen bg-background pb-12">
       {/* Header */}
       <div className="border-b border-border bg-card">
@@ -103,5 +104,6 @@ export default function VenezuelaDashboard() {
         </div>
       </div>
     </div>
+    </DashboardErrorBoundary>
   );
 }
