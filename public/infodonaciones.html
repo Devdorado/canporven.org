@@ -338,6 +338,61 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
 .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-left:2px solid var(--linea);border-radius:0;margin:0 0 6px 14px;padding:0;min-width:0}
 .dropdown a{padding:8px 12px}
 }
+/* cooperacion */
+.coop-intro{font-size:16px;color:var(--gris);max-width:70ch;margin-top:2px}
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 28px}
+.cstep{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:20px;box-shadow:var(--sombra-l)}
+.cstep .num{width:30px;height:30px;border-radius:9px;background:var(--azul-l);color:var(--azul-d);font-family:'Plus Jakarta Sans';font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:12px}
+.cstep h4{font-size:15.5px;margin-bottom:6px}
+.cstep p{font-size:12.5px;color:var(--gris)}
+.cstep.hot{border-color:var(--oro);box-shadow:0 0 0 3px var(--oro-l),var(--sombra-l)}
+.cstep.hot .num{background:var(--oro);color:#fff}
+.cstep .tagx{display:inline-block;margin-top:9px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--oro-d);background:var(--oro-l);border-radius:6px;padding:3px 8px}
+@media(max-width:900px){.chain{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.chain{grid-template-columns:1fr}}
+.coordbox{display:flex;gap:13px;background:var(--soft);border:1px solid var(--linea);border-radius:14px;padding:16px 18px;margin-bottom:28px}
+.coordbox svg{flex:none;width:20px;height:20px;stroke:var(--azul);margin-top:2px}
+.coordbox p{font-size:13.5px;color:var(--gris)}.coordbox b{color:var(--tinta)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:30px}
+.vscard{border-radius:18px;padding:24px;border:1px solid var(--linea)}
+.vscard.yes{background:var(--verde-l);border-color:#bfe7d4}.vscard.no{background:var(--rojo-l);border-color:#f3cdc6}
+.vscard h4{font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.vscard ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.vscard li{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+.vscard li svg{flex:none;width:18px;height:18px;margin-top:2px}
+.vscard.yes li svg{stroke:var(--verde)}.vscard.no li svg{stroke:var(--rojo)}
+@media(max-width:760px){.vs{grid-template-columns:1fr}}
+.ccards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:6px}
+.ccard{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:22px;box-shadow:var(--sombra-l)}
+.ccard h4{font-size:16px;margin-bottom:3px}
+.ccard .lead{font-size:12.5px;color:var(--gris-l);margin-bottom:12px}
+.ccard .ln{display:flex;align-items:center;gap:9px;font-size:13.5px;padding:8px 0;border-top:1px solid var(--linea)}
+.ccard .ln:first-of-type{border-top:none}
+.ccard .ln svg{flex:none;width:16px;height:16px;stroke:var(--azul)}
+.ccard a.lnk{color:var(--azul);font-weight:600;word-break:break-word}
+.ccard a.lnk:hover{text-decoration:underline}
+.tels{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.tels a{font-size:13.5px;font-weight:700;color:var(--azul);background:var(--azul-l);border-radius:9px;padding:8px 12px;line-height:1.2}
+.tels a:hover{background:#d7e7fa}
+.tels .lbl{font-size:11px;color:var(--gris);display:block;font-weight:500;margin-bottom:1px}
+.iban-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+.iban{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;font-weight:600;background:var(--soft);border:1px solid var(--linea);border-radius:9px;padding:9px 12px;user-select:all}
+.copy-btn{font-size:13px;font-weight:700;color:#fff;background:var(--azul);border:none;border-radius:9px;padding:9px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.copy-btn:hover{background:var(--azul-d)}.copy-btn svg{width:15px;height:15px;stroke:#fff;fill:none}
+.bizum{font-family:'Plus Jakarta Sans';font-weight:800;font-size:20px;color:var(--azul)}
+.ong-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.ong-tags span{font-size:12px;color:var(--tinta);background:var(--soft);border:1px solid var(--linea);border-radius:7px;padding:5px 9px}
+.router-note{display:flex;gap:13px;background:var(--azul-l);border:1px solid #cfe2f5;border-radius:14px;padding:16px 18px;margin-top:22px}
+.router-note svg{flex:none;width:20px;height:20px;stroke:var(--azul);margin-top:2px}
+.router-note p{font-size:13.5px;color:#34507a}
+.taxnote{background:linear-gradient(160deg,var(--azul-d),#0a3361);color:#fff;border-radius:16px;padding:22px 24px;margin-top:18px}
+.taxnote h4{font-size:16px;margin-bottom:10px}
+.taxnote ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.taxnote li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:9px;padding:8px 12px;font-size:13px}
+.taxnote b{color:#FFCB52;font-family:'Plus Jakarta Sans'}
+.coop-foot{margin-top:26px;padding-top:18px;border-top:1px dashed var(--linea);font-size:12.5px;color:var(--gris)}
+.coop-foot .mem{margin-top:8px;color:var(--azul-d);font-style:italic}
+@media(max-width:760px){.ccards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -367,6 +422,7 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
           <a href="/infodonaciones.html#funciona">Qué funciona</a>
           <a href="/infodonaciones.html#canarias">Factor Canarias</a>
           <a href="/infodonaciones.html#actuar">Cómo actuar</a>
+          <a href="/infodonaciones.html#cooperacion">Cooperación institucional</a>
         </div>
       </li>
       <li><a href="/respuesta-digital.html">Respuesta digital <span class="caret">▾</span></a>
@@ -878,6 +934,131 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
   </div>
 </section>
 
+<!-- COOPERACIÓN INSTITUCIONAL -->
+<section id="cooperacion" class="sec soft-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cooperación institucional</span>
+      <h2>Acoplarse, no duplicar</h2>
+      <p class="coop-intro">No hace falta inventar una estructura nueva. Canarias ya tiene una cadena de ayuda que funciona. Nos acoplamos a ella aportando dinero, alcance y confianza, en vez de montar una logística paralela.</p>
+    </div>
+
+    <div class="chain">
+      <div class="cstep"><div class="num">1</div><h4>Gobierno de Canarias</h4><p>Viceconsejería de Acción Exterior (presidente Fernando Clavijo). Decide y financia programas sociales, sanitarios, de medicamentos y alimentos. Con el respaldo de FECAM y FECAI.</p></div>
+      <div class="cstep"><div class="num">2</div><h4>Delegación en Venezuela</h4><p>Gestionada por la fundación FUCAEX, con 6 oficinas descentralizadas de asesoría. Consultorios médicos, asistencia domiciliaria, atención telefónica y localización de personas registradas.</p></div>
+      <div class="cstep hot"><div class="num">3</div><h4>22 entidades canarias</h4><p>Agrupadas en Fedecanarias. Reparten en la última milla.</p><span class="tagx">La mayor red social sobre el terreno</span></div>
+      <div class="cstep"><div class="num">4</div><h4>Familias y comunidad</h4><p>Destinatarios. Unos 55.000–70.000 canarios y descendientes en Venezuela; unos 90.000 venezolanos en Canarias.</p></div>
+    </div>
+
+    <div class="coordbox">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <p>Coordinación con <b>Protección Civil del Estado</b>, el <b>Ministerio de Asuntos Exteriores</b> y el <b>Consulado General de España</b>. La 2ª fase (perfiles técnicos) solo a través de <b>CECOES / 1-1-2 Canarias</b>. Lema: <b>primero información, no molestar</b>.</p>
+    </div>
+
+    <div class="vs">
+      <div class="vscard yes">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="#1F9D6B" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Lo que aportamos</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Dinero</b> a canales verificados.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Alcance</b> y difusión en la diáspora canaria y venezolana.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Confianza</b> e información basada en evidencia.</span></li>
+        </ul>
+      </div>
+      <div class="vscard no">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="#DC2A1A" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Lo que NO hacemos</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span>No montamos una <b>logística paralela</b>.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span>No <b>recaudamos ni gestionamos</b> donaciones.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span>No hacemos <b>envíos no coordinados</b>.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin:6px 0 16px"><h3 style="font-size:21px;font-weight:800">Puntos de contacto verificados</h3></div>
+    <div class="ccards">
+      <div class="ccard">
+        <h4>Delegación del Gobierno de Canarias en Venezuela</h4>
+        <p class="lead">FUCAEX · Caracas</p>
+        <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg><a class="lnk" href="https://www.delegaciongobiernodecanariasve.org/" target="_blank" rel="noopener noreferrer">delegaciongobiernodecanariasve.org</a></div>
+        <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a class="lnk" href="mailto:delegacion@fucaex.org">delegacion@fucaex.org</a></div>
+        <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg><span>@delegaciongobiernocanariasvzla</span></div>
+        <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>6ª Avenida entre 5ª y 3ª transversal de Altamira, Caracas</span></div>
+      </div>
+      <div class="ccard">
+        <h4>Localizar a un familiar</h4>
+        <p class="lead">Números facilitados por Exteriores</p>
+        <div class="tels">
+          <a href="tel:608670628"><span class="lbl">Consulado en Canarias</span>608 670 628</a>
+          <a href="tel:915981200"><span class="lbl">Embajada de España</span>915 981 200</a>
+          <a href="tel:650817137"><span class="lbl">Madrid</span>650 817 137</a>
+          <a href="tel:650154752"><span class="lbl">Barcelona</span>650 154 752</a>
+          <a href="tel:639154752"><span class="lbl">Bilbao</span>639 154 752</a>
+          <a href="tel:672353744"><span class="lbl">Vigo</span>672 353 744</a>
+        </div>
+      </div>
+      <div class="ccard">
+        <h4>Voluntariado técnico (2ª fase)</h4>
+        <p class="lead">Solo perfiles solicitados</p>
+        <p style="font-size:13.5px;color:var(--gris)">Psicología, arquitectura técnica y trabajo social, únicamente a través de <b>CECOES / 1-1-2 Canarias</b> y los colegios profesionales. Primero información, no molestar.</p>
+      </div>
+      <div class="ccard">
+        <h4>Entidades (Fedecanarias)</h4>
+        <p class="lead">Sede de ejemplo: Hogar Canario Venezolano, Caracas</p>
+        <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg><a class="lnk" href="https://www3.gobiernodecanarias.org/aplicaciones/sentircanario/entidades-canarias-en-exterior/" target="_blank" rel="noopener noreferrer">Registro oficial: Entidades Canarias en el Exterior</a></div>
+        <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg><a class="lnk" href="https://www.gobiernodecanarias.org/accionexterior/emigracion/entidades/" target="_blank" rel="noopener noreferrer">Acción Exterior · Emigración · Entidades</a></div>
+        <p style="font-size:12px;color:var(--gris-l);margin-top:8px">Lista completa en el registro oficial; no la reproducimos para no introducir errores.</p>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin:34px 0 16px"><h3 style="font-size:21px;font-weight:800">Canales de donación verificados</h3></div>
+    <div class="ccards">
+      <div class="ccard">
+        <h4>Cáritas Diocesana de Canarias</h4>
+        <p class="lead">Bizum · concepto «Cáritas con Venezuela»</p>
+        <div class="iban-row"><span class="bizum">Bizum 38068</span></div>
+      </div>
+      <div class="ccard">
+        <h4>Cáritas Diocesana de Tenerife</h4>
+        <p class="lead">CaixaBank · IBAN</p>
+        <div class="iban-row">
+          <span class="iban">ES68 2100 6725 1022 0127 4038</span>
+          <button class="copy-btn" type="button" data-copy="ES68 2100 6725 1022 0127 4038" aria-label="Copiar IBAN"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copiar</button>
+        </div>
+      </div>
+      <div class="ccard">
+        <h4>Cáritas Española</h4>
+        <p class="lead">Campaña «Cáritas con Venezuela»</p>
+        <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg><a class="lnk" href="https://www.caritas.es/emergencias/caritas-con-venezuela/" target="_blank" rel="noopener noreferrer">caritas.es · Cáritas con Venezuela</a></div>
+      </div>
+      <div class="ccard">
+        <h4>ONG acreditadas (Fundación Lealtad)</h4>
+        <p class="lead">Ya enlazadas en esta web</p>
+        <div class="ong-tags"><span>Médicos Sin Fronteras</span><span>UNICEF España</span><span>Cruz Roja / IFRC</span><span>World Vision España</span><span>Plan International España</span><span>Educo</span><span>España con ACNUR</span><span>Médicos del Mundo</span><span>ARCORES</span><span>Fundación Chamos</span><span>Cesal</span></div>
+      </div>
+    </div>
+
+    <div class="router-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+      <p><b>canporven.org no recauda ni gestiona donaciones.</b> Solo informamos y enlazamos a canales verificados. El dinero va siempre directamente a la organización que elijas. Verifica siempre antes de donar.</p>
+    </div>
+
+    <div class="taxnote">
+      <h4>Tu donación también desgrava (España · Ley 49/2002)</h4>
+      <ul>
+        <li>Primeros 250 €: <b>80%</b></li>
+        <li>Resto: <b>40%</b></li>
+        <li>Por fidelidad (3 años): <b>45%</b></li>
+        <li>Empresas: <b>40–50%</b></li>
+      </ul>
+    </div>
+
+    <div class="coop-foot">
+      Datos verificados con fuentes públicas a 27-jun-2026; verifica antes de difundir. La situación y las cifras cambian a diario.
+      <div class="mem">En memoria de Isabel Jara, delegada del Gobierno de Canarias en Venezuela, fallecida en el seísmo.</div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="ft">
@@ -921,6 +1102,7 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </button>
 
+<script src="/copy.js"></script>
 <script>
 // progress bar
 const pb=document.getElementById('progress');
