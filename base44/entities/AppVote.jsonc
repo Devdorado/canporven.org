@@ -1,0 +1,36 @@
+{
+  "name": "AppVote",
+  "type": "object",
+  "properties": {
+    "appKey": {
+      "type": "string",
+      "title": "App Key"
+    },
+    "vote": {
+      "type": "string",
+      "enum": [
+        "up",
+        "down"
+      ],
+      "title": "Vote"
+    }
+  },
+  "required": [
+    "appKey",
+    "vote"
+  ],
+  "rls": {
+    "create": {},
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -277,6 +277,34 @@ const translations = {
   'dr.cta_report': { es: 'Leer el informe completo', en: 'Read the full report' },
   'dr.cta_doctors': { es: 'Ver médicos y servicios', en: 'See doctors and services' },
 
+  // Citizen digital solutions
+  'cds.title': { es: 'Soluciones digitales ciudadanas', en: 'Citizen digital solutions' },
+  'cds.intro': {
+    es: 'Solo recopilamos información pública que hemos encontrado. No son plataformas nuestras ni las hemos verificado; comprueba siempre antes de usarlas. Tu voto nos ayuda a destacar las más útiles.',
+    en: 'We only collect public information we have found. These are not our platforms and we have not verified them; always check before using them. Your vote helps us highlight the most useful ones.',
+  },
+  'cds.open': { es: 'Abrir', en: 'Open' },
+  'cds.app1_desc': {
+    es: 'Mapa interactivo por zonas con estado, reporte de necesidades, directorio verificado de teléfonos de emergencia por estado y guía para donar.',
+    en: 'Interactive zone-status map, needs reporting, a verified directory of emergency phones by state, and a donation guide.',
+  },
+  'cds.app2_desc': {
+    es: 'Mapa en vivo, directorio público de personas, centros de acopio, API abierta y estadísticas.',
+    en: 'Live map, public person directory, collection points, open API and statistics.',
+  },
+  'cds.app3_desc': {
+    es: 'Plataforma ultraligera optimizada para 2G/3G y equipos antiguos. Búsqueda de personas, donaciones y refugios.',
+    en: 'Ultra-light platform optimized for 2G/3G and old devices. Person search, donations and shelters.',
+  },
+  'cds.app4_desc': {
+    es: 'Hospitales, centros de acopio, donación de sangre, apoyo psicológico y teléfonos de emergencia por estado.',
+    en: 'Hospitals, collection points, blood donation, psychological support and emergency phones by state.',
+  },
+  'cds.app5_desc': {
+    es: 'Buscar personas ingresadas en hospitales; digitaliza con IA listas de pacientes escritas a mano.',
+    en: 'Search for people admitted to hospitals; AI digitizes handwritten patient lists.',
+  },
+
   // Toolbox section
   'toolbox.title': { es: 'Nuestra toolbox: cerrar la brecha', en: 'Our toolbox: closing the gap' },
   'toolbox.note': {

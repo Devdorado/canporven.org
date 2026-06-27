@@ -7,6 +7,7 @@ import MissionSection from '@/components/landing/MissionSection';
 import GetInvolvedSection from '@/components/landing/GetInvolvedSection';
 import NotifySection from '@/components/landing/NotifySection';
 import DigitalResponseSection from '@/components/landing/DigitalResponseSection';
+import CitizenSolutionsSection from '@/components/landing/CitizenSolutionsSection';
 import ToolboxSection from '@/components/landing/ToolboxSection';
 import ShareSection from '@/components/landing/ShareSection';
 import PartnersSection from '@/components/landing/PartnersSection';
@@ -24,6 +25,7 @@ export default function Home() {
           <GetInvolvedSection />
           <NotifySection />
           <DigitalResponseSection />
+          <CitizenSolutionsSection />
           <ToolboxSection />
           <ShareSection />
           <PartnersSection />
