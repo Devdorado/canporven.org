@@ -43,7 +43,7 @@ export default function DigitalResponseSection() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="/respuesta-digital"
+            href="/respuesta-digital.html"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base bg-[#1565C0] text-white hover:bg-[#1255A0] transition-colors min-h-[48px]"
           >
             <FileText size={18} />

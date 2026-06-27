@@ -10,8 +10,8 @@ export default function Header() {
     { key: 'nav.mission', href: '#mision' },
     { key: 'nav.doctors', href: '#sumate' },
     { key: 'nav.notify', href: '#aviso' },
-    { key: 'nav.digital', href: '/respuesta-digital' },
-    { key: 'nav.help', href: '/infodonaciones' },
+    { key: 'nav.digital', href: '/respuesta-digital.html' },
+    { key: 'nav.help', href: '/infodonaciones.html' },
   ];
 
   return (

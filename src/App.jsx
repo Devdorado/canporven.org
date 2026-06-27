@@ -7,8 +7,6 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
-import InfoDonaciones from './pages/InfoDonaciones';
-import RespuestaDigital from './pages/RespuestaDigital';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -38,8 +36,6 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/infodonaciones" element={<InfoDonaciones />} />
-      <Route path="/respuesta-digital" element={<RespuestaDigital />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
