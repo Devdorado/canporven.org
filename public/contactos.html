@@ -110,6 +110,23 @@ a.tel svg{width:14px;height:14px;stroke:#14774f;fill:none}
 .ft p{font-size:13px;color:#9fb0c6;max-width:84ch;margin-top:12px;line-height:1.6}
 .ft .dom{margin-top:10px;font-weight:600;color:#e7eefa;font-size:13.5px}
 .ft .bar{border-top:1px solid rgba(255,255,255,.1);margin-top:22px;padding-top:18px;font-size:12px;color:#7d8da6}
+.jumpnav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;position:sticky;top:72px;z-index:40;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);padding:6px 0}
+.jumpnav a{font-size:13px;font-weight:700;color:var(--azul-d);background:var(--azul-l);border:1px solid #cfe2f5;border-radius:100px;padding:8px 15px}
+.jumpnav a:hover{background:#d7e7fa}
+.note-warn{display:flex;gap:12px;background:var(--oro-l);border:1px solid #f1ddae;border-radius:14px;padding:15px 18px;margin:0 0 18px}
+.note-warn svg{flex:none;width:20px;height:20px;stroke:var(--oro-d);margin-top:2px;fill:none}
+.note-warn p{font-size:13px;color:#6b541a}
+.note-warn a{color:var(--azul);font-weight:700}
+.estado-h{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:800;margin:22px 0 12px;color:var(--azul-d)}
+.grav{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;border-radius:6px;padding:3px 8px}
+.grav.epi{background:var(--rojo);color:#fff}
+.grav.muy{background:var(--rojo-l);color:var(--rojo-d)}
+.ent .loc-line{font-size:12.5px;color:var(--gris);display:flex;gap:7px;align-items:flex-start}
+.ent .loc-line svg{flex:none;width:15px;height:15px;stroke:var(--rojo);margin-top:2px;fill:none}
+a.mailx{font-size:12.5px;font-weight:600;color:var(--azul);word-break:break-all;display:inline-flex;align-items:center;gap:6px}
+a.mailx:hover{text-decoration:underline}
+a.mailx svg{flex:none;width:14px;height:14px;stroke:var(--azul);fill:none}
+.noinc{font-size:12.5px;color:var(--gris-l);margin-top:18px;max-width:84ch}
 </style>
 </head>
 <body>
@@ -159,7 +176,12 @@ a.tel svg{width:14px;height:14px;stroke:#14774f;fill:none}
 <section class="sec" id="contactos">
   <div class="wrap">
 
-    <div class="cat-h"><span class="cnum" style="background:var(--rojo)">SOS</span><h2><span class="es">Teléfonos de emergencia (Venezuela)</span><span class="en">Emergency phones (Venezuela)</span></h2></div>
+    <div class="jumpnav">
+      <a href="#emergencias"><span class="es">Emergencias</span><span class="en">Emergency</span></a>
+      <a href="#entidades"><span class="es">Entidades en la zona</span><span class="en">Entities in the area</span></a>
+      <a href="#donar"><span class="es">Canales de donación</span><span class="en">Donation channels</span></a>
+    </div>
+    <div class="cat-h" id="emergencias"><span class="cnum" style="background:var(--rojo)">SOS</span><h2><span class="es">Teléfonos de emergencia (Venezuela)</span><span class="en">Emergency phones (Venezuela)</span></h2></div>
     <p class="foc" style="max-width:72ch;margin:-6px 0 16px"><span class="es">Líneas nacionales. Pueden estar saturadas; verifica antes de llamar. Toca un número para marcar.</span><span class="en">National lines. They may be overloaded; verify before calling. Tap a number to dial.</span></p>
     <div class="grid">
       <div class="org">
@@ -199,7 +221,70 @@ a.tel svg{width:14px;height:14px;stroke:#14774f;fill:none}
       </div>
     </div>
 
-    <div class="cat-h"><span class="cnum">A</span><h2><span class="es">Desde Canarias</span><span class="en">From the Canary Islands</span></h2></div>
+    <div class="cat-h" id="entidades"><span class="cnum">VZ</span><h2><span class="es">Entidades canarias en la zona afectada</span><span class="en">Canarian entities in the affected area</span></h2></div>
+    <p class="foc" style="max-width:82ch;margin:-6px 0 14px"><span class="es">Solo estados con emergencia declarada, ordenadas por gravedad (Yaracuy, epicentro → La Guaira y Caracas → resto). Fuente: registro «Entidades Canarias en el Exterior», Gobierno de Canarias.</span><span class="en">Only states with a declared emergency, ordered by severity (Yaracuy, epicenter → La Guaira and Caracas → rest). Source: «Entidades Canarias en el Exterior» registry, Government of the Canary Islands.</span></p>
+    <div class="note-warn">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <p><span class="es">Los datos del registro pueden estar desactualizados (direcciones antiguas de cantv.net/terra). En la zona del seísmo (sobre todo La Guaira y Caracas) las sedes pueden estar dañadas o no operativas. Verifica con la Delegación <a href="mailto:delegacion@fucaex.org">delegacion@fucaex.org</a> antes de usarlas.</span><span class="en">Registry data may be outdated (old cantv.net/terra addresses). In the earthquake zone (especially La Guaira and Caracas) premises may be damaged or unreachable. Verify with the Delegación <a href="mailto:delegacion@fucaex.org">delegacion@fucaex.org</a> before using them.</span></p>
+    </div>
+
+    <h3 class="estado-h">Yaracuy <span class="grav epi"><span class="es">Epicentro</span><span class="en">Epicenter</span></span></h3>
+    <div class="grid">
+      <div class="org ent"><h3>Hogar Hispano del Yaracuy</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>San Felipe · Callejón La Mosca, entre Avdas. Cedeño y Yaracuy</p><div class="tels"><a class="tel" href="tel:+584124542682">+58 412 454 2682</a></div><a class="mailx" href="mailto:hogarhyaracuy@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hogarhyaracuy@hotmail.com</a></div>
+    </div>
+
+    <h3 class="estado-h">La Guaira (Vargas) <span class="grav muy"><span class="es">Muy afectado</span><span class="en">Heavily hit</span></span></h3>
+    <div class="grid">
+      <div class="org ent"><h3>Unión Canaria de Venezuela</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Macuto · 1ª Transversal, Urb. Punta Brisas, Sector Las 15 Letras</p><div class="tels"><a class="tel" href="tel:+582123375572">+58 212 337 5572 (ext. 11)</a></div><a class="mailx" href="mailto:acunioncanariadevenezuela@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>acunioncanariadevenezuela@hotmail.com</a></div>
+      <div class="org ent"><h3>Club Social y Deportivo Canario Venezolano Las Tunitas</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Catia la Mar · Avda. Principal Las Tunitas, Carretera Carayaca, entre 4ª y 5ª Loma</p><div class="tels"><a class="tel" href="tel:+582123537575">+58 212 353 7575</a></div><a class="mailx" href="mailto:centrocanariovzlanolastunitas@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>centrocanariovzlanolastunitas@gmail.com</a></div>
+    </div>
+
+    <h3 class="estado-h">Caracas (Distrito Capital) <span class="grav muy"><span class="es">Muy afectado</span><span class="en">Heavily hit</span></span></h3>
+    <div class="grid">
+      <div class="org ent"><h3>Federación de Centros Canarios (Fedecanarias)</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Libertador · Avda. Santander, sede Hogar Canario Venezolano</p><div class="tels"><a class="tel" href="tel:+582124425742">+58 212 442 5742</a><a class="tel" href="tel:+582129441074">+58 212 944 1074</a><a class="tel" href="tel:+584142430477">+58 414 243 0477</a></div><a class="mailx" href="mailto:fedecanarias@terra.com.ve"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>fedecanarias@terra.com.ve</a><a class="mailx" href="mailto:josefinabenitez@cantv.net"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>josefinabenitez@cantv.net</a></div>
+      <div class="org ent"><h3>Hogar Canario Venezolano</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>El Paraíso · Avda. Santander</p><div class="tels"><a class="tel" href="tel:+584122821741">+58 412 282 1741</a></div><a class="mailx" href="mailto:hogarcanariov@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hogarcanariov@gmail.com</a></div>
+      <div class="org ent"><h3>Club Social Archipiélago Canario</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>El Paraíso · Avenida El Ejército, Quinta El Farolito</p><div class="tels"><a class="tel" href="tel:+582124814817">+58 212 481 4817</a></div><a class="mailx" href="mailto:csarchipielagovzla@cantv.net"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>csarchipielagovzla@cantv.net</a></div>
+      <div class="org ent"><h3>A. C. Amigos de Garoé</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Alto Pinar · Av. José Antonio Páez, Resid. Carolina, ofic. 3</p><div class="tels"><a class="tel" href="tel:+582124519137">+58 212 451 9137</a></div><a class="mailx" href="mailto:amigosdelgaroe@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>amigosdelgaroe@gmail.com</a></div>
+      <div class="org ent"><h3>Fundación de Emigrantes Canarios</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>La Candelaria · Avda. Urdaneta, Centro Financiero Latino, piso 12, ofic. 8</p><div class="tels"><a class="tel" href="tel:+582126199301">+58 212 619 9301</a></div><a class="mailx" href="mailto:fecan.contacto@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>fecan.contacto@gmail.com</a></div>
+      <div class="org ent"><h3>Asociación Amigos Icodenses</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>El Pinar · Avenida B, Quinta Analiska</p><div class="tels"><a class="tel" href="tel:+582124517004">+58 212 451 7004</a></div><a class="mailx" href="mailto:icodensesvzla@cantv.net"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>icodensesvzla@cantv.net</a></div>
+    </div>
+
+    <h3 class="estado-h">Miranda</h3>
+    <div class="grid">
+      <div class="org ent"><h3>A. Hijos y Amigos Virgen del Pino (Gran Canaria)</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Sucre (Los Ruices) · Edif. Centro Empresarial Miranda, piso 4, ofic. 4K</p><div class="tels"><a class="tel" href="tel:+582122383649">+58 212 238 3649</a></div><a class="mailx" href="mailto:acvirgendelpino@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>acvirgendelpino@gmail.com</a></div>
+      <div class="org ent"><h3>Fundación Garajonay</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Chacao · Avda. Fco. de Miranda, Edificio Punta Brava, piso 6, ofic. 11</p><div class="tels"><a class="tel" href="tel:+584127371440">+58 412 737 1440</a></div><a class="mailx" href="mailto:fundagarajonay@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>fundagarajonay@hotmail.com</a></div>
+    </div>
+
+    <h3 class="estado-h">Aragua</h3>
+    <div class="grid">
+      <div class="org ent"><h3>Centro Hispano Venezolano de Aragua</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Maracay · Av. Intercomunal Santiago Mariño, parcelas 29 y 30, La Providencia</p><div class="tels"><a class="tel" href="tel:+582432691306">+58 243 269 1306</a><a class="tel" href="tel:+582432691307">+58 243 269 1307</a></div><a class="mailx" href="mailto:chavadministracion@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>chavadministracion@gmail.com</a></div>
+      <div class="org ent"><h3>Centro Hispano de Villa de Cura</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Villa de Cura (Zamora) · Avda. Paradisi, nº 48</p><div class="tels"><a class="tel" href="tel:+582443862130">+58 244 386 2130</a><a class="tel" href="tel:+582443864213">+58 244 386 4213</a></div><a class="mailx" href="mailto:chvilladecura@cantv.net"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>chvilladecura@cantv.net</a></div>
+      <div class="org ent"><h3>Club Social y Deportivo Palo Negro</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Palo Negro (Libertador) · Av. Bermúdez c/c Rivas Dávila, nº 29-1</p><div class="tels"><a class="tel" href="tel:+582432672435">+58 243 267 2435</a></div><a class="mailx" href="mailto:clubsocialpalonegro@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>clubsocialpalonegro@gmail.com</a></div>
+      <div class="org ent"><h3>Sociedad Nuestra Señora de la Candelaria</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Cagua (Sucre) · Prolongación Avenida Bolívar s/n, La Carpiera</p><div class="tels"><a class="tel" href="tel:+582444479278">+58 244 447 9278</a></div><a class="mailx" href="mailto:sociedadlacandelaria_cagua@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>sociedadlacandelaria_cagua@hotmail.com</a></div>
+      <div class="org ent"><h3>Hermandad Nuestra Señora de las Nieves</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Cagua · Avenida Henry Pittier, Urb. Santa Rosalía</p><div class="tels"><a class="tel" href="tel:+584143439769">+58 414 343 9769</a></div><a class="mailx" href="mailto:hermandadelasnieves@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hermandadelasnieves@hotmail.com</a></div>
+      <div class="org ent"><h3>Fundación Canaria Nuestra Señora de las Nieves</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Cagua · Urb. La Ciudadela, Carretera Cagua vía S/C de Aragua</p><div class="tels"><a class="tel" href="tel:+582443964660">+58 244 396 4660</a></div><a class="mailx" href="mailto:funcan.s.lasnieves@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>funcan.s.lasnieves@hotmail.com</a></div>
+    </div>
+
+    <h3 class="estado-h">Carabobo</h3>
+    <div class="grid">
+      <div class="org ent"><h3>Hogar Hispano de Valencia</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Naguanagua · Av. Hispanidad, Redoma de Guaparo</p><div class="tels"><a class="tel" href="tel:+582453412025">+58 245 341 2025</a><a class="tel" href="tel:+582453412520">+58 245 341 2520</a></div><a class="mailx" href="mailto:hogarhispano@cantv.net"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hogarhispano@cantv.net</a><a class="mailx" href="mailto:hogarhispanovalencia@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hogarhispanovalencia@hotmail.com</a></div>
+    </div>
+
+    <h3 class="estado-h">Lara</h3>
+    <div class="grid">
+      <div class="org ent"><h3>Hogar Canario Larense</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Barquisimeto (Iribarren) · Avda. La Salle con Av. Las Industrias</p><div class="tels"><a class="tel" href="tel:+584145230302">+58 414 523 0302</a></div><a class="mailx" href="mailto:hocalar2018@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hocalar2018@gmail.com</a></div>
+      <div class="org ent"><h3>Hermandad Canario Venezolana</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Quíbor (Jiménez) · Km. 3 vía a Sanare, Sector San Antonio</p><div class="tels"><a class="tel" href="tel:+584143526201">+58 414 352 6201</a></div><a class="mailx" href="mailto:eduroli@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>eduroli@hotmail.com</a></div>
+    </div>
+
+    <h3 class="estado-h">Falcón</h3>
+    <div class="grid">
+      <div class="org ent"><h3>Hogar Canario Venezolano de Coro</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Coro (Colina) · Avda. Intercomunal Coro–La Vela, Sector Los Olivos</p><div class="tels"><a class="tel" href="tel:+582684113080">+58 268 411 3080</a></div><a class="mailx" href="mailto:hcvcoro@gmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hcvcoro@gmail.com</a></div>
+      <div class="org ent"><h3>Centro Hispano de Instrucción y Deportes de Punto Fijo</h3><p class="loc-line"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Punto Fijo (Carirubana) · Avda. Doña Emilia Díaz, Sector Los Caciques</p><div class="tels"><a class="tel" href="tel:+582692455445">+58 269 245 5445</a></div><a class="mailx" href="mailto:centrohispano-pf@hotmail.com"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>centrohispano-pf@hotmail.com</a></div>
+    </div>
+
+    <p class="noinc"><span class="es"><b>No incluidas</b> (fuera de la zona de emergencia declarada): Cojedes (San Carlos), Anzoátegui (El Tigre), Monagas (Maturín), Guárico (Altagracia de Orituco; Valle de la Pascua), Portuguesa (Acarigua), Mérida (FUNCAMER; Hogar Canario de Mérida). Trujillo: sin entidades en el registro.</span><span class="en"><b>Not included</b> (outside the declared emergency area): Cojedes (San Carlos), Anzoátegui (El Tigre), Monagas (Maturín), Guárico (Altagracia de Orituco; Valle de la Pascua), Portuguesa (Acarigua), Mérida (FUNCAMER; Hogar Canario de Mérida). Trujillo: no entities in the registry.</span></p>
+
+    <div class="cat-h" id="donar"><span class="cnum">A</span><h2><span class="es">Desde Canarias</span><span class="en">From the Canary Islands</span></h2></div>
     <div class="grid">
       <div class="org">
         <h3>Cáritas Diocesana de Canarias</h3>
