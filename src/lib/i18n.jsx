@@ -243,6 +243,21 @@ const translations = {
     es: 'Te avisaremos en cuanto estemos listos. Gracias por tu interés.',
     en: 'We\'ll notify you as soon as we\'re ready. Thank you for your interest.',
   },
+  'notify.benefit1_title': { es: 'Por email', en: 'By email' },
+  'notify.benefit1_text': {
+    es: 'Recibe notificaciones importantes directamente en tu correo.',
+    en: 'Get important notifications straight to your inbox.',
+  },
+  'notify.benefit2_title': { es: 'Por WhatsApp', en: 'By WhatsApp' },
+  'notify.benefit2_text': {
+    es: 'Avisos rápidos y actualizaciones en tu móvil.',
+    en: 'Quick alerts and updates on your phone.',
+  },
+  'notify.benefit3_title': { es: 'Información verificada', en: 'Verified information' },
+  'notify.benefit3_text': {
+    es: 'Solo te escribiremos cuando todo esté listo y verificado.',
+    en: 'We only reach out when everything is ready and verified.',
+  },
 
   // Share
   'share.title': { es: 'Comparte esta página', en: 'Share This Page' },
