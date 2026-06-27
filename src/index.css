@@ -116,3 +116,37 @@ html {
 /* Soft borders that used the blue tint become lighter in dark */
 .dark .border-\[\#1565C0\]\/10 { border-color: rgba(255,255,255,0.08) !important; }
 .dark .border-\[\#1565C0\]\/30 { border-color: rgba(255,255,255,0.2) !important; }
+
+/* ----- Contrast fixes in dark mode ----- */
+/* Muted/secondary text built as #121212 with opacity is unreadable on dark.
+   Remap to light tints with the matching emphasis. */
+.dark .text-\[\#121212\]\/40,
+.dark .text-\[\#121212\]\/50 { color: rgba(232,238,246,0.55) !important; }
+.dark .text-\[\#121212\]\/60,
+.dark .text-\[\#121212\]\/70,
+.dark .text-\[\#121212\]\/75 { color: rgba(232,238,246,0.72) !important; }
+.dark .text-\[\#121212\]\/80 { color: rgba(232,238,246,0.85) !important; }
+
+/* Blue secondary text */
+.dark .text-\[\#1565C0\]\/80 { color: rgba(91,155,224,0.85) !important; }
+.dark .text-\[\#1565C0\]\/40 { color: rgba(91,155,224,0.6) !important; }
+
+/* Generic muted greys */
+.dark .text-gray-500,
+.dark .text-slate-500 { color: rgba(232,238,246,0.6) !important; }
+.dark .text-gray-600,
+.dark .text-slate-600 { color: rgba(232,238,246,0.72) !important; }
+
+/* Grey borders -> subtle light borders */
+.dark .border-gray-200,
+.dark .border-slate-200 { border-color: rgba(255,255,255,0.1) !important; }
+.dark .border-gray-300,
+.dark .border-slate-300 { border-color: rgba(255,255,255,0.18) !important; }
+
+/* Faint blue tint surfaces (hover/badge bg) get a bit more presence on dark */
+.dark .bg-\[\#1565C0\]\/5 { background-color: rgba(91,155,224,0.1) !important; }
+.dark .bg-\[\#1565C0\]\/10 { background-color: rgba(91,155,224,0.16) !important; }
+
+/* Gold warning text needs lifting on dark */
+.dark .text-\[\#9A6E00\],
+.dark .text-\[\#C48F00\] { color: #f0c14b !important; }
