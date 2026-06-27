@@ -13,30 +13,36 @@ const BLUE = '#1763B0';
 const RED = '#E23124';
 const YELLOW = '#F5B301';
 
-// tone: 'yellow' = operational focus, 'red' = potential
+const GRAY = '#9CA3AF';
+
+// tone drives the connector line + the "closes" badge color
 const tones = {
   yellow: {
     line: YELLOW,
-    tile: 'bg-[#F5B301]/15',
-    icon: 'text-[#C48F00]',
-    title: 'text-[#9A6E00]',
+    badge: 'bg-[#F5B301]/20 text-[#9A6E00]',
+  },
+  blue: {
+    line: BLUE,
+    badge: 'bg-[#1763B0]/15 text-[#1763B0]',
+  },
+  gray: {
+    line: GRAY,
+    badge: 'bg-gray-200 text-gray-600',
   },
   red: {
     line: RED,
-    tile: 'bg-[#E23124]/12',
-    icon: 'text-[#E23124]',
-    title: 'text-[#0F2747]',
+    badge: 'bg-[#E23124]/12 text-[#E23124]',
   },
 };
 
 // Nodes in the user's requested order. side/row drive desktop layout.
 const nodes = [
-  { id: 'n1', icon: Fingerprint, titleKey: 'toolbox.card1_title', descKey: 'toolbox.card1_desc', closeKey: 'toolbox.card1_close', side: 'left', row: 0, tone: 'red' },
-  { id: 'n2', icon: ShieldCheck, titleKey: 'toolbox.card4_title', descKey: 'toolbox.card4_desc', closeKey: 'toolbox.card4_close', side: 'left', row: 1, tone: 'red' },
-  { id: 'n3', icon: WifiOff, titleKey: 'toolbox.card5_title', descKey: 'toolbox.card5_desc', closeKey: 'toolbox.card5_close', side: 'left', row: 2, tone: 'red' },
-  { id: 'n4', icon: Languages, titleKey: 'toolbox.card2_title', descKey: 'toolbox.card2_desc', closeKey: 'toolbox.card2_close', side: 'right', row: 0, tone: 'red' },
-  { id: 'n5', icon: MonitorSmartphone, titleKey: 'toolbox.card3_title', descKey: 'toolbox.card3_desc', closeKey: 'toolbox.card3_close', side: 'right', row: 1, tone: 'yellow' },
-  { id: 'n6', icon: Users, titleKey: 'toolbox.card6_title', descKey: 'toolbox.card6_desc', closeKey: 'toolbox.card6_close', side: 'right', row: 2, tone: 'yellow' },
+  { id: 'n1', icon: Fingerprint, titleKey: 'toolbox.card1_title', descKey: 'toolbox.card1_desc', closeKey: 'toolbox.card1_close', side: 'left', row: 0, tone: 'gray' },
+  { id: 'n2', icon: ShieldCheck, titleKey: 'toolbox.card4_title', descKey: 'toolbox.card4_desc', closeKey: 'toolbox.card4_close', side: 'left', row: 1, tone: 'gray' },
+  { id: 'n3', icon: WifiOff, titleKey: 'toolbox.card5_title', descKey: 'toolbox.card5_desc', closeKey: 'toolbox.card5_close', side: 'left', row: 2, tone: 'gray' },
+  { id: 'n4', icon: Languages, titleKey: 'toolbox.card2_title', descKey: 'toolbox.card2_desc', closeKey: 'toolbox.card2_close', side: 'right', row: 0, tone: 'gray' },
+  { id: 'n5', icon: MonitorSmartphone, titleKey: 'toolbox.card3_title', descKey: 'toolbox.card3_desc', closeKey: 'toolbox.card3_close', side: 'right', row: 1, tone: 'blue', statusKey: 'toolbox.status_telemedicina' },
+  { id: 'n6', icon: Users, titleKey: 'toolbox.card6_title', descKey: 'toolbox.card6_desc', closeKey: 'toolbox.card6_close', side: 'right', row: 2, tone: 'yellow', statusKey: 'toolbox.status_coordinacion' },
 ];
 
 // SVG geometry (viewBox 1000 x 620). Hub center ~ (500, 310).
@@ -75,14 +81,17 @@ function NodeCard({ node, active, onActivate, onLeave }) {
           : 'shadow-sm border-gray-200 hover:shadow-md'
       }`}
     >
-      <div className={`w-11 h-11 rounded-xl ${tone.tile} flex items-center justify-center mb-3`}>
-        <Icon size={22} className={tone.icon} />
+      <div className="w-11 h-11 rounded-xl bg-[#1763B0]/10 flex items-center justify-center mb-3">
+        <Icon size={22} className="text-[#1763B0]" />
       </div>
-      <h3 className={`font-bold ${tone.title} mb-1.5 leading-tight`}>{t(node.titleKey, lang)}</h3>
+      <h3 className="font-bold text-[#0F2747] mb-1.5 leading-tight">{t(node.titleKey, lang)}</h3>
       <p className="text-sm text-gray-500 mb-3 leading-snug">{t(node.descKey, lang)}</p>
-      <span className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-[#F5B301]/20 text-[#9A6E00]">
+      <span className={`inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full ${tone.badge}`}>
         {t('toolbox.closes_label', lang)}: {t(node.closeKey, lang)}
       </span>
+      {node.statusKey && (
+        <p className="mt-2 text-xs italic text-gray-500 leading-snug">{t(node.statusKey, lang)}</p>
+      )}
     </button>
   );
 }

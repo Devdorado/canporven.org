@@ -304,6 +304,11 @@ const translations = {
   'toolbox.card6_desc': { es: 'Canaliza esfuerzos sin duplicar trabajo.', en: 'Channels efforts without duplicating work.' },
   'toolbox.card6_close': { es: 'duplicación de esfuerzos', en: 'duplicated effort' },
   'toolbox.cta_partner': { es: 'Conviértete en socio', en: 'Become a partner' },
+  'toolbox.status_telemedicina': { es: 'Listo en 48 h', en: 'Ready in 48 h' },
+  'toolbox.status_coordinacion': {
+    es: 'Actualmente coordinando entre diferentes voluntarios',
+    en: 'Currently coordinating among different volunteers',
+  },
 
   // Nav: Digital Response
   'nav.digital': { es: 'Respuesta digital', en: 'Digital response' },
