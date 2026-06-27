@@ -1,4 +1,6 @@
 import React from 'react';
+import { useVenezuelaUpdatedAt } from '@/hooks/useVenezuelaData';
+import { Clock } from 'lucide-react';
 import StatsCards from '@/components/venezuela/StatsCards';
 import VenezuelaMap from '@/components/venezuela/VenezuelaMap';
 import PersonSearch from '@/components/venezuela/PersonSearch';
@@ -7,6 +9,11 @@ import ReportsList from '@/components/venezuela/ReportsList';
 import DamageValidation from '@/components/venezuela/DamageValidation';
 
 export default function VenezuelaDashboard() {
+  const { updatedAt } = useVenezuelaUpdatedAt();
+  const updatedLabel = updatedAt
+    ? new Date(updatedAt).toLocaleString('es-ES', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })
+    : '—';
+
   return (
     <div className="min-h-screen bg-background pb-12">
       {/* Header */}
@@ -27,6 +34,10 @@ export default function VenezuelaDashboard() {
                 >
                   SOS Venezuela 2026
                 </a>
+              </p>
+              <p className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Clock className="w-3.5 h-3.5" />
+                Última actualización: {updatedLabel}
               </p>
             </div>
             <a
@@ -81,6 +92,9 @@ export default function VenezuelaDashboard() {
             <a href="https://desaparecidosterremotovenezuela.com" target="_blank" rel="noopener noreferrer" className="text-primary underline">
               Vermisste
             </a>
+          </p>
+          <p className="mt-1">
+            Datos de SOS Venezuela 2026, Apoyo Venezuela y ApoyoVzla — iniciativas ciudadanas sin afiliación política.
           </p>
           <p className="mt-1">
             Die Daten werden von der Community gemeldet. Bitte vor Handlung verifizieren. Bei Lebensgefahr: 911.

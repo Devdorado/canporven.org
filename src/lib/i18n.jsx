@@ -410,6 +410,15 @@ const translations = {
   'mfooter.bottom_note': { es: 'Iniciativa ciudadana privada en formación, sin garantía legal.', en: 'Private citizen initiative in formation, with no legal guarantee.' },
   'mfooter.bottom_copy': { es: '© 2026 Canarias por Venezuela', en: '© 2026 Canarias por Venezuela' },
 
+  // Venezuela live CTA
+  'vzla.badge': { es: '🔴 En vivo', en: '🔴 Live' },
+  'vzla.cta_title': { es: 'Terremoto de Venezuela', en: 'Venezuela earthquake' },
+  'vzla.cta_desc': {
+    es: 'Mapa de reportes, personas desaparecidas y noticias actualizadas. Datos de iniciativas ciudadanas.',
+    en: 'Map of reports, missing persons and updated news. Data from citizen initiatives.',
+  },
+  'vzla.cta_button': { es: 'Mapa y situación en vivo', en: 'Live map and situation' },
+
   // Misc
   'required': { es: 'Obligatorio', en: 'Required' },
   'select_options': { es: 'Selecciona opciones', en: 'Select options' },

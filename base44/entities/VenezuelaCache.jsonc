@@ -1,0 +1,62 @@
+{
+  "name": "VenezuelaCache",
+  "type": "object",
+  "properties": {
+    "cacheKey": {
+      "type": "string",
+      "default": "main",
+      "title": "Cache Key"
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "default": [],
+      "title": "Reports"
+    },
+    "stats": {
+      "type": "object",
+      "default": {},
+      "title": "Stats"
+    },
+    "news": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "default": [],
+      "title": "News"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Updated At"
+    },
+    "source": {
+      "type": "string",
+      "title": "Source"
+    }
+  },
+  "required": [
+    "cacheKey"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

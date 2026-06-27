@@ -3,6 +3,7 @@ import { LangProvider } from '@/lib/i18n.jsx';
 import AlphaBanner from '@/components/landing/AlphaBanner';
 import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
+import VenezuelaCTA from '@/components/landing/VenezuelaCTA';
 import MissionSection from '@/components/landing/MissionSection';
 import GetInvolvedSection from '@/components/landing/GetInvolvedSection';
 import NotifySection from '@/components/landing/NotifySection';
@@ -21,6 +22,7 @@ export default function Home() {
         <Header />
         <main>
           <Hero />
+          <VenezuelaCTA />
           <MissionSection />
           <GetInvolvedSection />
           <NotifySection />
