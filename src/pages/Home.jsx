@@ -6,6 +6,8 @@ import Hero from '@/components/landing/Hero';
 import MissionSection from '@/components/landing/MissionSection';
 import DoctorForm from '@/components/landing/DoctorForm';
 import NotifySection from '@/components/landing/NotifySection';
+import DigitalResponseSection from '@/components/landing/DigitalResponseSection';
+import ToolboxSection from '@/components/landing/ToolboxSection';
 import ShareSection from '@/components/landing/ShareSection';
 import PartnersSection from '@/components/landing/PartnersSection';
 import Footer from '@/components/landing/Footer';
@@ -21,6 +23,8 @@ export default function Home() {
           <MissionSection />
           <DoctorForm />
           <NotifySection />
+          <DigitalResponseSection />
+          <ToolboxSection />
           <ShareSection />
           <PartnersSection />
         </main>

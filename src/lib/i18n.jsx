@@ -128,6 +128,45 @@ const translations = {
   'share.copied': { es: '¡Enlace copiado!', en: 'Link copied!' },
   'share.copy': { es: 'Copiar enlace', en: 'Copy link' },
 
+  // Digital Response section
+  'dr.title': { es: 'La respuesta digital al terremoto', en: 'The digital response to the earthquake' },
+  'dr.abstract': {
+    es: 'Junto al rescate físico ocurre otra respuesta: alertas en el móvil, satélites e IA que mapean daños, y plataformas ciudadanas que buscan a más de 50.000 desaparecidos. Hemos mapeado ese ecosistema digital, sus grietas y dónde encaja una iniciativa como la nuestra.',
+    en: 'Alongside the physical rescue, another response is unfolding: phone alerts, satellites and AI mapping damage, and citizen platforms searching for 50,000+ missing people. We mapped that digital ecosystem, its gaps, and where an initiative like ours fits.',
+  },
+  'dr.cta_report': { es: 'Leer el informe completo', en: 'Read the full report' },
+  'dr.cta_doctors': { es: 'Ver médicos y servicios', en: 'See doctors and services' },
+
+  // Toolbox section
+  'toolbox.title': { es: 'Nuestra toolbox: cerrar la brecha', en: 'Our toolbox: closing the gap' },
+  'toolbox.note': {
+    es: 'Propuestas en formación (Alpha) que conectan herramientas existentes en lugar de reinventarlas.',
+    en: 'Proposals in formation (Alpha) that connect existing tools instead of reinventing them.',
+  },
+  'toolbox.closes_label': { es: 'cierra', en: 'closes' },
+  'toolbox.card1_title': { es: 'Agregador y resolución de identidad', en: 'Aggregator and identity resolution' },
+  'toolbox.card1_desc': { es: 'Unifica identidades dispersas y reduce duplicados.', en: 'Unifies scattered identities and reduces duplicates.' },
+  'toolbox.card1_close': { es: 'fragmentación y falsos positivos', en: 'fragmentation and false positives' },
+  'toolbox.card2_title': { es: 'Puente multilingüe y de voz', en: 'Multilingual and voice bridge' },
+  'toolbox.card2_desc': { es: 'Traducción y acceso por voz para todos.', en: 'Translation and voice access for everyone.' },
+  'toolbox.card2_close': { es: 'exclusión lingüística', en: 'linguistic exclusion' },
+  'toolbox.card3_title': { es: 'Telemedicina (Canarymedic.es)', en: 'Telemedicine (Canarymedic.es)' },
+  'toolbox.card3_desc': { es: 'Atención médica remota y continua.', en: 'Remote and continuous healthcare.' },
+  'toolbox.card3_close': { es: 'continuidad sanitaria', en: 'healthcare continuity' },
+  'toolbox.card4_title': { es: 'Verificación y anti-desinformación', en: 'Verification and anti-misinformation' },
+  'toolbox.card4_desc': { es: 'Valida fuentes y frena rumores.', en: 'Validates sources and curbs rumors.' },
+  'toolbox.card4_close': { es: 'rumores y falsos positivos', en: 'rumors and false positives' },
+  'toolbox.card5_title': { es: 'Acceso resistente a cortes', en: 'Outage-resistant access' },
+  'toolbox.card5_desc': { es: 'Funciona incluso con infraestructura débil.', en: 'Works even with weak infrastructure.' },
+  'toolbox.card5_close': { es: 'censura e infraestructura', en: 'censorship and infrastructure' },
+  'toolbox.card6_title': { es: 'Coordinación y derivación', en: 'Coordination and referral' },
+  'toolbox.card6_desc': { es: 'Canaliza esfuerzos sin duplicar trabajo.', en: 'Channels efforts without duplicating work.' },
+  'toolbox.card6_close': { es: 'duplicación de esfuerzos', en: 'duplicated effort' },
+  'toolbox.cta_partner': { es: 'Conviértete en socio', en: 'Become a partner' },
+
+  // Nav: Digital Response
+  'nav.digital': { es: 'Respuesta digital', en: 'Digital response' },
+
   // Partners section
   'partners.title': { es: 'Organizaciones, empresas y personas que nos apoyan', en: 'Organizations, companies and people who support us' },
   'partners.subtitle': { es: 'Una alianza en construcción de tecnología, salud y voluntariado.', en: 'A growing alliance of technology, health and volunteers.' },

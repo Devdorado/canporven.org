@@ -10,6 +10,7 @@ export default function Header() {
     { key: 'nav.mission', href: '#mision' },
     { key: 'nav.doctors', href: '#medicos' },
     { key: 'nav.notify', href: '#aviso' },
+    { key: 'nav.digital', href: '/respuesta-digital' },
     { key: 'nav.help', href: '/infodonaciones' },
   ];
 
