@@ -24,10 +24,10 @@ export default function VenezuelaDashboard() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h1 className="text-2xl font-bold tracking-tight">
-                🇻🇪 Venezuela Erdbeben
+                🇻🇪 Terremoto de Venezuela
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
-                Lageübersicht · 24. Juni 2026 · Daten von{' '}
+                Resumen de la situación · 24 de junio de 2026 · Datos de{' '}
                 <a
                   href="https://sosvenezuela2026.com"
                   target="_blank"
@@ -48,7 +48,7 @@ export default function VenezuelaDashboard() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Weitere Ressourcen:{' '}
+              Más recursos:{' '}
               <span className="text-primary underline">apoyovenezuela.com</span>
             </a>
           </div>
@@ -92,14 +92,14 @@ export default function VenezuelaDashboard() {
             </a>
             {' · '}
             <a href="https://desaparecidosterremotovenezuela.com" target="_blank" rel="noopener noreferrer" className="text-primary underline">
-              Vermisste
+              Desaparecidos
             </a>
           </p>
           <p className="mt-1">
             Datos de SOS Venezuela 2026, Apoyo Venezuela y ApoyoVzla — iniciativas ciudadanas sin afiliación política.
           </p>
           <p className="mt-1">
-            Die Daten werden von der Community gemeldet. Bitte vor Handlung verifizieren. Bei Lebensgefahr: 911.
+            Los datos son reportados por la comunidad. Por favor, verifica antes de actuar. En caso de peligro vital: 911.
           </p>
         </div>
       </div>
