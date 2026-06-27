@@ -6,6 +6,7 @@ const translations = {
   'nav.doctors': { es: 'Médicos', en: 'Doctors' },
   'nav.notify': { es: 'Recibir aviso', en: 'Get Notified' },
   'nav.help': { es: 'Cómo ayudar de verdad', en: 'How real help works' },
+  'nav.help_short': { es: 'Cómo ayudar', en: 'How to help' },
   'nav.menu': { es: 'Menú', en: 'Menu' },
   'nav.home': { es: 'Inicio', en: 'Home' },
   'nav.medicos': { es: 'Médicos', en: 'Doctors' },
@@ -18,6 +19,12 @@ const translations = {
   'menu.help_funciona': { es: 'Qué funciona', en: 'What works' },
   'menu.help_canarias': { es: 'Factor Canarias', en: 'Canary Islands factor' },
   'menu.help_actuar': { es: 'Cómo actuar', en: 'How to act' },
+  'menu.help_cooperacion': { es: 'Cooperación institucional', en: 'Institutional cooperation' },
+
+  // Contactos dropdown
+  'menu.ct_emergencias': { es: 'Teléfonos de emergencia', en: 'Emergency phones' },
+  'menu.ct_entidades': { es: 'Entidades en la zona', en: 'Entities in the area' },
+  'menu.ct_donar': { es: 'Canales de donación', en: 'Donation channels' },
 
   // Respuesta digital dropdown
   'menu.dr_ecosistema': { es: 'Ecosistema', en: 'Ecosystem' },
@@ -368,6 +375,40 @@ const translations = {
   'footer.contact': { es: 'Contacto', en: 'Contact' },
   'footer.contact_email_placeholder': { es: 'contacto@canporven.org', en: 'contact@canporven.org' },
   'footer.rights': { es: '© 2026 CANPORVEN.ORG — Todos los derechos reservados', en: '© 2026 CANPORVEN.ORG — All rights reserved' },
+
+  // Mega footer
+  'mfooter.brand_desc': {
+    es: 'Organizamos información y conexión desde Canarias para Venezuela. Dinero, no cosas. No recaudamos ni gestionamos donaciones: solo informamos y enlazamos a canales verificados.',
+    en: 'We organize information and connection from the Canary Islands to Venezuela. Money, not goods. We do not collect or manage donations: we only inform and link to verified channels.',
+  },
+  'mfooter.domains': { es: 'canariasporvenezuela.org · canporven.org', en: 'canariasporvenezuela.org · canporven.org' },
+  'mfooter.transparency': {
+    es: 'Esta es una iniciativa ciudadana privada, no una asociación registrada. Buscamos una entidad jurídica o asociación que actúe como soporte legal.',
+    en: 'This is a private citizen initiative, not a registered association. We are looking for a legal entity or association to act as the legal carrier.',
+  },
+  'mfooter.col_help': { es: 'Cómo ayudar', en: 'How to help' },
+  'mfooter.col_help_1': { es: 'Cómo ayudar de verdad', en: 'How real help works' },
+  'mfooter.col_help_2': { es: 'Dinero, no cosas', en: 'Money, not goods' },
+  'mfooter.col_help_3': { es: 'Las fases', en: 'The phases' },
+  'mfooter.col_help_4': { es: 'Cómo actuar', en: 'How to act' },
+  'mfooter.col_help_5': { es: 'Cooperación institucional', en: 'Institutional cooperation' },
+  'mfooter.col_digital': { es: 'Respuesta digital', en: 'Digital response' },
+  'mfooter.col_digital_1': { es: 'Ecosistema', en: 'Ecosystem' },
+  'mfooter.col_digital_2': { es: 'Las grietas', en: 'The gaps' },
+  'mfooter.col_digital_3': { es: 'IA agéntica', en: 'Agentic AI' },
+  'mfooter.col_digital_4': { es: 'Nuestra toolbox', en: 'Our toolbox' },
+  'mfooter.col_contacts': { es: 'Contactos', en: 'Contacts' },
+  'mfooter.col_contacts_1': { es: 'Teléfonos de emergencia', en: 'Emergency phones' },
+  'mfooter.col_contacts_2': { es: 'Entidades en la zona', en: 'Entities in the area' },
+  'mfooter.col_contacts_3': { es: 'Canales de donación', en: 'Donation channels' },
+  'mfooter.col_initiative': { es: 'La iniciativa', en: 'The initiative' },
+  'mfooter.col_initiative_1': { es: 'Novedades', en: 'News' },
+  'mfooter.col_initiative_2': { es: 'Médicos voluntarios', en: 'Volunteer doctors' },
+  'mfooter.col_initiative_3': { es: 'Súmate', en: 'Join' },
+  'mfooter.col_initiative_4': { es: 'Contacto: contacto@canporven.org', en: 'Contact: contacto@canporven.org' },
+  'mfooter.bottom_bold': { es: 'canporven.org no recauda ni gestiona donaciones.', en: 'canporven.org does not collect or manage donations.' },
+  'mfooter.bottom_note': { es: 'Iniciativa ciudadana privada en formación, sin garantía legal.', en: 'Private citizen initiative in formation, with no legal guarantee.' },
+  'mfooter.bottom_copy': { es: '© 2026 Canarias por Venezuela', en: '© 2026 Canarias por Venezuela' },
 
   // Misc
   'required': { es: 'Obligatorio', en: 'Required' },
