@@ -38,6 +38,7 @@ const partners = [
     descEs: 'Médicos voluntarios para telemedicina y soporte',
     descEn: 'Volunteer doctors for telemedicine and support',
     url: 'https://centroclinicobetanzos60.es',
+    logo: 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/5d2196561_WhatsAppImage2026-06-27at154517.jpg',
   },
 ];
 
@@ -61,8 +62,17 @@ export default function PartnersSection() {
             const desc = lang === 'es' ? p.descEs : p.descEn;
             const card = (
               <div className="flex items-start gap-3 h-full">
-                <div className="w-10 h-10 shrink-0 rounded-lg bg-[#1565C0]/10 flex items-center justify-center text-[#1565C0] font-bold text-sm">
-                  {p.name.charAt(0)}
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-[#1565C0]/10 flex items-center justify-center text-[#1565C0] font-bold text-sm overflow-hidden">
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      className="w-full h-full object-contain p-1"
+                      loading="lazy"
+                    />
+                  ) : (
+                    p.name.charAt(0)
+                  )}
                 </div>
                 <div>
                   <p className="font-semibold text-[#121212] leading-tight">{p.name}</p>
