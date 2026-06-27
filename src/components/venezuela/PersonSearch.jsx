@@ -15,7 +15,7 @@ export default function PersonSearch() {
       <CardHeader>
         <CardTitle className="text-lg flex items-center gap-2">
           <User className="w-5 h-5 text-primary" />
-          Personen suchen
+          Buscar personas
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -23,7 +23,7 @@ export default function PersonSearch() {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
-              placeholder="Name eingeben (min. 2 Zeichen)…"
+              placeholder="Escribe un nombre (mín. 2 caracteres)…"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="pl-9"
@@ -31,25 +31,25 @@ export default function PersonSearch() {
           </div>
           <Select value={estado} onValueChange={setEstado}>
             <SelectTrigger className="w-full sm:w-[180px]">
-              <SelectValue placeholder="Alle Status" />
+              <SelectValue placeholder="Todos los estados" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Alle Status</SelectItem>
-              <SelectItem value="seeking_info">Vermisst</SelectItem>
-              <SelectItem value="found_alive">Gefunden</SelectItem>
+              <SelectItem value="all">Todos los estados</SelectItem>
+              <SelectItem value="seeking_info">Desaparecido</SelectItem>
+              <SelectItem value="found_alive">Encontrado</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         {isLoading && (
           <div className="py-8 text-center text-muted-foreground text-sm">
-            Suche läuft…
+            Buscando…
           </div>
         )}
 
         {!isLoading && data?.length === 0 && query.length >= 2 && (
           <div className="py-8 text-center text-muted-foreground text-sm">
-            Keine Ergebnisse für „{query}"
+            Sin resultados para «{query}»
           </div>
         )}
 
@@ -80,7 +80,7 @@ export default function PersonSearch() {
                       : 'bg-amber-500/10 text-amber-600'
                   }`}
                 >
-                  {p.status === 'found_alive' ? 'Gefunden' : 'Vermisst'}
+                  {p.status === 'found_alive' ? 'Encontrado' : 'Desaparecido'}
                 </span>
               </div>
             </div>

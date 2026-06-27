@@ -11,13 +11,13 @@ export default function DamageValidation() {
       <CardHeader>
         <CardTitle className="text-lg flex items-center gap-2">
           <ShieldAlert className="w-5 h-5 text-primary" />
-          Strukturelle Schadensvalidierung
+          Validación de daños estructurales
         </CardTitle>
       </CardHeader>
       <CardContent>
         {isLoading && (
           <div className="py-8 text-center text-muted-foreground text-sm">
-            Daten werden geladen…
+            Cargando datos…
           </div>
         )}
 
@@ -36,18 +36,18 @@ export default function DamageValidation() {
               </p>
               <div className="flex items-center gap-3 mt-2 text-xs">
                 <span className="text-emerald-600">
-                  Bewohnbar: {item.habitable_votes}
+                  Habitable: {item.habitable_votes}
                 </span>
                 <span className="text-destructive">
-                  Unbewohnbar: {item.inhabitable_votes}
+                  No habitable: {item.inhabitable_votes}
                 </span>
                 <span className="text-muted-foreground">
-                  Validierungen: {item.validations}
+                  Validaciones: {item.validations}
                 </span>
               </div>
               {item.photo_ids?.length > 0 && (
                 <p className="text-xs text-muted-foreground mt-1">
-                  {item.photo_ids.length} Foto(s)
+                  {item.photo_ids.length} foto(s)
                 </p>
               )}
             </div>

@@ -17,10 +17,10 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const severityConfig = {
-  rojo:      { color: '#dc2626', label: 'Kritisch',     fillOpacity: 0.7 },
-  naranja:   { color: '#ea580c', label: 'Hoch',         fillOpacity: 0.6 },
-  amarillo:  { color: '#ca8a04', label: 'Mittel',       fillOpacity: 0.5 },
-  verde:     { color: '#16a34a', label: 'Niedrig',      fillOpacity: 0.4 },
+  rojo:      { color: '#dc2626', label: 'Crítico',      fillOpacity: 0.7 },
+  naranja:   { color: '#ea580c', label: 'Alto',         fillOpacity: 0.6 },
+  amarillo:  { color: '#ca8a04', label: 'Medio',        fillOpacity: 0.5 },
+  verde:     { color: '#16a34a', label: 'Bajo',         fillOpacity: 0.4 },
 };
 
 const categoryIcons = {
@@ -48,7 +48,7 @@ export default function VenezuelaMap() {
     return (
       <div className="h-[400px] w-full rounded-xl border border-destructive/20 bg-destructive/5 flex items-center justify-center text-destructive">
         <AlertTriangle className="w-5 h-5 mr-2" />
-        Karte konnte nicht geladen werden
+        No se pudo cargar el mapa
       </div>
     );
   }
@@ -93,7 +93,7 @@ export default function VenezuelaMap() {
                   <p className="text-xs text-muted-foreground">{r.municipio}</p>
                   {r.verification && (
                     <p className="text-xs text-muted-foreground">
-                      Verifizierung: {r.verification}
+                      Verificación: {r.verification}
                     </p>
                   )}
                   {r.source_url && (
@@ -103,7 +103,7 @@ export default function VenezuelaMap() {
                       rel="noopener noreferrer"
                       className="text-xs text-primary underline"
                     >
-                      Quelle öffnen
+                      Abrir fuente
                     </a>
                   )}
                 </div>

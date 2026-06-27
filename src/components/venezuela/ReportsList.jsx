@@ -6,19 +6,19 @@ import { MapPin, AlertTriangle, Building2, Filter } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const categoryLabels = {
-  collapsed_building: 'Eingestürzt',
-  damaged_building: 'Beschädigt',
-  gas_leak: 'Gasleck',
-  blocked_road: 'Straße blockiert',
-  trapped_person: 'Person eingeschlossen',
-  collection_center: 'Sammelstelle',
+  collapsed_building: 'Derrumbado',
+  damaged_building: 'Dañado',
+  gas_leak: 'Fuga de gas',
+  blocked_road: 'Vía bloqueada',
+  trapped_person: 'Persona atrapada',
+  collection_center: 'Centro de acopio',
 };
 
 const severityLabels = {
-  rojo: 'Kritisch',
-  naranja: 'Hoch',
-  amarillo: 'Mittel',
-  verde: 'Niedrig',
+  rojo: 'Crítico',
+  naranja: 'Alto',
+  amarillo: 'Medio',
+  verde: 'Bajo',
 };
 
 const severityBadge = {
@@ -48,16 +48,16 @@ export default function ReportsList() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <CardTitle className="text-lg flex items-center gap-2">
             <MapPin className="w-5 h-5 text-primary" />
-            Aktuelle Reports
+            Reportes recientes
           </CardTitle>
           <div className="flex gap-2">
             <Select value={filterCategory} onValueChange={setFilterCategory}>
               <SelectTrigger className="w-[160px] h-8 text-xs">
                 <Filter className="w-3 h-3 mr-1" />
-                <SelectValue placeholder="Kategorie" />
+                <SelectValue placeholder="Categoría" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Alle Kategorien</SelectItem>
+                <SelectItem value="all">Todas las categorías</SelectItem>
                 {categories.map((c) => (
                   <SelectItem key={c} value={c}>
                     {categoryLabels[c] || c}
@@ -67,10 +67,10 @@ export default function ReportsList() {
             </Select>
             <Select value={filterSeverity} onValueChange={setFilterSeverity}>
               <SelectTrigger className="w-[140px] h-8 text-xs">
-                <SelectValue placeholder="Schwere" />
+                <SelectValue placeholder="Gravedad" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Alle</SelectItem>
+                <SelectItem value="all">Todas</SelectItem>
                 {severities.map((s) => (
                   <SelectItem key={s} value={s}>
                     {severityLabels[s] || s}
@@ -84,7 +84,7 @@ export default function ReportsList() {
       <CardContent>
         {isLoading && (
           <div className="py-8 text-center text-muted-foreground text-sm">
-            Reports werden geladen…
+            Cargando reportes…
           </div>
         )}
 
@@ -114,7 +114,7 @@ export default function ReportsList() {
                 </div>
                 {r.verification && (
                   <p className="text-xs text-muted-foreground mt-1">
-                    Verifizierung: {r.verification}
+                    Verificación: {r.verification}
                   </p>
                 )}
               </div>
@@ -122,7 +122,7 @@ export default function ReportsList() {
           ))}
           {filtered.length > 50 && (
             <p className="text-xs text-center text-muted-foreground py-2">
-              + {filtered.length - 50} weitere Reports
+              + {filtered.length - 50} reportes más
             </p>
           )}
         </div>

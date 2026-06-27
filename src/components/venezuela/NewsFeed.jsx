@@ -11,13 +11,13 @@ export default function NewsFeed() {
       <CardHeader>
         <CardTitle className="text-lg flex items-center gap-2">
           <Newspaper className="w-5 h-5 text-primary" />
-          Aktuelle Nachrichten
+          Noticias recientes
         </CardTitle>
       </CardHeader>
       <CardContent>
         {isLoading && (
           <div className="py-8 text-center text-muted-foreground text-sm">
-            Nachrichten werden geladen…
+            Cargando noticias…
           </div>
         )}
 
@@ -37,7 +37,7 @@ export default function NewsFeed() {
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
                     {item.source} · {item.published_at
-                      ? new Date(item.published_at).toLocaleDateString('de-DE')
+                      ? new Date(item.published_at).toLocaleDateString('es-ES')
                       : ''}
                   </p>
                   {item.summary && (

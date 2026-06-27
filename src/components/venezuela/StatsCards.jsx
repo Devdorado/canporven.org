@@ -9,28 +9,28 @@ export default function StatsCards() {
 
   const cards = [
     {
-      title: 'Vermisste',
+      title: 'Desaparecidos',
       value: stats?.missing ?? 0,
       icon: Users,
       color: 'text-destructive',
       bg: 'bg-destructive/10',
     },
     {
-      title: 'Gefunden',
+      title: 'Encontrados',
       value: stats?.found ?? 0,
       icon: UserCheck,
       color: 'text-emerald-600',
       bg: 'bg-emerald-500/10',
     },
     {
-      title: 'Reports',
+      title: 'Reportes',
       value: reports?.length ?? 0,
       icon: MapPin,
       color: 'text-primary',
       bg: 'bg-primary/10',
     },
     {
-      title: 'Kritische',
+      title: 'Críticos',
       value: reports?.filter((r) => r.severity === 'rojo').length ?? 0,
       icon: AlertTriangle,
       color: 'text-orange-600',
