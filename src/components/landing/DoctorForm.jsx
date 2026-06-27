@@ -3,7 +3,7 @@ import { useLang, t } from '@/lib/i18n.jsx';
 import { base44 } from '@/api/base44Client';
 import { CheckCircle, Heart, Brain, Phone, Baby, Activity, MoreHorizontal } from 'lucide-react';
 
-const DOCTOR_IMG = 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/8dd087c14_generated_e8f07ecd.png';
+const DOCTOR_IMG = 'https://media.base44.com/images/public/6a3fe712a7f72f3df9b00ca1/7b69baeed_image.png';
 
 const skillOptions = [
   { value: 'Chronic disease care', key: 'skill.chronic', icon: Heart },
