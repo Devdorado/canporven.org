@@ -62,7 +62,7 @@ export default function ShareSection() {
   };
 
   return (
-    <section className="py-14 md:py-20 bg-gray-50" aria-labelledby="share-heading">
+    <section id="comparte" className="py-14 md:py-20 bg-gray-50" aria-labelledby="share-heading">
       <div className="max-w-3xl mx-auto px-4 text-center">
         <h2 id="share-heading" className="text-2xl font-bold text-[#121212] mb-2">
           {t('share.title', lang)}

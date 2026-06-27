@@ -1,22 +1,15 @@
 import React, { useState } from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import MegaMenu from '@/components/landing/MegaMenu';
 
 export default function Header() {
   const { lang, setLang } = useLang();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navItems = [
-    { key: 'nav.mission', href: '#mision' },
-    { key: 'nav.doctors', href: '#sumate' },
-    { key: 'nav.notify', href: '#aviso' },
-    { key: 'nav.digital', href: '/respuesta-digital.html' },
-    { key: 'nav.help', href: '/infodonaciones.html' },
-  ];
-
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#1565C0]/10">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="relative max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo + Brand */}
         <a href="/" className="flex items-center shrink-0">
           <img
@@ -26,21 +19,25 @@ export default function Header() {
           />
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
-          {navItems.map((item) => (
-            <a
-              key={item.key}
-              href={item.href}
-              className="text-sm font-medium text-[#121212]/70 hover:text-[#1565C0] transition-colors"
-            >
-              {t(item.key, lang)}
-            </a>
-          ))}
-        </nav>
-
-        {/* Language Switch + Mobile Toggle */}
+        {/* Right controls */}
         <div className="flex items-center gap-3">
+          {/* Mega menu trigger */}
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm text-white bg-[#1565C0] hover:bg-[#1255A0] transition-colors min-h-[44px]"
+            aria-haspopup="true"
+            aria-expanded={menuOpen}
+            aria-label={t('nav.menu', lang)}
+          >
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+            <span className="hidden sm:inline">{t('nav.menu', lang)}</span>
+            <ChevronDown
+              size={16}
+              className={`transition-transform ${menuOpen ? 'rotate-180' : ''}`}
+            />
+          </button>
+
+          {/* Language Switch */}
           <div className="flex rounded-full border-2 border-[#1565C0]/30 overflow-hidden" role="radiogroup" aria-label="Language">
             <button
               onClick={() => setLang('es')}
@@ -69,33 +66,10 @@ export default function Header() {
               EN
             </button>
           </div>
-
-          <button
-            className="md:hidden p-2 text-[#121212]"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-      </div>
 
-      {/* Mobile Nav */}
-      {menuOpen && (
-        <nav className="md:hidden border-t border-[#1565C0]/10 bg-white px-4 py-4 space-y-3" aria-label="Mobile navigation">
-          {navItems.map((item) => (
-            <a
-              key={item.key}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className="block text-base font-medium text-[#121212]/80 hover:text-[#1565C0] py-2"
-            >
-              {t(item.key, lang)}
-            </a>
-          ))}
-        </nav>
-      )}
+        <MegaMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+      </div>
     </header>
   );
 }

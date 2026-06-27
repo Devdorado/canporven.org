@@ -6,6 +6,27 @@ const translations = {
   'nav.doctors': { es: 'Médicos', en: 'Doctors' },
   'nav.notify': { es: 'Recibir aviso', en: 'Get Notified' },
   'nav.help': { es: 'Cómo ayudar de verdad', en: 'How real help works' },
+  'nav.menu': { es: 'Menú', en: 'Menu' },
+  'nav.home': { es: 'Inicio', en: 'Home' },
+  'nav.getinvolved': { es: 'Súmate a la red', en: 'Join the network' },
+  'nav.partners': { es: 'Aliados', en: 'Partners' },
+  'nav.share': { es: 'Comparte', en: 'Share' },
+
+  // Mega menu groups
+  'menu.group_main': { es: 'Páginas', en: 'Pages' },
+  'menu.group_main_desc': { es: 'Navega entre las secciones principales del sitio.', en: 'Move between the main parts of the site.' },
+  'menu.group_participate': { es: 'Participa', en: 'Get involved' },
+  'menu.group_participate_desc': { es: 'Regístrate, recibe avisos y comparte.', en: 'Register, get notified and share.' },
+  'menu.group_resources': { es: 'Recursos', en: 'Resources' },
+  'menu.group_resources_desc': { es: 'Informes y guías detalladas.', en: 'Detailed reports and guides.' },
+  'menu.home_desc': { es: 'Vuelve a la página principal', en: 'Back to the main page' },
+  'menu.mission_desc': { es: 'Cómo ayudamos', en: 'How we help' },
+  'menu.digital_desc': { es: 'La respuesta digital al terremoto', en: 'The digital response to the earthquake' },
+  'menu.help_desc': { es: 'Guía de ayuda eficaz', en: 'Guide to effective help' },
+  'menu.doctors_desc': { es: 'Médicos, empresas y particulares', en: 'Doctors, companies and individuals' },
+  'menu.notify_desc': { es: 'Recibe un aviso cuando esté listo', en: 'Get notified when ready' },
+  'menu.partners_desc': { es: 'Organizaciones que nos apoyan', en: 'Organizations supporting us' },
+  'menu.share_desc': { es: 'Difunde esta página', en: 'Spread the word' },
 
   // Hero
   'hero.headline': {
