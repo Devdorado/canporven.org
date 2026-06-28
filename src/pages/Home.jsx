@@ -7,6 +7,7 @@ import VenezuelaCTA from '@/components/landing/VenezuelaCTA';
 import MissionSection from '@/components/landing/MissionSection';
 import GetInvolvedSection from '@/components/landing/GetInvolvedSection';
 import NotifySection from '@/components/landing/NotifySection';
+import NewsSection from '@/components/landing/NewsSection';
 import DigitalResponseSection from '@/components/landing/DigitalResponseSection';
 import CitizenSolutionsSection from '@/components/landing/CitizenSolutionsSection';
 import ToolboxSection from '@/components/landing/ToolboxSection';
@@ -25,6 +26,7 @@ export default function Home() {
           <VenezuelaCTA />
           <MissionSection />
           <GetInvolvedSection />
+          <NewsSection />
           <NotifySection />
           <DigitalResponseSection />
           <CitizenSolutionsSection />

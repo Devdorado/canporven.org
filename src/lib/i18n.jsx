@@ -579,6 +579,13 @@ const translations = {
   'map.error': { es: 'No se pudo cargar el mapa', en: 'The map could not be loaded' },
   'map.open_source': { es: 'Abrir fuente', en: 'Open source' },
 
+  // News widget
+  'news.title': { es: 'Últimas noticias', en: 'Latest news' },
+  'news.subtitle': { es: 'Prensa local sobre el terremoto', en: 'Local press on the earthquake' },
+  'news.empty': { es: 'No hay noticias por ahora.', en: 'No news right now.' },
+  'news.disclaimer': { es: 'Noticias de prensa externa. Verifica antes de difundir.', en: 'External press news. Verify before sharing.' },
+  'news.more': { es: 'Ver más noticias', en: 'See more news' },
+
   // Misc
   'required': { es: 'Obligatorio', en: 'Required' },
   'select_options': { es: 'Selecciona opciones', en: 'Select options' },

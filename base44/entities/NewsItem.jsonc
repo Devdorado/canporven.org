@@ -1,0 +1,63 @@
+{
+  "name": "NewsItem",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "snippet": {
+      "type": "string",
+      "title": "Snippet"
+    },
+    "source": {
+      "type": "string",
+      "title": "Source"
+    },
+    "link": {
+      "type": "string",
+      "title": "Link"
+    },
+    "pubDate": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Publication Date"
+    },
+    "category": {
+      "type": "string",
+      "default": "prensa",
+      "title": "Category"
+    },
+    "guid": {
+      "type": "string",
+      "title": "GUID"
+    },
+    "imageUrl": {
+      "type": "string",
+      "title": "Image URL"
+    }
+  },
+  "required": [
+    "title",
+    "link",
+    "guid"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
