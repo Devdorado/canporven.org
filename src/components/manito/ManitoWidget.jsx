@@ -1,7 +1,23 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 const GREETING =
-  'Hola, soy Manito. Tu asistente para ayudar mejor a Venezuela. ¿En qué te ayudo hoy?';
+  '¡Hola! 👋 Soy **Manito**, tu asistente de ayuda verificada para Venezuela 🇻🇪\n\n' +
+  'Puedo ayudarte a:\n' +
+  '🔎 Buscar zonas y edificios afectados\n' +
+  '🏚️ Ver el estado de los daños y qué se necesita ahora\n' +
+  '❤️ Donar de forma segura (dinero, no cosas)\n' +
+  '🩺 Conectar con ayuda médica gratuita\n' +
+  '🧑‍🤝‍🧑 Orientarte para buscar personas desaparecidas\n\n' +
+  'Toca una idea o escríbeme lo que necesites 👇';
+
+const SUGGESTIONS = [
+  '🔎 Zonas afectadas en La Guaira',
+  '🏚️ Edificios con derrumbe',
+  '💧 ¿Qué se necesita ahora?',
+  '❤️ ¿Cómo dono de forma segura?',
+  '🩺 Ayuda médica gratis',
+  '🧑‍🤝‍🧑 Buscar a una persona',
+];
 const NETWORK_ERROR =
   'Ahora mismo no puedo conectar. Vuelve a intentarlo o escríbenos por WhatsApp: https://wa.me/34601010101';
 const STORAGE_KEY = 'manito_conv';
@@ -80,8 +96,8 @@ export default function ManitoWidget() {
     }
   }, [input]);
 
-  const send = useCallback(async () => {
-    const text = input.trim();
+  const send = useCallback(async (override) => {
+    const text = (typeof override === 'string' ? override : input).trim();
     if (!text || loading) return;
 
     setMessages((prev) => [...prev, { role: 'user', content: text }]);
@@ -215,6 +231,21 @@ export default function ManitoWidget() {
                 </div>
               </div>
             ))}
+
+            {!messages.some((m) => m.role === 'user') && (
+              <div className="flex flex-wrap gap-2 pt-1">
+                {SUGGESTIONS.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => send(s)}
+                    disabled={loading}
+                    className="rounded-full border border-[#1763B0]/40 dark:border-[#7FB3F0]/40 text-[#1763B0] dark:text-[#7FB3F0] hover:bg-[#1763B0]/5 dark:hover:bg-white/5 px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-50"
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            )}
 
             {loading && (
               <div className="flex justify-start">
