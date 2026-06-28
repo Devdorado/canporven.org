@@ -17,20 +17,23 @@ function jsonResponse(body, status = 200) {
   });
 }
 
-// Trigger keyword groups
+// Trigger keyword groups — specific tokens only; generic help words ("ayuda",
+// "ayudar", "quiero ayudar") must NOT trigger live-data fetches.
 const GENERAL_KEYWORDS = [
-  "situaci", "cuant", "cuánt", "dato", "reporte", "zona", "edificio", "derrumbe",
-  "daño", "dano", "afectad", "necesit", "pedido", "falta", "ayuda", "agua",
-  "medicin", "aliment", "rescate", "refugio", "escombro", "atrapad",
+  "situaci", "cuant", "cuánt", "dato", "reporte", "estadístic", "cifra", "panorama",
+  "zona", "edificio", "derrumbe", "daño", "dano", "escombro", "atrapad", "colaps",
+  "estructura", "afectad", "necesit", "pedido", "falta", "insumo", "medicin",
+  "aliment", "rescate", "refugio", "agua", "ropa",
 ];
 
 const BUILDING_KEYWORDS = [
-  "edificio", "zona", "derrumbe", "daño", "atrapad", "escombro", "colaps", "estructura",
+  "edificio", "zona", "derrumbe", "daño", "dano", "atrapad", "escombro", "colaps",
+  "estructura", "afectad",
 ];
 
 const NEEDS_KEYWORDS = [
-  "necesit", "pedido", "falta", "insumo", "agua", "medicin", "aliment",
-  "rescate", "refugio", "ropa",
+  "necesit", "pedido", "falta", "insumo", "medicin", "aliment",
+  "rescate", "refugio", "agua", "ropa",
 ];
 
 // State name (lowercase substring) -> proper-case for the API
