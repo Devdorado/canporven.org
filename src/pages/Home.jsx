@@ -2,6 +2,7 @@ import React from 'react';
 import { LangProvider } from '@/lib/i18n.jsx';
 import AlphaBanner from '@/components/landing/AlphaBanner';
 import Header from '@/components/landing/Header';
+import NewsTicker from '@/components/landing/NewsTicker';
 import Hero from '@/components/landing/Hero';
 import VenezuelaCTA from '@/components/landing/VenezuelaCTA';
 import MissionSection from '@/components/landing/MissionSection';
@@ -21,6 +22,7 @@ export default function Home() {
       <div className="min-h-screen bg-white">
         <AlphaBanner />
         <Header />
+        <NewsTicker />
         <main>
           <Hero />
           <VenezuelaCTA />

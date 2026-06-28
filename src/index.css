@@ -20,6 +20,22 @@ html {
   .animate-hero-zoom { animation: none; }
 }
 
+/* Continuous right-to-left ticker. Two identical tracks sit side by side and
+   the wrapper translates by -50% so the loop is seamless. */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker-scroll 40s linear infinite;
+}
+.ticker-pause:hover .animate-ticker {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker { animation: none; }
+}
+
 
 @layer base {
   :root {
