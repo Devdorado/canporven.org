@@ -12,6 +12,7 @@ import ReportsList from '@/components/venezuela/ReportsList';
 import DamageValidation from '@/components/venezuela/DamageValidation';
 import DashboardErrorBoundary from '@/components/venezuela/DashboardErrorBoundary';
 import ApoyoZonasTab from '@/components/venezuela/apoyo/ApoyoZonasTab';
+import FeedTimeline from '@/components/venezuela/feed/FeedTimeline';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 
 function DashboardContent() {
@@ -94,6 +95,7 @@ function DashboardContent() {
           <TabsList className="mb-2">
             <TabsTrigger value="overview">{t('tabs.overview', lang)}</TabsTrigger>
             <TabsTrigger value="zones">{t('tabs.zones', lang)}</TabsTrigger>
+            <TabsTrigger value="activity">{t('tabs.activity', lang)}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6 mt-0">
@@ -122,6 +124,10 @@ function DashboardContent() {
 
           <TabsContent value="zones" className="mt-0">
             <ApoyoZonasTab />
+          </TabsContent>
+
+          <TabsContent value="activity" className="mt-0">
+            <FeedTimeline />
           </TabsContent>
         </Tabs>
 

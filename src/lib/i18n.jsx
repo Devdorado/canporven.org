@@ -591,6 +591,15 @@ const translations = {
   // Apoyo Venezuela tab
   'tabs.overview': { es: 'Resumen general', en: 'Overview' },
   'tabs.zones': { es: 'Zonas afectadas', en: 'Affected zones' },
+  'tabs.activity': { es: 'Actividad reciente', en: 'Recent activity' },
+
+  // Unified feed timeline
+  'feed.loading': { es: 'Cargando actividad…', en: 'Loading activity…' },
+  'feed.empty': { es: 'No hay actividad reciente todavía.', en: 'No recent activity yet.' },
+  'feed.open': { es: 'Ver fuente', en: 'View source' },
+  'feed.type.reporte': { es: 'Reporte', en: 'Report' },
+  'feed.type.zona': { es: 'Zona', en: 'Zone' },
+  'feed.type.pedido': { es: 'Pedido', en: 'Request' },
   'apoyo.credit': { es: 'Datos de Apoyo Venezuela', en: 'Data from Apoyo Venezuela' },
   'apoyo.summary_title': { es: 'Resumen de zonas afectadas', en: 'Affected zones summary' },
   'apoyo.total_zonas': { es: 'Zonas registradas', en: 'Registered zones' },

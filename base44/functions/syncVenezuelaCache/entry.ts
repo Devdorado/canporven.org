@@ -2,6 +2,28 @@ import { createClientFromRequest } from 'npm:@base44/sdk@0.8.31';
 
 const API_BASE = 'https://sosvenezuela2026.com';
 const MAX_REPORTS = 200;
+const SNIPPET_MAX = 200;
+
+// Strip HTML tags and decode common entities so stored snippets are plain text.
+function stripHtml(input, maxLen = SNIPPET_MAX) {
+  if (!input) return '';
+  const clean = String(input)
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&hellip;/g, '…')
+    .replace(/&[a-zA-Z0-9#]+;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (clean.length <= maxLen) return clean;
+  return clean.slice(0, maxLen).replace(/\s+\S*$/, '') + '…';
+}
 
 async function safeFetchJson(url) {
   try {
@@ -53,7 +75,12 @@ Deno.serve(async (req) => {
         ? newsRes.data
         : (Array.isArray(newsRes.data?.news) ? newsRes.data.news : null);
       if (Array.isArray(arr)) {
-        news = arr;
+        // Store snippets already cleaned (no HTML) so both Home and dashboard render plain text.
+        news = arr.map((n) => ({
+          ...n,
+          title: n.title ? stripHtml(n.title, 300) : n.title,
+          summary: n.summary ? stripHtml(n.summary, SNIPPET_MAX) : n.summary,
+        }));
       }
     }
 

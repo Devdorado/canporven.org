@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useVenezuelaNews } from '@/hooks/useVenezuelaData';
 import { useLang, t } from '@/lib/i18n.jsx';
+import { stripHtml } from '@/lib/sanitizeText';
 import { Newspaper, ExternalLink } from 'lucide-react';
 
 export default function NewsFeed() {
@@ -44,7 +45,7 @@ export default function NewsFeed() {
                   </p>
                   {item.summary && (
                     <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                      {item.summary}
+                      {stripHtml(item.summary, 200)}
                     </p>
                   )}
                 </div>

@@ -1,0 +1,106 @@
+{
+  "name": "FeedItem",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "enum": [
+        "sos",
+        "apoyovenezuela"
+      ],
+      "title": "Source"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "reporte",
+        "zona",
+        "pedido"
+      ],
+      "title": "Type"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "estado": {
+      "type": "string",
+      "title": "Estado"
+    },
+    "ciudad": {
+      "type": "string",
+      "title": "Ciudad"
+    },
+    "lat": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "title": "Latitude"
+    },
+    "lng": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "title": "Longitude"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status"
+    },
+    "urgencia": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Urgencia"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Summary"
+    },
+    "link": {
+      "type": "string",
+      "title": "Link"
+    },
+    "externalId": {
+      "type": "string",
+      "title": "External ID"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Created At"
+    },
+    "syncedAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Synced At"
+    }
+  },
+  "required": [
+    "source",
+    "type",
+    "title",
+    "externalId"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
