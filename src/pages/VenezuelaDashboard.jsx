@@ -11,6 +11,8 @@ import NewsFeed from '@/components/venezuela/NewsFeed';
 import ReportsList from '@/components/venezuela/ReportsList';
 import DamageValidation from '@/components/venezuela/DamageValidation';
 import DashboardErrorBoundary from '@/components/venezuela/DashboardErrorBoundary';
+import ApoyoZonasTab from '@/components/venezuela/apoyo/ApoyoZonasTab';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 
 function DashboardContent() {
   const { lang } = useLang();
@@ -88,27 +90,40 @@ function DashboardContent() {
 
       {/* Content */}
       <div className="container mx-auto max-w-7xl px-4 py-6 space-y-6">
-        {/* Stats Row */}
-        <StatsCards />
+        <Tabs defaultValue="overview" className="w-full">
+          <TabsList className="mb-2">
+            <TabsTrigger value="overview">{t('tabs.overview', lang)}</TabsTrigger>
+            <TabsTrigger value="zones">{t('tabs.zones', lang)}</TabsTrigger>
+          </TabsList>
 
-        {/* Map + News */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            <VenezuelaMap />
-          </div>
-          <div>
-            <NewsFeed />
-          </div>
-        </div>
+          <TabsContent value="overview" className="space-y-6 mt-0">
+            {/* Stats Row */}
+            <StatsCards />
 
-        {/* Person Search + Damage Validation */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <PersonSearch />
-          <DamageValidation />
-        </div>
+            {/* Map + News */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="lg:col-span-2">
+                <VenezuelaMap />
+              </div>
+              <div>
+                <NewsFeed />
+              </div>
+            </div>
 
-        {/* Reports List */}
-        <ReportsList />
+            {/* Person Search + Damage Validation */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <PersonSearch />
+              <DamageValidation />
+            </div>
+
+            {/* Reports List */}
+            <ReportsList />
+          </TabsContent>
+
+          <TabsContent value="zones" className="mt-0">
+            <ApoyoZonasTab />
+          </TabsContent>
+        </Tabs>
 
         {/* Footer Note */}
         <div className="text-center text-xs text-muted-foreground pt-4 border-t border-border">
