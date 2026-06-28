@@ -578,6 +578,8 @@ const translations = {
   // Map
   'map.error': { es: 'No se pudo cargar el mapa', en: 'The map could not be loaded' },
   'map.open_source': { es: 'Abrir fuente', en: 'Open source' },
+  'map.src_sos': { es: 'Reportes · SOS Venezuela 2026', en: 'Reports · SOS Venezuela 2026' },
+  'map.src_apoyo': { es: 'Daño estructural · Apoyo Venezuela', en: 'Structural damage · Apoyo Venezuela' },
 
   // News widget
   'news.title': { es: 'Últimas noticias', en: 'Latest news' },

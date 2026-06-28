@@ -10,7 +10,7 @@ const FEEDS = [
 
 const KEYWORDS = ['terremoto', 'sismo', 'réplica', 'replica', 'la guaira', 'yaracuy', 'venezuela'];
 const MAX_ITEMS = 40;
-const SNIPPET_MAX = 300;
+const SNIPPET_MAX = 200;
 
 function decodeEntities(str) {
   if (!str) return '';

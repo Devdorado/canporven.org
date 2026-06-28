@@ -21,6 +21,35 @@ export function useApoyoZonas(filters = {}) {
   });
 }
 
+/* ---------- All located zonas (for the unified map) ----------
+   Pulls zonas pages until exhausted (capped) and keeps only those with
+   lat/lng, so they can be plotted alongside SOS Venezuela reports. */
+export function useApoyoZonasLocated() {
+  return useQuery({
+    queryKey: ['apoyo-zonas-located'],
+    queryFn: async () => {
+      const located = [];
+      let cursor;
+      let guard = 0;
+      // Cap iterations to avoid runaway loops; 8 pages * 50 = 400 zonas max.
+      while (guard < 8) {
+        guard += 1;
+        const page = await fetchZonas({ limit: 50, cursor });
+        const rows = page?.data ?? [];
+        for (const z of rows) {
+          if (z.ubicacion && typeof z.ubicacion.lat === 'number' && typeof z.ubicacion.lng === 'number') {
+            located.push(z);
+          }
+        }
+        cursor = page?.pagination?.nextCursor;
+        if (!cursor) break;
+      }
+      return located;
+    },
+    staleTime: 120_000,
+  });
+}
+
 /* ---------- Single zona detail ---------- */
 export function useApoyoZona(id) {
   return useQuery({

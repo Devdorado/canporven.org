@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLang, t } from '@/lib/i18n.jsx';
 import { base44 } from '@/api/base44Client';
+import { stripHtml } from '@/lib/sanitizeText';
 import { Newspaper, ExternalLink, ArrowRight, AlertTriangle } from 'lucide-react';
 
 function timeAgo(dateStr, lang) {
@@ -82,11 +83,11 @@ export default function NewsSection() {
                 <span>{n.title}</span>
                 <ExternalLink size={14} className="mt-1 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
-              {n.snippet && (
+              {stripHtml(n.snippet) && (
                 <p
                   className="text-sm text-[#121212]/70 mt-1.5 leading-snug overflow-hidden"
                   style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}
-                >{n.snippet}</p>
+                >{stripHtml(n.snippet)}</p>
               )}
             </article>
           ))}
