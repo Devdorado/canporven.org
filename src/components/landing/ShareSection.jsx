@@ -3,7 +3,7 @@ import { useLang, t } from '@/lib/i18n.jsx';
 import { Link2, Check } from 'lucide-react';
 
 const SHARE_URL = 'https://canporven.canarymedtech.es';
-const SHARE_TEXT_ES = 'Canarias con Venezuela — Plataforma de coordinación tras los terremotos de junio 2026';
+const SHARE_TEXT_ES = 'Canarias por Venezuela — Plataforma de coordinación tras los terremotos de junio 2026';
 const SHARE_TEXT_EN = 'Canary Islands for Venezuela — Coordination platform after the June 2026 earthquakes';
 
 export default function ShareSection() {

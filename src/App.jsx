@@ -8,10 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import VenezuelaDashboard from './pages/VenezuelaDashboard';
-import InfoDonaciones from './pages/InfoDonaciones';
-import RespuestaDigital from './pages/RespuestaDigital';
-import Novedades from './pages/Novedades';
-import Contactos from './pages/Contactos';
+import StaticRedirect from './components/StaticRedirect';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -42,10 +39,10 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/venezuela" element={<VenezuelaDashboard />} />
-      <Route path="/info-donaciones" element={<InfoDonaciones />} />
-      <Route path="/respuesta-digital" element={<RespuestaDigital />} />
-      <Route path="/novedades" element={<Novedades />} />
-      <Route path="/contactos" element={<Contactos />} />
+      <Route path="/info-donaciones" element={<StaticRedirect to="/infodonaciones.html" />} />
+      <Route path="/respuesta-digital" element={<StaticRedirect to="/respuesta-digital.html" />} />
+      <Route path="/novedades" element={<StaticRedirect to="/novedades.html" />} />
+      <Route path="/contactos" element={<StaticRedirect to="/contactos.html" />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
