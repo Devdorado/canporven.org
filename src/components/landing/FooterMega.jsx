@@ -34,6 +34,7 @@ const columns = [
     titleKey: 'mfooter.col_initiative',
     links: [
       { key: 'mfooter.col_initiative_1', href: '/novedades.html' },
+      { key: 'mfooter.col_initiative_guias', href: '/guias' },
       { key: 'mfooter.col_initiative_2', href: '/#medicos' },
       { key: 'mfooter.col_initiative_3', href: '/#sumate' },
       { key: 'mfooter.col_initiative_4', href: 'mailto:contacto@canporven.org' },

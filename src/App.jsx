@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import VenezuelaDashboard from './pages/VenezuelaDashboard';
+import Guias from './pages/Guias';
 import StaticRedirect from './components/StaticRedirect';
 import GlobalLayout from './components/manito/GlobalLayout';
 // Add page imports here
@@ -41,6 +42,7 @@ const AuthenticatedApp = () => {
       <Route element={<GlobalLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/venezuela" element={<VenezuelaDashboard />} />
+        <Route path="/guias" element={<Guias />} />
         <Route path="/info-donaciones" element={<StaticRedirect to="/infodonaciones.html" />} />
         <Route path="/respuesta-digital" element={<StaticRedirect to="/respuesta-digital.html" />} />
         <Route path="/novedades" element={<StaticRedirect to="/novedades.html" />} />

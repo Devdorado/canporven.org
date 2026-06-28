@@ -348,6 +348,7 @@ const translations = {
   // Nav: Digital Response
   'nav.digital': { es: 'Respuesta digital', en: 'Digital response' },
   'nav.novedades': { es: 'Novedades', en: 'News' },
+  'nav.guias': { es: 'Guías', en: 'Guides' },
   'nav.contactos': { es: 'Contactos', en: 'Contacts' },
 
   // Partners section
@@ -403,6 +404,7 @@ const translations = {
   'mfooter.col_contacts_3': { es: 'Canales de donación', en: 'Donation channels' },
   'mfooter.col_initiative': { es: 'La iniciativa', en: 'The initiative' },
   'mfooter.col_initiative_1': { es: 'Novedades', en: 'News' },
+  'mfooter.col_initiative_guias': { es: 'Guías', en: 'Guides' },
   'mfooter.col_initiative_2': { es: 'Médicos voluntarios', en: 'Volunteer doctors' },
   'mfooter.col_initiative_3': { es: 'Súmate', en: 'Join' },
   'mfooter.col_initiative_4': { es: 'Contacto: contacto@canporven.org', en: 'Contact: contacto@canporven.org' },

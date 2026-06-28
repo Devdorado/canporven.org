@@ -181,6 +181,9 @@ export default function Header() {
           <a href="/novedades.html" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
             {t('nav.novedades', lang)}
           </a>
+          <a href="/guias" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
+            {t('nav.guias', lang)}
+          </a>
           <a href="/contactos.html" className="px-3 py-2 text-sm font-semibold text-[#121212] hover:text-[#1565C0] transition-colors">
             {t('nav.contactos', lang)}
           </a>
@@ -233,6 +236,13 @@ export default function Header() {
               className="block py-3 text-base font-semibold text-[#121212] border-b border-[#1565C0]/10"
             >
               {t('nav.novedades', lang)}
+            </a>
+            <a
+              href="/guias"
+              onClick={closeMobile}
+              className="block py-3 text-base font-semibold text-[#121212] border-b border-[#1565C0]/10"
+            >
+              {t('nav.guias', lang)}
             </a>
             <a
               href="/contactos.html"

@@ -1,0 +1,62 @@
+{
+  "name": "Guia",
+  "type": "object",
+  "properties": {
+    "titulo": {
+      "type": "string",
+      "title": "T\u00edtulo"
+    },
+    "descripcion": {
+      "type": "string",
+      "title": "Descripci\u00f3n"
+    },
+    "idioma": {
+      "type": "string",
+      "default": "ES",
+      "title": "Idioma"
+    },
+    "imagenUrl": {
+      "type": "string",
+      "title": "URL de la infograf\u00eda (PNG/JPG)"
+    },
+    "pdfUrl": {
+      "type": "string",
+      "title": "URL del PDF imprimible"
+    },
+    "fuente": {
+      "type": "string",
+      "title": "Fuente"
+    },
+    "orden": {
+      "type": "number",
+      "default": 0,
+      "title": "Orden"
+    },
+    "publicado": {
+      "type": "boolean",
+      "default": true,
+      "title": "Publicado"
+    }
+  },
+  "required": [
+    "titulo"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

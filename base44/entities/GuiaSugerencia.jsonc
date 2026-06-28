@@ -1,0 +1,49 @@
+{
+  "name": "GuiaSugerencia",
+  "type": "object",
+  "properties": {
+    "guiaTitulo": {
+      "type": "string",
+      "title": "Gu\u00eda"
+    },
+    "mensaje": {
+      "type": "string",
+      "title": "Mensaje"
+    },
+    "contacto": {
+      "type": "string",
+      "title": "Contacto"
+    },
+    "estado": {
+      "type": "string",
+      "default": "pendiente",
+      "title": "Estado"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Created At"
+    }
+  },
+  "required": [
+    "mensaje"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
