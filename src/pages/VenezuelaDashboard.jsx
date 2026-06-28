@@ -1,6 +1,9 @@
 import React from 'react';
 import { useVenezuelaUpdatedAt } from '@/hooks/useVenezuelaData';
 import { Clock, Search, ExternalLink } from 'lucide-react';
+import { LangProvider } from '@/lib/i18n.jsx';
+import Header from '@/components/landing/Header';
+import FooterMega from '@/components/landing/FooterMega';
 import StatsCards from '@/components/venezuela/StatsCards';
 import VenezuelaMap from '@/components/venezuela/VenezuelaMap';
 import PersonSearch from '@/components/venezuela/PersonSearch';
@@ -17,6 +20,8 @@ export default function VenezuelaDashboard() {
 
   return (
     <DashboardErrorBoundary>
+    <LangProvider>
+    <Header />
     <div className="min-h-screen bg-background pb-12">
       {/* Header */}
       <div className="border-b border-border bg-card">
@@ -130,6 +135,8 @@ export default function VenezuelaDashboard() {
         </div>
       </div>
     </div>
+    <FooterMega />
+    </LangProvider>
     </DashboardErrorBoundary>
   );
 }
