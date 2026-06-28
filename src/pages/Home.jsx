@@ -15,7 +15,6 @@ import ToolboxSection from '@/components/landing/ToolboxSection';
 import ShareSection from '@/components/landing/ShareSection';
 import PartnersSection from '@/components/landing/PartnersSection';
 import Footer from '@/components/landing/Footer';
-import ManitoChat from '@/components/landing/ManitoChat';
 
 export default function Home() {
   return (
@@ -38,7 +37,6 @@ export default function Home() {
           <PartnersSection />
         </main>
         <Footer />
-        <ManitoChat />
       </div>
     </LangProvider>
   );

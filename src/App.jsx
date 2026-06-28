@@ -9,6 +9,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import VenezuelaDashboard from './pages/VenezuelaDashboard';
 import StaticRedirect from './components/StaticRedirect';
+import GlobalLayout from './components/manito/GlobalLayout';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -37,13 +38,15 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/venezuela" element={<VenezuelaDashboard />} />
-      <Route path="/info-donaciones" element={<StaticRedirect to="/infodonaciones.html" />} />
-      <Route path="/respuesta-digital" element={<StaticRedirect to="/respuesta-digital.html" />} />
-      <Route path="/novedades" element={<StaticRedirect to="/novedades.html" />} />
-      <Route path="/contactos" element={<StaticRedirect to="/contactos.html" />} />
-      <Route path="*" element={<PageNotFound />} />
+      <Route element={<GlobalLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/venezuela" element={<VenezuelaDashboard />} />
+        <Route path="/info-donaciones" element={<StaticRedirect to="/infodonaciones.html" />} />
+        <Route path="/respuesta-digital" element={<StaticRedirect to="/respuesta-digital.html" />} />
+        <Route path="/novedades" element={<StaticRedirect to="/novedades.html" />} />
+        <Route path="/contactos" element={<StaticRedirect to="/contactos.html" />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Route>
     </Routes>
   );
 };
