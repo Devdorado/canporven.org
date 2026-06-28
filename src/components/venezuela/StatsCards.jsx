@@ -1,36 +1,38 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useVenezuelaStats, useVenezuelaReports } from '@/hooks/useVenezuelaData';
+import { useLang, t } from '@/lib/i18n.jsx';
 import { Users, UserCheck, MapPin, AlertTriangle } from 'lucide-react';
 
 export default function StatsCards() {
+  const { lang } = useLang();
   const { data: stats, isLoading: statsLoading } = useVenezuelaStats();
   const { data: reports, isLoading: reportsLoading } = useVenezuelaReports();
 
   const cards = [
     {
-      title: 'Desaparecidos',
+      title: t('stats.missing', lang),
       value: stats?.missing ?? 0,
       icon: Users,
       color: 'text-destructive',
       bg: 'bg-destructive/10',
     },
     {
-      title: 'Encontrados',
+      title: t('stats.found', lang),
       value: stats?.found ?? 0,
       icon: UserCheck,
       color: 'text-emerald-600',
       bg: 'bg-emerald-500/10',
     },
     {
-      title: 'Reportes',
+      title: t('stats.reports', lang),
       value: reports?.length ?? 0,
       icon: MapPin,
       color: 'text-primary',
       bg: 'bg-primary/10',
     },
     {
-      title: 'Críticos',
+      title: t('stats.critical', lang),
       value: reports?.filter((r) => r.severity === 'rojo').length ?? 0,
       icon: AlertTriangle,
       color: 'text-orange-600',

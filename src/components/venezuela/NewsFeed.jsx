@@ -1,9 +1,11 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useVenezuelaNews } from '@/hooks/useVenezuelaData';
+import { useLang, t } from '@/lib/i18n.jsx';
 import { Newspaper, ExternalLink } from 'lucide-react';
 
 export default function NewsFeed() {
+  const { lang } = useLang();
   const { data, isLoading } = useVenezuelaNews();
 
   return (
@@ -11,13 +13,13 @@ export default function NewsFeed() {
       <CardHeader>
         <CardTitle className="text-lg flex items-center gap-2">
           <Newspaper className="w-5 h-5 text-primary" />
-          Noticias recientes
+          {t('news.recent', lang)}
         </CardTitle>
       </CardHeader>
       <CardContent>
         {isLoading && (
           <div className="py-8 text-center text-muted-foreground text-sm">
-            Cargando noticias…
+            {t('news.loading', lang)}
           </div>
         )}
 
@@ -37,7 +39,7 @@ export default function NewsFeed() {
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
                     {item.source} · {item.published_at
-                      ? new Date(item.published_at).toLocaleDateString('es-ES')
+                      ? new Date(item.published_at).toLocaleDateString(lang === 'en' ? 'en-GB' : 'es-ES')
                       : ''}
                   </p>
                   {item.summary && (

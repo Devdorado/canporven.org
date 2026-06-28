@@ -3,9 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useVenezuelaPersons } from '@/hooks/useVenezuelaData';
+import { useLang, t } from '@/lib/i18n.jsx';
 import { Search, User, Hospital } from 'lucide-react';
 
 export default function PersonSearch() {
+  const { lang } = useLang();
   const [query, setQuery] = useState('');
   const [estado, setEstado] = useState('all');
   const { data, isLoading } = useVenezuelaPersons(query, estado === 'all' ? '' : estado);
@@ -15,7 +17,7 @@ export default function PersonSearch() {
       <CardHeader>
         <CardTitle className="text-lg flex items-center gap-2">
           <User className="w-5 h-5 text-primary" />
-          Buscar personas
+          {t('persons.title', lang)}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -23,7 +25,7 @@ export default function PersonSearch() {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
-              placeholder="Escribe un nombre (mín. 2 caracteres)…"
+              placeholder={t('persons.placeholder', lang)}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="pl-9"
@@ -31,25 +33,25 @@ export default function PersonSearch() {
           </div>
           <Select value={estado} onValueChange={setEstado}>
             <SelectTrigger className="w-full sm:w-[180px]">
-              <SelectValue placeholder="Todos los estados" />
+              <SelectValue placeholder={t('persons.all_states', lang)} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Todos los estados</SelectItem>
-              <SelectItem value="seeking_info">Desaparecido</SelectItem>
-              <SelectItem value="found_alive">Encontrado</SelectItem>
+              <SelectItem value="all">{t('persons.all_states', lang)}</SelectItem>
+              <SelectItem value="seeking_info">{t('persons.missing', lang)}</SelectItem>
+              <SelectItem value="found_alive">{t('persons.found', lang)}</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         {isLoading && (
           <div className="py-8 text-center text-muted-foreground text-sm">
-            Buscando…
+            {t('persons.searching', lang)}
           </div>
         )}
 
         {!isLoading && data?.length === 0 && query.length >= 2 && (
           <div className="py-8 text-center text-muted-foreground text-sm">
-            Sin resultados para «{query}»
+            {t('persons.no_results', lang)} «{query}»
           </div>
         )}
 
@@ -80,7 +82,7 @@ export default function PersonSearch() {
                       : 'bg-amber-500/10 text-amber-600'
                   }`}
                 >
-                  {p.status === 'found_alive' ? 'Encontrado' : 'Desaparecido'}
+                  {p.status === 'found_alive' ? t('persons.found', lang) : t('persons.missing', lang)}
                 </span>
               </div>
             </div>

@@ -503,6 +503,82 @@ const translations = {
   'contactos.em_171': { es: 'Emergencias / Protección Civil', en: 'Emergencies / Civil Protection' },
   'contactos.em_sismo': { es: 'Línea de atención sísmica', en: 'Earthquake support line' },
 
+  // Venezuela dashboard
+  'dash.title': { es: '🇻🇪 Terremoto de Venezuela', en: '🇻🇪 Venezuela Earthquake' },
+  'dash.subtitle_prefix': { es: 'Resumen de la situación · 24 de junio de 2026 · Datos de', en: 'Situation summary · 24 June 2026 · Data from' },
+  'dash.last_update': { es: 'Última actualización:', en: 'Last update:' },
+  'dash.more_resources': { es: 'Más recursos:', en: 'More resources:' },
+  'dash.missing_title': { es: 'Buscar o reportar personas desaparecidas', en: 'Search or report missing people' },
+  'dash.missing_desc': {
+    es: 'Plataforma ciudadana externa e independiente · desaparecidosterremotovenezuela.com — no gestiona dinero ni donaciones.',
+    en: 'External, independent citizen platform · desaparecidosterremotovenezuela.com — it does not handle money or donations.',
+  },
+  'dash.open': { es: 'Abrir', en: 'Open' },
+  'dash.source': { es: 'Fuente de datos:', en: 'Data source:' },
+  'dash.source_note': {
+    es: 'Datos de SOS Venezuela 2026, Apoyo Venezuela y ApoyoVzla — iniciativas ciudadanas sin afiliación política.',
+    en: 'Data from SOS Venezuela 2026, Apoyo Venezuela and ApoyoVzla — citizen initiatives with no political affiliation.',
+  },
+  'dash.verify_note': {
+    es: 'Los datos son reportados por la comunidad. Por favor, verifica antes de actuar. En caso de peligro vital: 911.',
+    en: 'Data is community-reported. Please verify before acting. In case of life-threatening danger: 911.',
+  },
+
+  // Stats cards
+  'stats.missing': { es: 'Desaparecidos', en: 'Missing' },
+  'stats.found': { es: 'Encontrados', en: 'Found' },
+  'stats.reports': { es: 'Reportes', en: 'Reports' },
+  'stats.critical': { es: 'Críticos', en: 'Critical' },
+
+  // News feed
+  'news.recent': { es: 'Noticias recientes', en: 'Recent news' },
+  'news.loading': { es: 'Cargando noticias…', en: 'Loading news…' },
+
+  // Person search
+  'persons.title': { es: 'Buscar personas', en: 'Search people' },
+  'persons.placeholder': { es: 'Escribe un nombre (mín. 2 caracteres)…', en: 'Type a name (min. 2 characters)…' },
+  'persons.all_states': { es: 'Todos los estados', en: 'All states' },
+  'persons.missing': { es: 'Desaparecido', en: 'Missing' },
+  'persons.found': { es: 'Encontrado', en: 'Found' },
+  'persons.searching': { es: 'Buscando…', en: 'Searching…' },
+  'persons.no_results': { es: 'Sin resultados para', en: 'No results for' },
+
+  // Damage validation
+  'damage.title': { es: 'Validación de daños estructurales', en: 'Structural damage validation' },
+  'damage.loading': { es: 'Cargando datos…', en: 'Loading data…' },
+  'damage.habitable': { es: 'Habitable:', en: 'Habitable:' },
+  'damage.inhabitable': { es: 'No habitable:', en: 'Uninhabitable:' },
+  'damage.validations': { es: 'Validaciones:', en: 'Validations:' },
+  'damage.photos': { es: 'foto(s)', en: 'photo(s)' },
+
+  // Reports list
+  'reports.recent': { es: 'Reportes recientes', en: 'Recent reports' },
+  'reports.category': { es: 'Categoría', en: 'Category' },
+  'reports.all_categories': { es: 'Todas las categorías', en: 'All categories' },
+  'reports.severity': { es: 'Gravedad', en: 'Severity' },
+  'reports.all': { es: 'Todas', en: 'All' },
+  'reports.loading': { es: 'Cargando reportes…', en: 'Loading reports…' },
+  'reports.verification': { es: 'Verificación:', en: 'Verification:' },
+  'reports.more': { es: 'reportes más', en: 'more reports' },
+
+  // Categories
+  'cat.collapsed_building': { es: 'Derrumbado', en: 'Collapsed' },
+  'cat.damaged_building': { es: 'Dañado', en: 'Damaged' },
+  'cat.gas_leak': { es: 'Fuga de gas', en: 'Gas leak' },
+  'cat.blocked_road': { es: 'Vía bloqueada', en: 'Blocked road' },
+  'cat.trapped_person': { es: 'Persona atrapada', en: 'Trapped person' },
+  'cat.collection_center': { es: 'Centro de acopio', en: 'Collection center' },
+
+  // Severities
+  'sev.rojo': { es: 'Crítico', en: 'Critical' },
+  'sev.naranja': { es: 'Alto', en: 'High' },
+  'sev.amarillo': { es: 'Medio', en: 'Medium' },
+  'sev.verde': { es: 'Bajo', en: 'Low' },
+
+  // Map
+  'map.error': { es: 'No se pudo cargar el mapa', en: 'The map could not be loaded' },
+  'map.open_source': { es: 'Abrir fuente', en: 'Open source' },
+
   // Misc
   'required': { es: 'Obligatorio', en: 'Required' },
   'select_options': { es: 'Selecciona opciones', en: 'Select options' },
