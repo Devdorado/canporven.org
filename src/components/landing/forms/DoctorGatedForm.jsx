@@ -20,6 +20,7 @@ const initialForm = {
   languages_spoken: [],
   weekly_hours: '',
   availability_text: '',
+  message: '',
   gdpr_consent: false,
 };
 
@@ -202,6 +203,16 @@ export default function DoctorGatedForm() {
             className="w-full h-12 px-4 rounded-lg border border-gray-300 focus:border-[#1565C0] focus:ring-2 focus:ring-[#1565C0]/20 outline-none text-base"
           />
         </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-[#121212] mb-1.5">{t('doctors.note', lang)}</label>
+        <textarea
+          value={form.message}
+          onChange={(e) => set('message', e.target.value)}
+          rows={3}
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#1565C0] focus:ring-2 focus:ring-[#1565C0]/20 outline-none text-base resize-none"
+        />
       </div>
 
       <div className="flex items-start gap-3 pt-1">

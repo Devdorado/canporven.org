@@ -164,3 +164,17 @@ html {
 /* Gold warning text needs lifting on dark */
 .dark .text-\[\#9A6E00\],
 .dark .text-\[\#C48F00\] { color: #f0c14b !important; }
+
+/* ----- Form fields contrast in dark mode ----- */
+/* Inputs/textareas/selects were built light; their typed text stays dark and
+   becomes unreadable on the dark surface. Lift text + placeholder contrast. */
+.dark input,
+.dark textarea,
+.dark select {
+  color: #E8EEF6 !important;
+  background-color: #0e1726 !important;
+  border-color: rgba(255,255,255,0.18) !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder { color: rgba(232,238,246,0.45) !important; }
+.dark select option { color: #E8EEF6; background-color: #0e1726; }

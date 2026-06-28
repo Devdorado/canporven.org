@@ -48,6 +48,10 @@
       "type": "string",
       "title": "General Availability"
     },
+    "message": {
+      "type": "string",
+      "title": "Short Note"
+    },
     "gdpr_consent": {
       "type": "boolean",
       "title": "GDPR Consent"
