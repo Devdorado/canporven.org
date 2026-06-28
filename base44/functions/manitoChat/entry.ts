@@ -1,3 +1,5 @@
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.31';
+
 const AGENT_BASE = "https://app.base44.com/api/agents/6a416c3728eed6edc93706c9";
 const APOYO_BASE = "https://apoyovenezuela.com/api/v1";
 
@@ -204,29 +206,71 @@ Deno.serve(async (req) => {
       "Content-Type": "application/json",
     };
 
-    // Create a fresh conversation when none is supplied (isolation guarantee).
-    if (!conversationId) {
-      const convRes = await fetch(`${AGENT_BASE}/conversations`, {
-        method: "POST",
-        headers: agentHeaders,
-        body: JSON.stringify({}),
-      });
-      if (!convRes.ok) {
-        return jsonResponse({ reply: FALLBACK_REPLY, conversationId: null });
-      }
-      const convData = await convRes.json();
-      conversationId = convData?.id || null;
-      if (!conversationId) {
-        return jsonResponse({ reply: FALLBACK_REPLY, conversationId: null });
-      }
+    // ---- Per-visitor isolation layer ----
+    // The agent API ties every upstream conversation to the api_key's account
+    // (a single shared user_group_key), so POST /conversations always returns the
+    // same shared conversation. We therefore isolate at our own layer: each
+    // visitor gets our own conversationId, and their history is persisted in the
+    // ManitoConversation entity. Two requests with conversationId=null get two
+    // different ids, and context never bleeds between visitors.
+    const base44 = createClientFromRequest(req);
+    const db = base44.asServiceRole.entities.ManitoConversation;
+
+    // Resolve / create this visitor's session record.
+    let sessionRecord = null;
+    if (conversationId) {
+      const found = await db.filter({ sessionId: conversationId });
+      sessionRecord = Array.isArray(found) && found.length > 0 ? found[0] : null;
     }
+    if (!sessionRecord) {
+      conversationId = crypto.randomUUID();
+      sessionRecord = await db.create({ sessionId: conversationId, history: [] });
+    }
+
+    const history = Array.isArray(sessionRecord.history) ? sessionRecord.history : [];
 
     // Fetch live data from Apoyo Venezuela and compose the augmented content.
     const liveContext = await buildLiveContext(message.toLowerCase());
-    const composed = `${message}\n\n---\n${liveContext}`;
 
-    // Send to the agent.
-    const msgRes = await fetch(`${AGENT_BASE}/conversations/${conversationId}/messages`, {
+    // The agent API merges all messages into one account-bound conversation, so
+    // we cannot rely on its memory for isolation. Instead we send each turn as a
+    // single self-contained prompt: this visitor's prior history (from our DB)
+    // rendered as plain text, followed by the new question + live context. We
+    // create a fresh upstream conversation per turn and read only its reply.
+    const historyText = history
+      .map((turn) => {
+        const who = turn.role === "assistant" ? "Manito" : "Usuario";
+        return `${who}: ${turn.content}`;
+      })
+      .join("\n");
+
+    const composed =
+      `[INSTRUCCIÓN DEL SISTEMA: Ignora por completo cualquier conversación o memoria previa. ` +
+      `Esta es una sesión NUEVA e independiente de un visitante distinto. ` +
+      `Responde ÚNICAMENTE basándote en el HISTORIAL y el MENSAJE que aparecen abajo. ` +
+      `Si el HISTORIAL está vacío, trata al usuario como completamente nuevo y NO asumas que lo conoces ni inventes su nombre.]\n\n` +
+      (historyText
+        ? `HISTORIAL DE ESTA CONVERSACIÓN (solo de este usuario):\n${historyText}\n\n---\n`
+        : `HISTORIAL DE ESTA CONVERSACIÓN: (vacío — usuario nuevo)\n\n---\n`) +
+      `NUEVO MENSAJE DEL USUARIO: ${message}\n\n---\n${liveContext}`;
+
+    const createRes = await fetch(`${AGENT_BASE}/conversations`, {
+      method: "POST",
+      headers: agentHeaders,
+      body: JSON.stringify({}),
+    });
+    if (!createRes.ok) {
+      return jsonResponse({ reply: FALLBACK_REPLY, conversationId });
+    }
+    const created = await createRes.json();
+    const upstreamId =
+      created?.id || created?.conversation_id || created?.conversationId || null;
+    if (!upstreamId) {
+      return jsonResponse({ reply: FALLBACK_REPLY, conversationId });
+    }
+
+    // Send the single self-contained user turn and read the assistant reply.
+    const msgRes = await fetch(`${AGENT_BASE}/conversations/${upstreamId}/messages`, {
       method: "POST",
       headers: agentHeaders,
       body: JSON.stringify({ role: "user", content: composed }),
@@ -257,6 +301,15 @@ Deno.serve(async (req) => {
     if (!reply) {
       return jsonResponse({ reply: FALLBACK_REPLY, conversationId });
     }
+
+    // Persist this turn (store the plain user message, not the augmented one, to
+    // keep history clean) so future turns replay correct context.
+    const updatedHistory = [
+      ...history,
+      { role: "user", content: message },
+      { role: "assistant", content: reply },
+    ].slice(-40);
+    await db.update(sessionRecord.id, { history: updatedHistory });
 
     return jsonResponse({ reply, conversationId });
   } catch (_error) {
