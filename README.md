@@ -1,7 +1,7 @@
 # CANPORVEN.ORG — Canary Islands ↔ Venezuela Humanitarian Coordination Platform
 
-> **A hybrid infrastructure project built with Base44, AI-accelerated development, and custom engineering.**  
-> **Not a "vibe-coded" toy. This is production-grade crisis response tooling.**
+> **A hybrid infrastructure project built with Base44, AI assistance, and human judgment.**  
+> **AI + Brain + Heart. Not cold prompts alone.**
 
 [![Base44](https://img.shields.io/badge/Built%20with-Base44-3b82f6)](https://base44.com)
 [![React](https://img.shields.io/badge/React-18-61dafb)](https://react.dev)
@@ -33,26 +33,29 @@
 
 ## Architecture: A Hybrid Stack
 
-This project is **NOT** a "vibe-coded" experiment where someone typed a prompt and accepted the output. It is a deliberately engineered hybrid:
+This project was built with **AI + Brain + Heart** — not cold prompts alone.
+
+We used vibe-coding and AI assistance as accelerators, but every line of code was reviewed, every algorithm was hand-tuned, and every community interaction was driven by human empathy. The AI handled what machines do best (research at scale, pattern detection, boilerplate generation). The human did what only humans can do (judgment, relationships, ethical decisions).
 
 | Layer | Technology | Role |
 |-------|-----------|------|
 | **Infrastructure** | Base44 (Vite + React + Tailwind + shadcn/ui) | Production hosting, auth, database, server functions |
-| **AI Acceleration** | LLM-assisted research, security auditing, code generation | Rapid analysis of 45+ repos, vulnerability detection, documentation |
-| **Custom Engineering** | Vanilla JS/TS, algorithm design, API clients | Matching algorithms, deduplication, data normalization, CORS handling |
+| **AI Acceleration** | LLM-assisted research, security auditing, code generation | Rapid analysis of 45+ repos, vulnerability detection, documentation, boilerplate scaffolding |
+| **Custom Engineering** | Vanilla JS/TS, algorithm design, API clients | Matching algorithms reviewed and tuned by hand, security decisions, data normalization, CORS handling |
 | **Data Sources** | Multiple open APIs + Supabase + Google Sheets | SOS Venezuela 2026, Apoyo Venezuela, ApoyoVzla, Red Solidaria Venezuela |
 
 ### Why "hybrid" matters
 
 **Base44** gave us the scaffold: auth, database, deployment, server functions. Without it, we would have spent days wiring up infrastructure instead of building features.
 
-**AI** accelerated what a single developer could research: in 48 hours, we analyzed 45+ GitHub repositories, identified 6 security vulnerabilities, evaluated API designs, and wrote integration plans that would have taken weeks manually.
+**AI** accelerated what a single developer could research: in 48 hours, we analyzed 45+ GitHub repositories, identified 6 security vulnerabilities, evaluated API designs, and wrote integration plans that would have taken weeks manually. The AI was the amplifier; the human was the decision-maker.
 
-**Custom Engineering** is where the real work lives:
-- The **fuzzy matching algorithm** (Levenshtein + token reordering + weighted confidence scoring) was hand-tuned for Spanish names and Latin American ID formats
-- The **API clients** handle rate limiting, CORS edge cases, and graceful degradation when sources fail
-- The **security audits** (as @Devdorado) responsibly disclosed exposed keys across 4 projects
-- The **community coordination** (GitHub issues, bilingual outreach, API negotiation) is human relationship work that no AI can replace
+**Custom Engineering + Human Judgment** is where the work lives:
+- The **fuzzy matching algorithm** (Levenshtein + token reordering + weighted confidence scoring) was AI-generated but hand-reviewed and tuned for Spanish names and Latin American ID formats
+- The **API clients** were scaffolded by AI but reviewed for rate limiting, CORS edge cases, and graceful degradation
+- The **security audits** (as @Devdorado) were AI-assisted in detection but human-driven in disclosure, communication, and ethical handling
+- The **community coordination** (GitHub issues, bilingual outreach, API negotiation across 4 projects) is human relationship work that no AI can replace
+- The **ethical decisions** (what data to display, how to credit sources, when to flag matches for human review) were made by humans, not algorithms
 
 ---
 
