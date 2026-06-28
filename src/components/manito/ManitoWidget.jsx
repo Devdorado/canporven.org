@@ -2,20 +2,19 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 const GREETING =
   '¡Hola! 👋 Soy **Manito**, tu asistente de ayuda verificada para Venezuela 🇻🇪\n\n' +
-  'Puedo ayudarte a:\n' +
-  '🔎 Buscar zonas y edificios afectados\n' +
-  '🏚️ Ver el estado de los daños y qué se necesita ahora\n' +
+  'Tanto si quieres ayudar desde Canarias 🇮🇨 como si buscas información, te doy enlaces y pasos concretos:\n' +
   '❤️ Donar de forma segura (dinero, no cosas)\n' +
-  '🩺 Conectar con ayuda médica gratuita\n' +
-  '🧑‍🤝‍🧑 Orientarte para buscar personas desaparecidas\n\n' +
-  'Toca una idea o escríbeme lo que necesites 👇';
+  '🩺 Ayuda médica gratuita y voluntariado de médicos\n' +
+  '🔎 Zonas, edificios y qué se necesita ahora\n' +
+  '🧑‍🤝‍🧑 Buscar personas desaparecidas\n\n' +
+  'Toca una idea o escríbeme 👇';
 
 const SUGGESTIONS = [
-  '🔎 Zonas afectadas en La Guaira',
-  '🏚️ Edificios con derrumbe',
-  '💧 ¿Qué se necesita ahora?',
+  '🇮🇨 Soy de Canarias, quiero ayudar',
+  '🩺 Soy médico, quiero ayudar',
   '❤️ ¿Cómo dono de forma segura?',
-  '🩺 Ayuda médica gratis',
+  '🏚️ Zonas y edificios afectados',
+  '💧 ¿Qué se necesita ahora?',
   '🧑‍🤝‍🧑 Buscar a una persona',
 ];
 const NETWORK_ERROR =
