@@ -155,7 +155,13 @@ Deno.serve(async (req) => {
       const arr = pickArray(sosRes.data, 'reports');
       if (Array.isArray(arr)) {
         sourcesOk.sos = true;
-        for (const r of arr) {
+        // Keep the most recent SOS reports only — caps total work per run.
+        const sorted = [...arr].sort(
+          (a, b) =>
+            new Date(b.created_at || b.createdAt || b.fecha || 0) -
+            new Date(a.created_at || a.createdAt || a.fecha || 0)
+        );
+        for (const r of sorted.slice(0, 250)) {
           const n = normalizeSosReport(r);
           if (n) items.push(n);
         }
@@ -203,13 +209,18 @@ Deno.serve(async (req) => {
       }
     }
 
-    if (toUpdate.length) {
-      await base44.asServiceRole.entities.FeedItem.bulkUpdate(toUpdate);
+    const chunk = (arr, size) => {
+      const out = [];
+      for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+      return out;
+    };
+
+    for (const batch of chunk(toUpdate, 200)) {
+      await base44.asServiceRole.entities.FeedItem.bulkUpdate(batch);
     }
-    let createdRecords = [];
-    if (toCreate.length) {
-      createdRecords = await base44.asServiceRole.entities.FeedItem.bulkCreate(toCreate);
-      createdRecords.forEach((rec) => {
+    for (const batch of chunk(toCreate, 200)) {
+      const recs = await base44.asServiceRole.entities.FeedItem.bulkCreate(batch);
+      (recs || []).forEach((rec) => {
         if (rec && rec.source && rec.externalId) kept.set(`${rec.source}:${rec.externalId}`, rec);
       });
     }
@@ -221,12 +232,10 @@ Deno.serve(async (req) => {
       (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
     );
     let pruned = 0;
-    if (all.length > KEEP_RECENT) {
-      const toDelete = all.slice(KEEP_RECENT).filter((e) => e.id);
-      for (const e of toDelete) {
-        await base44.asServiceRole.entities.FeedItem.delete(e.id);
-        pruned += 1;
-      }
+    const toDelete = all.slice(KEEP_RECENT).filter((e) => e.id);
+    for (const batch of chunk(toDelete, 100)) {
+      await base44.asServiceRole.entities.FeedItem.deleteMany({ id: { $in: batch.map((e) => e.id) } });
+      pruned += batch.length;
     }
 
     return Response.json({
