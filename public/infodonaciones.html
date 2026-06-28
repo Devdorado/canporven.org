@@ -516,7 +516,7 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
         <p class="when">Dos seísmos con 39 segundos de diferencia · Mw 7,2 y Mw 7,5 · el más fuerte desde 1900</p>
         <div class="qstats">
           <div class="qstat"><div class="n oro">7,5</div><div class="t">Magnitud del seísmo principal (epicentro en Yaracuy)</div></div>
-          <div class="qstat"><div class="n rojo">~920</div><div class="t">Fallecidos confirmados; +3.300 heridos (cifras preliminares)</div></div>
+          <div class="qstat"><div class="n rojo" id="vzla-live-missing">~920</div><div class="t" id="vzla-live-missing-label">Fallecidos confirmados; +3.300 heridos (cifras preliminares)</div></div>
           <div class="qstat"><div class="n">8</div><div class="t">Estados afectados, con foco en La Guaira y Gran Caracas</div></div>
           <div class="qstat"><div class="n oro">ROJA</div><div class="t">Alerta USGS-PAGER: pérdidas estimadas del 2–10% del PIB</div></div>
         </div>
@@ -1120,6 +1120,26 @@ h2{font-size:clamp(27px,3.4vw,40px);font-weight:800}
 </button>
 
 <script src="/copy.js"></script>
+<script>
+  /* Vincula la cifra del bloque «doblete de La Guaira» con los datos en vivo de /venezuela.
+     La API ya no expone fallecidos; mostramos los Desaparecidos registrados en tiempo real. */
+  (function () {
+    var APP_ID = '6a3fe712a7f72f3df9b00ca1';
+    var url = 'https://app.base44.com/api/apps/' + APP_ID + '/entities/VenezuelaCache?cacheKey=main';
+    fetch(url)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        var rec = Array.isArray(rows) ? rows[0] : rows;
+        var missing = rec && rec.stats && rec.stats.missing;
+        if (typeof missing !== 'number') return;
+        var nEl = document.getElementById('vzla-live-missing');
+        var tEl = document.getElementById('vzla-live-missing-label');
+        if (nEl) nEl.textContent = missing.toLocaleString('es-ES');
+        if (tEl) tEl.textContent = 'Desaparecidos registrados (datos en vivo · SOS Venezuela 2026)';
+      })
+      .catch(function () {});
+  })();
+</script>
 <script src="/shared-ui-v3.js"></script>
 <script>
 // progress bar
