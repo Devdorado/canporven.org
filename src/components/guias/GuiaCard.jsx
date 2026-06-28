@@ -1,9 +1,10 @@
-import React from 'react';
-import { Download, Image as ImageIcon, FileText } from 'lucide-react';
+import React, { useState } from 'react';
+import { Download, Image as ImageIcon, FileText, X, ZoomIn } from 'lucide-react';
 import ShareButtons from './ShareButtons';
 import SuggestionForm from './SuggestionForm';
 
 export default function GuiaCard({ guia, pageUrl }) {
+  const [zoomOpen, setZoomOpen] = useState(false);
   const hasImage = !!(guia.imagenUrl && guia.imagenUrl.trim());
   const hasPdf = !!(guia.pdfUrl && guia.pdfUrl.trim());
 
@@ -18,12 +19,23 @@ export default function GuiaCard({ guia, pageUrl }) {
           <span className="flex-1" style={{ backgroundColor: '#CF142B' }} />
         </div>
         {hasImage ? (
-          <img
-            src={guia.imagenUrl}
-            alt={guia.titulo}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
+          <button
+            type="button"
+            onClick={() => setZoomOpen(true)}
+            aria-label="Ampliar infografía"
+            className="group block h-full w-full"
+          >
+            <img
+              src={guia.imagenUrl}
+              alt={guia.titulo}
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+            <span className="absolute bottom-2 right-2 inline-flex items-center gap-1 rounded-full bg-black/55 px-2.5 py-1 text-[11px] font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity">
+              <ZoomIn size={13} />
+              Ampliar
+            </span>
+          </button>
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center text-[#1763B0]/40 dark:text-white/30">
             <ImageIcon size={40} />
@@ -98,6 +110,29 @@ export default function GuiaCard({ guia, pageUrl }) {
           <SuggestionForm guiaTitulo={guia.titulo} />
         </div>
       </div>
+
+      {/* Zoom modal */}
+      {zoomOpen && hasImage && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={guia.titulo}
+          onClick={() => setZoomOpen(false)}
+          className="fixed inset-0 z-[2147483000] flex items-center justify-center bg-black/80 p-4"
+        >
+          <button
+            type="button"
+            onClick={() => setZoomOpen(false)}
+            aria-label="Cerrar"
+            className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/25 transition-colors"
+          >
+            <X size={22} />
+          </button>
+          <div onClick={(e) => e.stopPropagation()} className="max-h-[90vh] max-w-4xl overflow-auto rounded-xl">
+            <img src={guia.imagenUrl} alt={guia.titulo} className="w-full h-auto" />
+          </div>
+        </div>
+      )}
     </article>
   );
 }
