@@ -32,14 +32,31 @@ function renderBotHtml(text) {
 
   const linkClass = 'underline text-[#1763B0] dark:text-[#7FB3F0]';
 
+  // Build a safe href: the URL has already been HTML-escaped (so it contains
+  // entities like &quot;), which the browser decodes back inside the href and
+  // would allow an attribute breakout (e.g. ...?x="onmouseover="...). We harden
+  // it by encoding the dangerous characters " ' < > space so they can never
+  // terminate the attribute or inject markup.
+  const safeHref = (raw) =>
+    String(raw)
+      .replace(/&quot;/g, '%22')
+      .replace(/&#39;/g, '%27')
+      .replace(/&lt;/g, '%3C')
+      .replace(/&gt;/g, '%3E')
+      .replace(/"/g, '%22')
+      .replace(/'/g, '%27')
+      .replace(/</g, '%3C')
+      .replace(/>/g, '%3E')
+      .replace(/ /g, '%20');
+
   // Full http(s) URLs
   let out = escaped.replace(/(https?:\/\/[^\s<]+)/g, (url) => {
-    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="${linkClass}">${url}</a>`;
+    return `<a href="${safeHref(url)}" target="_blank" rel="noopener noreferrer" class="${linkClass}">${url}</a>`;
   });
 
   // Bare canporven.org links (not already inside an href)
   out = out.replace(/(^|[^/"=>])((?:www\.)?canporven\.org[^\s<]*)/g, (m, pre, domain) => {
-    return `${pre}<a href="https://${domain}" target="_blank" rel="noopener noreferrer" class="${linkClass}">${domain}</a>`;
+    return `${pre}<a href="https://${safeHref(domain)}" target="_blank" rel="noopener noreferrer" class="${linkClass}">${domain}</a>`;
   });
 
   // Bold
