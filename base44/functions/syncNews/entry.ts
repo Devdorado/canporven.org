@@ -85,8 +85,25 @@ function isRelevant(item) {
   return KEYWORDS.some((k) => hay.includes(k));
 }
 
+// Whitelist of hostnames we are allowed to fetch, derived from the static FEEDS
+// list. Even though FEEDS is hardcoded, we re-validate every URL here (https +
+// known host) so no unexpected/internal target can ever be reached (anti-SSRF).
+const ALLOWED_FEED_HOSTS = new Set(
+  FEEDS.map((f) => {
+    try { return new URL(f.url).hostname; } catch { return null; }
+  }).filter(Boolean),
+);
+
+function isAllowedFeedUrl(rawUrl) {
+  let u;
+  try { u = new URL(rawUrl); } catch { return false; }
+  if (u.protocol !== 'https:' && u.protocol !== 'http:') return false;
+  return ALLOWED_FEED_HOSTS.has(u.hostname);
+}
+
 async function safeFetchFeed(feed) {
   try {
+    if (!isAllowedFeedUrl(feed.url)) return [];
     const res = await fetch(feed.url, {
       headers: { 'User-Agent': 'CanporvenNewsBot/1.0', Accept: 'application/rss+xml, application/xml, text/xml, */*' },
     });

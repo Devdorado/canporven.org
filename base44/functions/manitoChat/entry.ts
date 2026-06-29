@@ -3,19 +3,36 @@ import { createClientFromRequest } from 'npm:@base44/sdk@0.8.31';
 const AGENT_BASE = "https://app.base44.com/api/agents/6a416c3728eed6edc93706c9";
 const APOYO_BASE = "https://apoyovenezuela.com/api/v1";
 
-const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
-};
+// Explicit allow-list of trusted origins. Session-based chat data must not be
+// reachable from arbitrary sites, so we never reflect "*". We reflect the
+// request Origin only when it is on this list; unknown origins get no CORS
+// grant (the browser then blocks the cross-origin read).
+const ALLOWED_ORIGINS = [
+  "https://canporven.org",
+  "https://www.canporven.org",
+  "https://canporven.base44.app",
+];
+
+function corsHeaders(req) {
+  const origin = req.headers.get("Origin") || "";
+  const headers = {
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Vary": "Origin",
+  };
+  if (ALLOWED_ORIGINS.includes(origin)) {
+    headers["Access-Control-Allow-Origin"] = origin;
+  }
+  return headers;
+}
 
 const FALLBACK_REPLY =
   "Lo siento, ahora mismo no puedo responder. Vuelve a intentarlo o escríbenos por WhatsApp al +34 601 01 01 01.";
 
-function jsonResponse(body, status = 200) {
+function jsonResponse(body, status = 200, req = null) {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    headers: { "Content-Type": "application/json", ...(req ? corsHeaders(req) : {}) },
   });
 }
 
@@ -216,11 +233,11 @@ async function buildLiveContext(lowerMsg) {
 Deno.serve(async (req) => {
   // CORS preflight
   if (req.method === "OPTIONS") {
-    return new Response(null, { status: 204, headers: CORS_HEADERS });
+    return new Response(null, { status: 204, headers: corsHeaders(req) });
   }
 
   if (req.method !== "POST") {
-    return jsonResponse({ error: "Method not allowed" }, 405);
+    return jsonResponse({ error: "Method not allowed" }, 405, req);
   }
 
   let conversationId = null;
@@ -228,14 +245,14 @@ Deno.serve(async (req) => {
   try {
     const apiKey = Deno.env.get("MANITO_API_KEY");
     if (!apiKey) {
-      return jsonResponse({ reply: FALLBACK_REPLY, conversationId: null });
+      return jsonResponse({ reply: FALLBACK_REPLY, conversationId: null }, 200, req);
     }
 
     let payload;
     try {
       payload = await req.json();
     } catch {
-      return jsonResponse({ error: "Invalid JSON body" }, 400);
+      return jsonResponse({ error: "Invalid JSON body" }, 400, req);
     }
 
     const message = typeof payload?.message === "string" ? payload.message.trim() : "";
@@ -243,7 +260,7 @@ Deno.serve(async (req) => {
 
     // Validate input
     if (!message || message.length > 2000) {
-      return jsonResponse({ error: "Message must be between 1 and 2000 characters." }, 400);
+      return jsonResponse({ error: "Message must be between 1 and 2000 characters." }, 400, req);
     }
 
     const agentHeaders = {
@@ -313,13 +330,13 @@ Deno.serve(async (req) => {
       body: JSON.stringify({}),
     });
     if (!createRes.ok) {
-      return jsonResponse({ reply: FALLBACK_REPLY, conversationId });
+      return jsonResponse({ reply: FALLBACK_REPLY, conversationId }, 200, req);
     }
     const created = await createRes.json();
     const upstreamId =
       created?.id || created?.conversation_id || created?.conversationId || null;
     if (!upstreamId) {
-      return jsonResponse({ reply: FALLBACK_REPLY, conversationId });
+      return jsonResponse({ reply: FALLBACK_REPLY, conversationId }, 200, req);
     }
 
     // Send the single self-contained user turn and read the assistant reply.
@@ -330,7 +347,7 @@ Deno.serve(async (req) => {
     });
 
     if (!msgRes.ok) {
-      return jsonResponse({ reply: FALLBACK_REPLY, conversationId });
+      return jsonResponse({ reply: FALLBACK_REPLY, conversationId }, 200, req);
     }
 
     const msgData = await msgRes.json();
@@ -352,7 +369,7 @@ Deno.serve(async (req) => {
     }
 
     if (!reply) {
-      return jsonResponse({ reply: FALLBACK_REPLY, conversationId });
+      return jsonResponse({ reply: FALLBACK_REPLY, conversationId }, 200, req);
     }
 
     // Persist this turn (store the plain user message, not the augmented one, to
@@ -364,8 +381,8 @@ Deno.serve(async (req) => {
     ].slice(-40);
     await db.update(sessionRecord.id, { history: updatedHistory });
 
-    return jsonResponse({ reply, conversationId });
+    return jsonResponse({ reply, conversationId }, 200, req);
   } catch (_error) {
-    return jsonResponse({ reply: FALLBACK_REPLY, conversationId: conversationId || null });
+    return jsonResponse({ reply: FALLBACK_REPLY, conversationId: conversationId || null }, 200, req);
   }
 });
