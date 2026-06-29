@@ -28,7 +28,9 @@ Deno.serve(async (req) => {
     if (estado) query.estado = estado;
 
     // Fetch one extra to know whether there's a next page.
-    const records = await base44.asServiceRole.entities.FeedItem.filter(
+    // FeedItem read is public (RLS read: {}), so use the RLS-respecting client
+    // rather than asServiceRole — no service-role bypass for a public read.
+    const records = await base44.entities.FeedItem.filter(
       query,
       '-createdAt',
       limit + 1,
