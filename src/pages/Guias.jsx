@@ -4,6 +4,7 @@ import { LangProvider } from '@/lib/i18n.jsx';
 import Header from '@/components/landing/Header';
 import FooterMega from '@/components/landing/FooterMega';
 import GuiaCard from '@/components/guias/GuiaCard';
+import GuiasOverview from '@/components/guias/GuiasOverview';
 import { BookOpen } from 'lucide-react';
 
 export default function Guias() {
@@ -49,7 +50,8 @@ export default function Guias() {
           </section>
 
           {/* Gallery */}
-          <section className="max-w-6xl mx-auto px-4 py-10 md:py-14">
+          <section className="max-w-6xl mx-auto px-4 py-10 md:py-14 space-y-8">
+            {!loading && guias.length > 0 && <GuiasOverview guias={guias} />}
             {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[0, 1, 2].map((i) => (

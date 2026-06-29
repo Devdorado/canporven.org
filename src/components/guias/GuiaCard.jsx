@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Download, Image as ImageIcon, FileText, X, ZoomIn } from 'lucide-react';
 import ShareButtons from './ShareButtons';
 import SuggestionForm from './SuggestionForm';
+import { guiaAnchorId } from './GuiasOverview';
 
 export default function GuiaCard({ guia, pageUrl }) {
   const [zoomOpen, setZoomOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function GuiaCard({ guia, pageUrl }) {
   const hasPdf = !!(guia.pdfUrl && guia.pdfUrl.trim());
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-[#1763B0]/12 dark:border-white/10 bg-white dark:bg-[#0e1726] shadow-sm hover:shadow-md transition-shadow">
+    <article id={guiaAnchorId(guia)} className="scroll-mt-24 flex flex-col overflow-hidden rounded-2xl border border-[#1763B0]/12 dark:border-white/10 bg-white dark:bg-[#0e1726] shadow-sm hover:shadow-md transition-shadow">
       {/* Thumbnail */}
       <div className="relative aspect-[4/3] w-full bg-[#F5F7FB] dark:bg-white/5">
         {/* Tricolor accent bar */}
