@@ -142,6 +142,26 @@ Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
 
+    // Auth: accept a valid shared secret (used by the scheduled automation) OR an
+    // authenticated admin (manual trigger). Everyone else is rejected. This does
+    // not change the sync logic — only who is allowed to run it.
+    const expected = Deno.env.get('SYNC_SECRET') || '';
+    let provided = req.headers.get('x-sync-secret') || '';
+    if (!provided) {
+      try {
+        const body = await req.clone().json();
+        provided = body?.secret || '';
+      } catch (_e) { /* no body */ }
+    }
+    let authorized = expected && provided === expected;
+    if (!authorized) {
+      try {
+        const user = await base44.auth.me();
+        authorized = user?.role === 'admin';
+      } catch (_e) { /* not authenticated */ }
+    }
+    if (!authorized) return Response.json({ error: 'Forbidden' }, { status: 403 });
+
     const [sosRes, zonasRes, pedidosRes] = await Promise.all([
       safeFetchJson(`${SOS_BASE}/api/reports`),
       safeFetchJson(`${APOYO_BASE}/zonas?source=${APOYO_SOURCE}&limit=200`),
