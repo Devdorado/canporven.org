@@ -5,7 +5,7 @@ const FEEDS = [
   { url: 'https://efectococuyo.com/feed', source: 'Efecto Cocuyo' },
   { url: 'https://efe.com/feed/', source: 'EFE' },
   { url: 'https://www.bbc.co.uk/mundo/index.xml', source: 'BBC Mundo' },
-  { url: 'http://cnnespanol.cnn.com/feed/', source: 'CNN en Español' },
+  { url: 'https://cnnespanol.cnn.com/feed/', source: 'CNN en Español' },
 ];
 
 const KEYWORDS = ['terremoto', 'sismo', 'réplica', 'replica', 'la guaira', 'yaracuy', 'venezuela'];
@@ -97,7 +97,9 @@ const ALLOWED_FEED_HOSTS = new Set(
 function isAllowedFeedUrl(rawUrl) {
   let u;
   try { u = new URL(rawUrl); } catch { return false; }
-  if (u.protocol !== 'https:' && u.protocol !== 'http:') return false;
+  // Only https to a known, hardcoded feed host. No http, no other schemes,
+  // no internal/loopback targets can ever be reached (anti-SSRF).
+  if (u.protocol !== 'https:') return false;
   return ALLOWED_FEED_HOSTS.has(u.hostname);
 }
 
