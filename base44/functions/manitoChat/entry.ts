@@ -19,6 +19,51 @@ function jsonResponse(body, status = 200) {
   });
 }
 
+// ---- Signed session tokens (anti-IDOR) ----
+// Anonymous visitors get a token "<uuid>.<hmac>" where the HMAC is computed
+// server-side with a secret. We only ever accept an incoming conversationId
+// whose signature we can re-verify, so a guessed/stolen raw UUID is rejected
+// and cannot be used to read or mutate another visitor's conversation.
+function hexEncode(buf) {
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+async function signSessionId(sessionId) {
+  const secret = Deno.env.get("MANITO_SESSION_SECRET") || "";
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(sessionId));
+  return hexEncode(sig);
+}
+
+async function makeToken(sessionId) {
+  return `${sessionId}.${await signSessionId(sessionId)}`;
+}
+
+// Returns the bare sessionId if the token is authentic, otherwise null.
+async function verifyToken(token) {
+  if (typeof token !== "string" || !token.includes(".")) return null;
+  const idx = token.lastIndexOf(".");
+  const sessionId = token.slice(0, idx);
+  const provided = token.slice(idx + 1);
+  if (!sessionId || !provided) return null;
+  const expected = await signSessionId(sessionId);
+  // Constant-time-ish comparison.
+  if (provided.length !== expected.length) return null;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) {
+    diff |= provided.charCodeAt(i) ^ expected.charCodeAt(i);
+  }
+  return diff === 0 ? sessionId : null;
+}
+
 // Trigger keyword groups — specific tokens only; generic help words ("ayuda",
 // "ayudar", "quiero ayudar") must NOT trigger live-data fetches.
 const GENERAL_KEYWORDS = [
@@ -216,15 +261,23 @@ Deno.serve(async (req) => {
     const base44 = createClientFromRequest(req);
     const db = base44.asServiceRole.entities.ManitoConversation;
 
-    // Resolve / create this visitor's session record.
+    // Resolve / create this visitor's session record. We only trust an incoming
+    // conversationId if it carries a valid server signature; a guessed or stolen
+    // raw UUID fails verification and is treated as "no session", so it can never
+    // be used to read or mutate someone else's conversation (anti-IDOR).
     let sessionRecord = null;
-    if (conversationId) {
-      const found = await db.filter({ sessionId: conversationId });
+    const verifiedSessionId = conversationId ? await verifyToken(conversationId) : null;
+    if (verifiedSessionId) {
+      const found = await db.filter({ sessionId: verifiedSessionId });
       sessionRecord = Array.isArray(found) && found.length > 0 ? found[0] : null;
     }
     if (!sessionRecord) {
-      conversationId = crypto.randomUUID();
-      sessionRecord = await db.create({ sessionId: conversationId, history: [] });
+      const newSessionId = crypto.randomUUID();
+      sessionRecord = await db.create({ sessionId: newSessionId, history: [] });
+      conversationId = await makeToken(newSessionId);
+    } else {
+      // Re-issue the signed token for the verified session.
+      conversationId = await makeToken(sessionRecord.sessionId);
     }
 
     const history = Array.isArray(sessionRecord.history) ? sessionRecord.history : [];
