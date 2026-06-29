@@ -77,10 +77,14 @@ Deno.serve(async (req) => {
     if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 });
     if (user.role !== 'admin') return Response.json({ error: 'Forbidden' }, { status: 403 });
 
-    const token = Deno.env.get('CLICKUP_API_KEY');
-    if (!token) {
+    const rawToken = Deno.env.get('CLICKUP_API_KEY');
+    if (!rawToken) {
       return Response.json({ error: 'CLICKUP_API_KEY is not set' }, { status: 500 });
     }
+    // Trim stray whitespace/newlines/quotes from the stored secret. Personal
+    // tokens (pk_...) are sent raw; OAuth tokens need a "Bearer " prefix.
+    const token = rawToken.trim().replace(/^["']|["']$/g, '');
+    const authHeader = token.startsWith('pk_') ? token : `Bearer ${token}`;
 
     // 1) Fetch all tasks from the list, paginated.
     const allTasks = [];
@@ -89,7 +93,7 @@ Deno.serve(async (req) => {
     while (!lastPage && page < 50) {
       const url = `https://api.clickup.com/api/v2/list/${LIST_ID}/task?include_closed=true&page=${page}`;
       const res = await fetch(url, {
-        headers: { Authorization: token, 'Content-Type': 'application/json' },
+        headers: { Authorization: authHeader, 'Content-Type': 'application/json' },
       });
       if (!res.ok) {
         const body = await res.text();
