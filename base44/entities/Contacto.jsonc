@@ -1,0 +1,105 @@
+{
+  "name": "Contacto",
+  "type": "object",
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "title": "Nombre"
+    },
+    "categoria": {
+      "type": "string",
+      "title": "Categor\u00eda"
+    },
+    "tipo": {
+      "type": "string",
+      "title": "Tipo"
+    },
+    "pais": {
+      "type": "string",
+      "title": "Pa\u00eds"
+    },
+    "ciudad": {
+      "type": "string",
+      "title": "Ciudad"
+    },
+    "telefono": {
+      "type": "string",
+      "title": "Tel\u00e9fono"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "website": {
+      "type": "string",
+      "title": "Website"
+    },
+    "area": {
+      "type": "string",
+      "title": "\u00c1rea"
+    },
+    "estadoOperativo": {
+      "type": "string",
+      "title": "Estado operativo"
+    },
+    "verificado": {
+      "type": "string",
+      "title": "Verificado"
+    },
+    "estadoContacto": {
+      "type": "string",
+      "default": "nuevo",
+      "title": "Estado de contacto"
+    },
+    "marca": {
+      "type": "string",
+      "title": "Marca"
+    },
+    "fuente": {
+      "type": "string",
+      "title": "Fuente"
+    },
+    "stand": {
+      "type": "string",
+      "title": "Stand"
+    },
+    "notas": {
+      "type": "string",
+      "title": "Notas"
+    },
+    "clickupTaskId": {
+      "type": "string",
+      "title": "ClickUp Task ID"
+    },
+    "syncedAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Synced At"
+    }
+  },
+  "required": [
+    "clickupTaskId"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

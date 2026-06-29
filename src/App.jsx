@@ -9,6 +9,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import VenezuelaDashboard from './pages/VenezuelaDashboard';
 import Guias from './pages/Guias';
+import CRM from './pages/CRM';
 import StaticRedirect from './components/StaticRedirect';
 import GlobalLayout from './components/manito/GlobalLayout';
 // Add page imports here
@@ -39,6 +40,8 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
+      {/* Admin-only CRM mirror — isolated, outside the public GlobalLayout (no Header/Footer/Manito) */}
+      <Route path="/crm" element={<CRM />} />
       <Route element={<GlobalLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/venezuela" element={<VenezuelaDashboard />} />
