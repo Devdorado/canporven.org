@@ -72,10 +72,24 @@ Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
 
-    // Admin-only guard.
-    const user = await base44.auth.me();
-    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    if (user.role !== 'admin') return Response.json({ error: 'Forbidden' }, { status: 403 });
+    // Auth: accept a valid shared secret (used by the scheduled automation) OR an
+    // authenticated admin (manual trigger). Everyone else is rejected.
+    const expected = Deno.env.get('SYNC_SECRET') || '';
+    let provided = req.headers.get('x-sync-secret') || '';
+    if (!provided) {
+      try {
+        const body = await req.clone().json();
+        provided = body?.secret || '';
+      } catch (_e) { /* no body */ }
+    }
+    let authorized = expected && provided === expected;
+    if (!authorized) {
+      try {
+        const user = await base44.auth.me();
+        authorized = user?.role === 'admin';
+      } catch (_e) { /* not authenticated */ }
+    }
+    if (!authorized) return Response.json({ error: 'Forbidden' }, { status: 403 });
 
     const rawToken = Deno.env.get('CLICKUP_API_KEY');
     if (!rawToken) {
