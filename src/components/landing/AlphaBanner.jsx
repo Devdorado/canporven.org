@@ -16,7 +16,7 @@ export default function AlphaBanner() {
     >
       <div className="max-w-6xl mx-auto px-4 py-2 flex items-start gap-2">
         <span className="shrink-0 mt-0.5 inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide bg-[#F5B301] text-[#121212]">
-          ALPHA
+          BETA
         </span>
         <p className="text-xs md:text-sm leading-snug text-[#121212]">
           {t('alpha.text', lang)}
